@@ -1,0 +1,8 @@
+query ClientResumeToolbar_client($clientId: ID!) {
+  client(clientId: $clientId) {
+    id
+    firstName
+    lastName
+    email
+  }
+}

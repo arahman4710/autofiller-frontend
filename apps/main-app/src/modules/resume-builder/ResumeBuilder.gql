@@ -1,0 +1,169 @@
+fragment Resumes on Resumes {
+  id
+  uniqueId
+  createdAt
+  updatedAt
+  name
+  archived
+  firstName
+  lastName
+  email
+  linkedinUrl
+  phoneNumber
+  professionalSummary
+  website
+  linkedinUrl
+  location
+  suggestedSkills
+  documentUrl
+  documentType
+  showOriginalDocument
+  hideEducations
+  hideProjects
+  hideSkills
+  hideSummary
+  hideCertifications
+  hideWorkExperiences
+  hideCourseworks
+  hideInvolvements
+  sectionsOrder
+  template
+  templateColorEnum
+  aiGenerated
+  courseworks {
+    id
+    name
+    institutionName
+    endDate
+    achievements
+    currentlyWorkingOnCourse
+  }
+  educations {
+    id
+    additionalInformation
+    degree
+    endDate
+    startDate
+    gpa
+    institutionName
+    location
+    currentlyInEducation
+  }
+  involvements {
+    id
+    name
+    organizationName
+    startDate
+    endDate
+    achievements
+    currentlyWorkingOnInvolvement
+  }
+  projects {
+    id
+    achievements
+    name
+    endDate
+    startDate
+    currentlyWorkingOnProject
+  }
+  workExperiences {
+    id
+    companyDescription
+    companyName
+    simpleAnalysis {
+      field
+      errorMessage
+    }
+    workPositions {
+      id
+      achievements
+      location
+      name
+      startDate
+      endDate
+      currentlyInPosition
+      simpleAnalysis {
+        field
+        errorMessage
+      }
+    }
+  }
+  groupedSkills {
+    id
+    category
+    skills
+  }
+  simpleAnalysis {
+    field
+    errorMessage
+  }
+  certifications {
+    id
+    name
+    completionDate
+    provider
+  }
+}
+
+query ResumeBuilder_getResume($resumeId: [ID!]) {
+  resumes(resumeIds: $resumeId) {
+    id
+    documentUrl
+    ...Resumes
+  }
+}
+
+query ResumeBuilder_getResumeUnauthenticated($id: ID!) {
+  resumeUnauthenticated(id: $id) {
+    id
+    ...Resumes
+  }
+}
+
+query ResumeBuilder_getClientResume($clientId: ID!, $resumeId: [ID!]) {
+  clientResumes(clientId: $clientId, resumeIds: $resumeId) {
+    id
+    ...Resumes
+  }
+}
+
+mutation ResumeBuilder_createResumeUnauthenticated($attributes: ResumesInputObject) {
+  createResumeUnauthenticated(attributes: $attributes) {
+    id
+    ...Resumes
+  }
+}
+
+mutation ResumeBuilder_updateResumeUnauthenticated(
+  $resumeUniqueId: ID!
+  $attributes: ResumesInputObject!
+) {
+  updateResumeUnauthenticated(id: $resumeUniqueId, attributes: $attributes) {
+    id
+    ...Resumes
+  }
+}
+
+mutation ResumeBuilder_updateResume($resumeId: ID!, $attributes: ResumesInputObject!) {
+  updateResume(id: $resumeId, attributes: $attributes) {
+    id
+    ...Resumes
+  }
+}
+
+mutation ResumeBuilder_scoreResume($id: ID!) {
+  scoreResume(id: $id) {
+    failed
+    passed
+    score
+    scoreFields {
+      didPass
+      errorMessage
+      header
+      tags {
+        tagName
+      }
+    }
+    total
+  }
+}

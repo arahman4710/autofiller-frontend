@@ -1,0 +1,11 @@
+fragment UserJobsActivity on UsersJobs {
+  id
+  interviewStep
+  interviewedAt
+  createdAt
+  appliedAt
+  offerAt
+  rejectedAt
+  rejectedStage
+  offerAt
+}

@@ -1,0 +1,37 @@
+fragment UsersJobs on UsersJobs {
+  id
+  applicationInstructions
+  createdAt
+  companyName
+  isRemote
+  jobDetails
+  location
+  notes
+  payPeriod
+  position
+  salaryMax
+  salaryMin
+  status
+  updatedAt
+  url
+  archived
+  rejectedStage
+  interviewStep
+  numClientsApplied
+  numClientsShared
+  partnerArchived
+  partnerCreatedByUser {
+    id
+    firstName
+    lastName
+  }
+  contacts {
+    id
+    email
+    name
+  }
+  resume {
+    id
+    name
+  }
+}

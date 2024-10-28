@@ -1,0 +1,16 @@
+query ClientContent_client($clientId: ID!) {
+  client(clientId: $clientId) {
+    id
+    email
+    firstName
+    lastName
+    lastActiveAt
+    usersJobs {
+      id
+      archived
+    }
+    activeResumes {
+      id
+    }
+  }
+}

@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --box-shadow-highlight-soft: 0px 2px 8px 0px rgba(0, 0, 0, 0.1),
+      0px 1px 0px 0px var(--color-white-010) inset;
+    --box-shadow-highlight-hard: 0px 2px 8px 0px rgba(0, 0, 0, 0.1),
+      0px 1px 0px 0px rgba(255, 255, 255, 0.3) inset;
+  }
+
+  .dark {
+  }
+}
+
+.prose li > p {
+  margin: 0;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+[type='search']::-webkit-search-cancel-button,
+[type='search']::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Tiptap */
+.ProseMirror ul {
+  padding-left: 1em;
+  list-style: initial;
+}
+
+.ProseMirror ol {
+  padding-left: 1em;
+  list-style: decimal;
+}
+
+.ProseMirror-focused {
+  outline: none;
+}
+
+.tiptap {
+  font-size: 13px;
+  height: 180px;
+  overflow-y: auto;
+
+  @media (max-height: 900px) {
+    height: 100px;
+  }
+}
+
+.tiptap p.is-editor-empty:first-child::before {
+  @apply text-text-muted;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+  font-size: 13px;
+}

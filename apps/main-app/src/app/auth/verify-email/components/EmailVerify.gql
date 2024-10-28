@@ -1,0 +1,7 @@
+query EmailVerify_emailVerifyAllowed($emailVerificationCode: String!) {
+  emailVerifyAllowed(emailVerificationCode: $emailVerificationCode) {
+    firstName
+    lastName
+    email
+  }
+}

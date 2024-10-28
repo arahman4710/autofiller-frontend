@@ -1,0 +1,3 @@
+mutation SalaryInsights_salaryInsights($usersJobId: ID!) {
+  salaryInsights(usersJobId: $usersJobId)
+}

@@ -1,0 +1,42 @@
+query AdvisorsList_advisors(
+  $page: Int
+  $perPage: Int
+  $searchTerm: String
+  $fromDate: ISO8601DateTime
+  $toDate: ISO8601DateTime
+  $role: UsersRoleEnum,
+  $sortBy: AdvisorSortEnum,
+  $sortByDirection: SortByDirectionEnum
+) {
+  advisors(
+    page: $page
+    perPage: $perPage
+    searchTerm: $searchTerm
+    fromDate: $fromDate
+    toDate: $toDate
+    role: $role,
+    sortBy: $sortBy,
+    sortByDirection: $sortByDirection
+  ) {
+    pagination {
+      page
+      totalPages
+    }
+    data {
+      id
+      jobsShared {
+        id
+        ...UsersJobs
+      }
+      jobsAdded {
+        id
+        ...UsersJobs
+      }
+      user {
+        id
+        numOwnClients
+        ...Users
+      }
+    }
+  }
+}

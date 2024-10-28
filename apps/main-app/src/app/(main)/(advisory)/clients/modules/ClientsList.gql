@@ -1,0 +1,27 @@
+query ClientsList_clients($page: Int, $perPage: Int, $searchTerm: String, $fromDate: ISO8601DateTime, $toDate: ISO8601DateTime, $advisorIds: [ID!]) {
+  clients(page: $page, perPage: $perPage, searchTerm: $searchTerm, fromDate: $fromDate, toDate: $toDate, advisorIds: $advisorIds) {
+    pagination {
+      page
+      totalPages
+    }
+    data {
+      id
+      numAllJobs
+      numAppliedJobs
+      numInterviewedJobs
+      numOfferedJobs
+      numRejectedJobs
+      user {
+        id
+        firstName
+        lastName
+        lastActiveAt
+        advisor {
+          id
+          firstName
+          lastName
+        }
+      }
+    }
+  }
+}

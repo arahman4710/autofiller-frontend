@@ -1,0 +1,19 @@
+query AdvisorSheet_clients($advisorIds: [ID!], $page: Int!, $perPage: Int!) {
+  clients(advisorIds: $advisorIds, page: $page, perPage: $perPage) {
+    pagination {
+      page
+      totalPages
+    }
+    data {
+      user {
+        id
+        firstName
+        lastName
+      }
+    }
+  }
+}
+
+mutation AdvisorSheet_assignClientToAdvisor($advisorId: ID!, $clientIds: [ID!]!) {
+  assignClientToAdvisor(advisorId: $advisorId, clientIds: $clientIds)
+}

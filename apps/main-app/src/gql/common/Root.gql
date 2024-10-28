@@ -1,0 +1,10 @@
+query Root {
+  user {
+    id
+    completedAllChecklistItems
+    role
+  }
+  resumes {
+    id
+  }
+}

@@ -1,0 +1,67 @@
+fragment AuthResponse on AuthResponse {
+  token
+  user {
+    id
+    role
+  }
+}
+
+mutation ProviderAuthentication(
+  $data: String!
+  $firstName: String
+  $lastName: String
+  $provider: AuthProviderTypeEnum!
+  $resumeUniqueId: ID
+  $referredByUserUniqueId: ID
+) {
+  authProviderAuthenticate(
+    data: $data
+    firstName: $firstName
+    lastName: $lastName
+    provider: $provider
+    resumeUniqueId: $resumeUniqueId
+    referredByUserUniqueId: $referredByUserUniqueId
+  ) {
+    ...AuthResponse
+  }
+}
+
+mutation CredentialsAuthenticationSignIn($email: String!, $password: String!) {
+  authSignIn(email: $email, password: $password) {
+    ...AuthResponse
+  }
+}
+
+mutation CredentialsAuthenticationSignUp(
+  $email: String!
+  $firstName: String
+  $lastName: String
+  $referredByUserUniqueId: ID
+  $resumeUniqueId: ID
+) {
+  authSignUp(
+    email: $email
+    firstName: $firstName
+    lastName: $lastName
+    referredByUserUniqueId: $referredByUserUniqueId
+    resumeUniqueId: $resumeUniqueId
+  ) {
+    ...AuthResponse
+  }
+}
+
+mutation CredentialsAuthenticationEmailVerify(
+  $emailVerificationCode: String!
+  $firstName: String!
+  $lastName: String!
+  $password: String!
+) {
+  userEmailVerify(
+    emailVerificationCode: $emailVerificationCode
+    firstName: $firstName
+    lastName: $lastName
+    password: $password
+  ) {
+    ...AuthResponse
+  }
+}

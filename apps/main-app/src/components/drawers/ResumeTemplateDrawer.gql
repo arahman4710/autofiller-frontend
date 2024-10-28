@@ -1,0 +1,7 @@
+mutation ResumeTemplateDrawer_updateTemplate($resumeId: ID!, $template: ResumesTemplateEnum!, $templateColorEnum: ResumesTemplateColorEnum) {
+  updateTemplateResume(id: $resumeId, template: $template, templateColorEnum: $templateColorEnum) {
+    id
+    template
+    templateColorEnum
+  }
+}

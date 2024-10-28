@@ -1,0 +1,13 @@
+mutation ResumeBuilderToolbar_archiveResume($id: ID!, $archived: Boolean!) {
+  updateArchivedResume(archived: $archived, id: $id) {
+    id
+    archived
+  }
+}
+
+query ResumeBuilderToolbar_getResume($id: ID!) {
+  resumes(resumeIds: [$id]) {
+    id
+    archived
+  }
+}

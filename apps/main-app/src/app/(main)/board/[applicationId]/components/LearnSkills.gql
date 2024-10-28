@@ -1,0 +1,16 @@
+mutation LearnSkills_learnSkills($usersJobId: ID!) {
+  learnSkills(usersJobId: $usersJobId) {
+    result
+    isSync
+  }
+}
+
+subscription LearnSkillsSubscription {
+  learnSkills {
+    content
+    usersJobId
+    initial
+    requestId
+    i
+  }
+}

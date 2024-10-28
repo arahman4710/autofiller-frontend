@@ -1,0 +1,32 @@
+fragment CreateClientGroupDialog_clientGroup on ClientGroup {
+  id
+  clients {
+    id
+  }
+}
+
+mutation CreateClientGroupDialog_createClientGroup($name: String!) {
+  createClientGroup(name: $name) {
+    id
+    ...CreateClientGroupDialog_clientGroup
+  }
+}
+
+mutation CreateClientGroupDialog_addUsersToClientGroup($clientGroupId: ID!, $userIds: [ID!]!) {
+  addUsersToClientGroup(clientGroupId: $clientGroupId, userIds: $userIds) {
+    id
+    ...CreateClientGroupDialog_clientGroup
+  }
+}
+
+query CreateClientGroupDialog_clients {
+  clients {
+    data {
+      id
+      user {
+        firstName
+        lastName
+      }
+    }
+  }
+}

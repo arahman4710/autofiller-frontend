@@ -1,0 +1,21 @@
+fragment UsersUpdate on Users {
+  id
+  firstName
+  lastName
+  phoneNumber
+  location
+  website
+  linkedinUrl
+}
+
+query AccountSettingsDialog_user {
+  user {
+    ...UsersUpdate
+  }
+}
+
+mutation AccountSettingsDialog_updateUser($attributes: UsersInputObject!) {
+  updateUser(attributes: $attributes) {
+    ...UsersUpdate
+  }
+}

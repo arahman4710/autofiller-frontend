@@ -1,0 +1,6 @@
+mutation ListEmpty_createResume($name: String!) {
+  createResume(name: $name) {
+    id
+    name
+  }
+}

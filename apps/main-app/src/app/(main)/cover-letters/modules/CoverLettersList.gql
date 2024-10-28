@@ -1,0 +1,12 @@
+query CoverLettersList_coverLetters($archived: Boolean) {
+  coverLetters(archived: $archived) {
+    id
+    body
+    createdAt
+    usersJob {
+      id
+      companyName
+      position
+    }
+  }
+}

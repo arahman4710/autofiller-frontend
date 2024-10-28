@@ -1,0 +1,7 @@
+mutation useBillingPlan_subscriptionSessionCreate($plan: SubscriptionPlanEnum!) {
+  subscriptionsSessionCreate(plan: $plan)
+}
+
+mutation useBillingPlan_billingPortalUrl {
+  billingPortalUrl
+}

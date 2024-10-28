@@ -1,0 +1,44 @@
+query ShareJobPostingDialog_usersJobs($ids: [ID!]!) {
+  usersJobs(usersJobIds: $ids) {
+    id
+    position
+    companyName
+    clientsShared {
+      id
+    }
+  }
+}
+
+query ShareJobPostingDialog_clients($searchTerm: String) {
+  clients(page: 1, perPage: 50, searchTerm: $searchTerm) {
+    pagination {
+      page
+      totalPages
+    }
+    data {
+      id
+      user {
+        id
+        firstName
+        lastName
+      }
+    }
+  }
+}
+
+query ShareJobPostingDialog_clientGroups {
+  clientGroups {
+    id
+    name
+  }
+}
+
+mutation ShareJobPostingDialog_shareJobWithClients(
+  $usersJobId: ID!
+  $userIds: [ID!]!
+  $clientGroupIds: [ID!]!
+) {
+  shareJobWithClients(usersJobId: $usersJobId, userIds: $userIds, clientGroupIds: $clientGroupIds) {
+    id
+  }
+}

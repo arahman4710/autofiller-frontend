@@ -1,0 +1,12 @@
+query ImportResumeFromLinkedinDialog_resumes {
+  resumes {
+    id
+    name
+  }
+}
+
+mutation ImportResumeFromLinkedinDialog_createResumeFromLinkedinUrl($linkedinProfileUrl: String!) {
+  createResumeFromLinkedinUrl(linkedinProfileUrl: $linkedinProfileUrl) {
+    id
+  }
+}

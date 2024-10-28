@@ -1,0 +1,13 @@
+fragment ApplicationSelect_usersJobs on UsersJobs {
+  id
+  companyName
+  position
+  jobDetails
+}
+
+query ApplicationSelect_usersJobs($archived: Boolean) {
+  usersJobs(archived: $archived) {
+    id
+    ...ApplicationSelect_usersJobs
+  }
+}

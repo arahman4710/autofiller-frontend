@@ -1,0 +1,12 @@
+query NewInterviewDialog_resume($archived: Boolean) {
+  resumes(archived: $archived) {
+    id
+    name
+  }
+}
+
+mutation NewInterviewDialog_interviewStartMock($jobTitle: String!, $jobDescription: String, $interviewType: InterviewsTypeEnum!, $resumeId: ID) {
+  interviewStartMock(jobTitle: $jobTitle, jobDescription: $jobDescription, interviewType: $interviewType, resumeId: $resumeId) {
+    id
+  }
+}

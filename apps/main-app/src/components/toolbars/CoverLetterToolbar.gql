@@ -1,0 +1,13 @@
+query CoverLetterToolbar_coverLetters($coverLetterId: ID!) {
+  coverLetters(coverLetterIds: [$coverLetterId]) {
+    id
+    archived
+  }
+}
+
+mutation CoverLetterToolbar_updateArchivedCoverLetter($coverLetterId: ID!, $archived: Boolean!) {
+  updateArchivedCoverLetter(coverLetterId: $coverLetterId, archived: $archived) {
+    id
+    archived
+  }
+}

@@ -1,0 +1,61 @@
+query ApplicationContent_usersJobs($usersJobIds: [ID!]) {
+  usersJobs(usersJobIds: $usersJobIds) {
+    id
+    ...UserJobsActivity
+    ...UsersJobs
+  }
+  user {
+    id
+    tokenSalaryInsights
+    tokenJobMatch
+    tokenLearnSkills
+    tokenAchievements
+    plan
+  }
+  resumes(archived: false) {
+    id
+    name
+  }
+}
+
+mutation ApplicationContent_updateUsersJob(
+  $applicationInstructions: String
+  $companyName: String
+  $id: ID!
+  $isRemote: Boolean
+  $jobDetails: String
+  $location: String
+  $notes: String
+  $payPeriod: UsersJobsPayPeriodEnum
+  $position: String
+  $salaryMax: Int
+  $salaryMin: Int
+  $status: UsersJobsStatusEnum
+  $rejectedStage: UsersJobsRejectedStageEnum
+  $interviewStep: UsersJobsInterviewStepEnum
+  $url: String
+  $resumeId: ID
+) {
+  updateUsersJob(
+    applicationInstructions: $applicationInstructions
+    companyName: $companyName
+    id: $id
+    isRemote: $isRemote
+    jobDetails: $jobDetails
+    location: $location
+    notes: $notes
+    payPeriod: $payPeriod
+    position: $position
+    salaryMax: $salaryMax
+    salaryMin: $salaryMin
+    status: $status
+    rejectedStage: $rejectedStage
+    interviewStep: $interviewStep
+    url: $url
+    resumeId: $resumeId
+  ) {
+    id
+    ...UserJobsActivity
+    ...UsersJobs
+  }
+}

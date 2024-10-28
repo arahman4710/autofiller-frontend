@@ -1,0 +1,32 @@
+query Navigation_itemsData {
+  user {
+    id
+    numJobs
+    usedJobAiFeature
+    usedResumeAiFeature
+    usedChromeExtension
+  }
+  resumes {
+    id
+    simpleAnalysis {
+      errorMessage
+    }
+    workExperiences {
+      simpleAnalysis {
+        errorMessage
+      }
+      workPositions {
+        simpleAnalysis {
+          errorMessage
+        }
+      }
+    }
+  }
+}
+
+query Navigation_clientGroups {
+  clientGroups {
+    id
+    name
+  }
+}

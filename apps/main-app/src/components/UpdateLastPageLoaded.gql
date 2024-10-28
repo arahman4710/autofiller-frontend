@@ -1,0 +1,5 @@
+mutation UpdateLastPageLoaded_updateLastPageLoadedAt {
+  updateLastPageLoadedAt {
+    id
+  }
+}

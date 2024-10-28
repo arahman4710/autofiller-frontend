@@ -1,0 +1,5 @@
+query CoverLettersToolbar_coverLetters {
+  coverLetters {
+    id
+  }
+}

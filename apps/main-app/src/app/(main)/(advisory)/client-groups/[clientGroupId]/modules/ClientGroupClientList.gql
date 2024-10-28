@@ -1,0 +1,23 @@
+query ClientGroupClientList_clientGroups($clientGroupIds: [ID!]!) {
+  clientGroups(clientGroupIds: $clientGroupIds) {
+    id
+    name
+    clients {
+      id
+      numAllJobs
+      numInterviewedJobs
+      numOfferedJobs
+      numRejectedJobs
+      numAppliedJobs
+      user {
+        firstName
+        lastName
+        lastActiveAt
+        advisor {
+          firstName
+          lastName
+        }
+      }
+    }
+  }
+}

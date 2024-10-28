@@ -1,0 +1,17 @@
+{
+  "name": "@canyon/utils",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "lint": "eslint --fix .",
+    "format": "prettier --write .",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@canyon/tsconfig": "workspace:*",
+    "date-fns": "latest"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  }
+}

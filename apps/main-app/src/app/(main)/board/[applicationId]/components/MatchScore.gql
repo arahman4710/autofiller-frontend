@@ -1,0 +1,20 @@
+query MatchScore_resumes($archived: Boolean) {
+  resumes(archived: $archived) {
+    id
+    name
+    groupedSkills {
+      skills
+    }
+  }
+}
+
+mutation MatchScore_matchScore($usersJobId: ID!, $resumeId: ID!) {
+  matchScore(usersJobId: $usersJobId, resumeId: $resumeId) {
+    matchLevel
+    hardSkills
+    matches {
+      field
+      errorMessage
+    }
+  }
+}

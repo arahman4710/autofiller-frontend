@@ -1,0 +1,3 @@
+mutation EnhanceSummaryDialog_generateProfessionalSummary($resumeId: ID!, $useExisting: Boolean!, $keywords: [String!]) {
+  generateProfessionalSummary(id: $resumeId, useExisting: $useExisting, keywords: $keywords)
+}

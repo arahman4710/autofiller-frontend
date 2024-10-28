@@ -1,0 +1,13 @@
+query Interview_getInterview($interviewId: [ID!]) {
+  interviews(interviewIds: $interviewId) {
+    id
+    status
+    interviewType
+    score
+    jobTitle
+    messages {
+      fromUser
+      message
+    }
+  }
+}

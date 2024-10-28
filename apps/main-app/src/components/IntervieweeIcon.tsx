@@ -1,5 +1,5 @@
-import { cn } from '@canyon/ui/utils/cn'
-import { getInitials } from '@canyon/utils'
+import { cn } from '@rag/ui/utils/cn'
+import { getInitials } from '@rag/utils'
 
 export const IntervieweeIcon = ({
   className,

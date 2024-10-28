@@ -2,12 +2,12 @@
 
 import { useMutation } from '@apollo/client'
 import { useQuery } from '@apollo/experimental-nextjs-app-support/ssr'
-import { Button } from '@canyon/ui/Button'
-import { Dialog, DialogClose, DialogContent, DialogFooter, DialogTrigger } from '@canyon/ui/Dialog'
-import { DropdownMenuItem } from '@canyon/ui/DropdownMenu'
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@canyon/ui/Form'
-import { Input } from '@canyon/ui/Input'
-import { useToast } from '@canyon/ui/useToast'
+import { Button } from '@rag/ui/Button'
+import { Dialog, DialogClose, DialogContent, DialogFooter, DialogTrigger } from '@rag/ui/Dialog'
+import { DropdownMenuItem } from '@rag/ui/DropdownMenu'
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@rag/ui/Form'
+import { Input } from '@rag/ui/Input'
+import { useToast } from '@rag/ui/useToast'
 import { LinkedinLogo } from '@phosphor-icons/react'
 import { useRouter } from 'next/navigation'
 

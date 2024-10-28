@@ -1,13 +1,13 @@
 'use client'
 
-import { Dialog, DialogContent } from '@canyon/ui/Dialog'
-import { Progress, ProgressIndicator } from '@canyon/ui/Progress'
+import { Dialog, DialogContent } from '@rag/ui/Dialog'
+import { Progress, ProgressIndicator } from '@rag/ui/Progress'
 import {
   VerticalGroup,
   VerticalGroupColumn,
   VerticalGroupDescription,
   VerticalGroupTitle,
-} from '@canyon/ui/VerticalGroup'
+} from '@rag/ui/VerticalGroup'
 import { Copy, HandCoins, XLogo } from '@phosphor-icons/react'
 
 import { LinkedInLogo } from '@/components/assets/LinkedInLogo'
@@ -22,7 +22,7 @@ interface IReferralsDialogProps {
 export const ReferralsDialog = ({ isDialogOpen, setIsDialogOpen }: IReferralsDialogProps) => {
   const { copyToClipboard } = useCopyToClipboard()
   const { user } = useCurrentUser()
-  const referralUrl = `https://app.usecanyon.com/auth/signup?referral_code=${user?.uniqueId}`
+  const referralUrl = `https://app.userag.com/auth/signup?referral_code=${user?.uniqueId}`
   const linkedinReferralUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${referralUrl}`
   const twitterReferralUrl = `https://twitter.com/intent/tweet?text=Canyon's%20all-in-one%20platform%20helps%20you%20perfect%20your%20resume,%20apply%20to%20more%20jobs,%20and%20ace%20your%20interview.%0A%0ACheck%20out%20Canyon%20using%20my%20invite%20link%3A%20${referralUrl}`
   const referralTokens = user?.referralTokens

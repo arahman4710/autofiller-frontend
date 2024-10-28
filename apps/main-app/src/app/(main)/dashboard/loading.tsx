@@ -1,6 +1,6 @@
 'use client'
 
-import { MainShell } from '@canyon/ui/MainShell'
+import { MainShell } from '@rag/ui/MainShell'
 
 import { ListHeaderSkeleton } from './components/ListHeader'
 import { ListTodoRowSkeleton } from './components/ListTodoRow'

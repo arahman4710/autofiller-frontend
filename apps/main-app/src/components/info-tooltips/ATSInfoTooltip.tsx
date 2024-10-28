@@ -1,4 +1,4 @@
-import { ITooltipContentProps, Tooltip, TooltipContent, TooltipTrigger } from '@canyon/ui/Tooltip'
+import { ITooltipContentProps, Tooltip, TooltipContent, TooltipTrigger } from '@rag/ui/Tooltip'
 
 interface IATsInfoTooltipProps {
   plural?: boolean

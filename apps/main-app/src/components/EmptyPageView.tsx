@@ -1,4 +1,4 @@
-import { Button, IButtonProps } from '@canyon/ui/Button'
+import { Button, IButtonProps } from '@rag/ui/Button'
 
 interface IEmptyPageView {
   button?: IButtonProps

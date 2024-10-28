@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/experimental-nextjs-app-support/ssr'
-import { IconText } from '@canyon/ui/IconText'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@canyon/ui/Select'
+import { IconText } from '@rag/ui/IconText'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@rag/ui/Select'
 import { Plus } from '@phosphor-icons/react'
 
 import {

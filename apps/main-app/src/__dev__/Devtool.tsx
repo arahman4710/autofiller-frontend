@@ -1,8 +1,8 @@
 'use client'
 
-import { Switch } from '@canyon/ui/Switch'
-import { Tooltip, TooltipContent, TooltipTrigger } from '@canyon/ui/Tooltip'
-import { cn } from '@canyon/ui/utils/cn'
+import { Switch } from '@rag/ui/Switch'
+import { Tooltip, TooltipContent, TooltipTrigger } from '@rag/ui/Tooltip'
+import { cn } from '@rag/ui/utils/cn'
 import { WarningOctagon } from '@phosphor-icons/react'
 
 import { useStore } from '@/hooks/useStore'

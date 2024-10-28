@@ -1,5 +1,5 @@
-import { OrDivider } from '@canyon/ui/OrDivider'
-import { objectToQueryString } from '@canyon/utils'
+import { OrDivider } from '@rag/ui/OrDivider'
+import { objectToQueryString } from '@rag/utils'
 import { Metadata } from 'next'
 import Link from 'next/link'
 

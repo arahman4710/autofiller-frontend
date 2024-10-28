@@ -2,7 +2,7 @@
 
 import { useMemo } from 'react'
 
-import { TableFooterCell } from '@canyon/ui/Table'
+import { TableFooterCell } from '@rag/ui/Table'
 import { ColumnDef } from '@tanstack/react-table'
 
 export type TClient = {

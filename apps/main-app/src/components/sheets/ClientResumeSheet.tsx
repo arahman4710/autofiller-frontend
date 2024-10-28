@@ -1,7 +1,7 @@
 'use client'
 import { Suspense } from 'react'
 
-import { Sheet, SheetContent, SheetHeader } from '@canyon/ui/Sheet'
+import { Sheet, SheetContent, SheetHeader } from '@rag/ui/Sheet'
 
 import { ResumeBuilder } from '@/modules/resume-builder/ResumeBuilder'
 

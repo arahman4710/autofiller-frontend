@@ -4,9 +4,9 @@ import { useEffect, useRef, useState } from 'react'
 
 import { useMutation } from '@apollo/client'
 import { useSuspenseQuery } from '@apollo/experimental-nextjs-app-support/ssr'
-import { Loader } from '@canyon/ui/Loader'
-import { Textarea } from '@canyon/ui/Textarea'
-import { cn } from '@canyon/ui/utils/cn'
+import { Loader } from '@rag/ui/Loader'
+import { Textarea } from '@rag/ui/Textarea'
+import { cn } from '@rag/ui/utils/cn'
 import Markdown from 'react-markdown'
 
 import {

@@ -25,7 +25,7 @@ export default function ExtensionPage() {
       window.postMessage(
         {
           sessionToken,
-          type: 'canyon:extension:link',
+          type: 'rag:extension:link',
         },
         '*'
       )

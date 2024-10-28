@@ -3,19 +3,19 @@
 import { useEffect, useState } from 'react'
 import { createContext } from 'react'
 
-import { Alert } from '@canyon/ui/Alert'
-import { Badge } from '@canyon/ui/Badge'
-import { Button } from '@canyon/ui/Button'
-import { Card, CardContent } from '@canyon/ui/Card'
-import { Dialog, DialogContent } from '@canyon/ui/Dialog'
-import { Loader } from '@canyon/ui/Loader'
+import { Alert } from '@rag/ui/Alert'
+import { Badge } from '@rag/ui/Badge'
+import { Button } from '@rag/ui/Button'
+import { Card, CardContent } from '@rag/ui/Card'
+import { Dialog, DialogContent } from '@rag/ui/Dialog'
+import { Loader } from '@rag/ui/Loader'
 import {
   SwitchTabs,
   SwitchTabsContent,
   SwitchTabsList,
   SwitchTabsTrigger,
-} from '@canyon/ui/SwitchTabs'
-import { cn } from '@canyon/ui/utils/cn'
+} from '@rag/ui/SwitchTabs'
+import { cn } from '@rag/ui/utils/cn'
 import { ArrowCircleUp, CheckCircle } from '@phosphor-icons/react'
 import { motion } from 'framer-motion'
 

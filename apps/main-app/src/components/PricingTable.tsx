@@ -1,5 +1,5 @@
-import { EmptySpace } from '@canyon/ui/EmptySpace'
-import { cn } from '@canyon/ui/utils/cn'
+import { EmptySpace } from '@rag/ui/EmptySpace'
+import { cn } from '@rag/ui/utils/cn'
 import { Check, X } from '@phosphor-icons/react'
 
 type TCheck = 'check' | 'cross'

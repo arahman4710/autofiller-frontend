@@ -3,10 +3,10 @@
 import { useState } from 'react'
 
 import { useMutation } from '@apollo/client'
-import { Button } from '@canyon/ui/Button'
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@canyon/ui/Form'
-import { Popover, PopoverContent } from '@canyon/ui/Popover'
-import { Textarea } from '@canyon/ui/Textarea'
+import { Button } from '@rag/ui/Button'
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@rag/ui/Form'
+import { Popover, PopoverContent } from '@rag/ui/Popover'
+import { Textarea } from '@rag/ui/Textarea'
 import { useForm } from 'react-hook-form'
 
 import { Feedback_FeedbackCreateDocument } from '@gql/graphql'

@@ -1,4 +1,4 @@
-import { Button } from '@canyon/ui/Button'
+import { Button } from '@rag/ui/Button'
 import { Clipboard } from '@phosphor-icons/react'
 
 import { useCopyToClipboard } from '@/hooks/useCopyToClipboard'

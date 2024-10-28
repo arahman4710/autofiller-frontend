@@ -3,8 +3,8 @@
 import { useEffect } from 'react'
 
 import { useSuspenseQuery } from '@apollo/client'
-import { Button } from '@canyon/ui/Button'
-import { DataTable } from '@canyon/ui/DataTable'
+import { Button } from '@rag/ui/Button'
+import { DataTable } from '@rag/ui/DataTable'
 import { useRouter } from 'next/navigation'
 
 import { ClientsList_ClientsDocument } from '@gql/graphql'

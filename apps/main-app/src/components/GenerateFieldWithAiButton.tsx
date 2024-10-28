@@ -1,4 +1,4 @@
-import { EnhanceAIButton, IEnhanceAIButtonProps } from '@canyon/ui/EnhanceAIButton'
+import { EnhanceAIButton, IEnhanceAIButtonProps } from '@rag/ui/EnhanceAIButton'
 
 import { SubscriptionPlanEnum } from '@gql/graphql'
 

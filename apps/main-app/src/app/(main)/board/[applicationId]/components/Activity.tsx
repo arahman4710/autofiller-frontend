@@ -5,8 +5,8 @@ import {
   TimelineHeading,
   TimelineItem,
   TimelineLine,
-} from '@canyon/ui/Timeline'
-import { formatDate } from '@canyon/utils'
+} from '@rag/ui/Timeline'
+import { formatDate } from '@rag/utils'
 
 import {
   UserJobsActivityFragment,

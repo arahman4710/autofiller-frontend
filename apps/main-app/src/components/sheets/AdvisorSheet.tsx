@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 
 import { useMutation, useQuery } from '@apollo/client'
-import { Button } from '@canyon/ui/Button'
-import { Combobox, IComboboxOption } from '@canyon/ui/Combobox'
-import { Label } from '@canyon/ui/Label'
-import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@canyon/ui/Sheet'
+import { Button } from '@rag/ui/Button'
+import { Combobox, IComboboxOption } from '@rag/ui/Combobox'
+import { Label } from '@rag/ui/Label'
+import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@rag/ui/Sheet'
 
 import {
   AdvisorSheet_AssignClientToAdvisorDocument,

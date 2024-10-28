@@ -2,8 +2,8 @@
 
 import { useState } from 'react'
 
-import { Avatar, AvatarFallback, AvatarImage } from '@canyon/ui/Avatar'
-import { IconText } from '@canyon/ui/IconText'
+import { Avatar, AvatarFallback, AvatarImage } from '@rag/ui/Avatar'
+import { IconText } from '@rag/ui/IconText'
 import {
   Popover,
   PopoverContent,
@@ -11,7 +11,7 @@ import {
   PopoverMenuItem,
   PopoverMenuSeparator,
   PopoverTrigger,
-} from '@canyon/ui/Popover'
+} from '@rag/ui/Popover'
 import { Barcode, Gear, Gift, Question, SignOut, User } from '@phosphor-icons/react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'

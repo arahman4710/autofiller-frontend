@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 
 import { useMutation } from '@apollo/client'
-import { Button } from '@canyon/ui/Button'
+import { Button } from '@rag/ui/Button'
 import {
   Dialog,
   DialogClose,
@@ -10,15 +10,15 @@ import {
   DialogFooter,
   DialogScreen,
   DialogScreenProvider,
-} from '@canyon/ui/Dialog'
-import { EnhanceSelect } from '@canyon/ui/EnhanceSelect'
-import { InputChips } from '@canyon/ui/InputChips'
+} from '@rag/ui/Dialog'
+import { EnhanceSelect } from '@rag/ui/EnhanceSelect'
+import { InputChips } from '@rag/ui/InputChips'
 import {
   VerticalGroup,
   VerticalGroupColumn,
   VerticalGroupDescription,
   VerticalGroupTitle,
-} from '@canyon/ui/VerticalGroup'
+} from '@rag/ui/VerticalGroup'
 import { ArrowClockwise, Sparkle } from '@phosphor-icons/react'
 import parse from 'html-react-parser'
 

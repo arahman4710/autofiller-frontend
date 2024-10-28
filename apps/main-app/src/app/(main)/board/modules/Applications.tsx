@@ -15,9 +15,9 @@ import {
   ContextMenuSubContent,
   ContextMenuSubTrigger,
   ContextMenuTrigger,
-} from '@canyon/ui/ContextMenu'
-import { Draggable } from '@canyon/ui/Draggable'
-import { IconText } from '@canyon/ui/IconText'
+} from '@rag/ui/ContextMenu'
+import { Draggable } from '@rag/ui/Draggable'
+import { IconText } from '@rag/ui/IconText'
 import {
   DndContext,
   DragOverlay,

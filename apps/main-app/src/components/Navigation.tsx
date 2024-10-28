@@ -3,9 +3,9 @@
 import { cloneElement, useEffect, useMemo, useState } from 'react'
 
 import { useQuery, useSuspenseQuery } from '@apollo/client'
-import { Badge } from '@canyon/ui/Badge'
-import { IconText } from '@canyon/ui/IconText'
-import { cn } from '@canyon/ui/utils/cn'
+import { Badge } from '@rag/ui/Badge'
+import { IconText } from '@rag/ui/IconText'
+import { cn } from '@rag/ui/utils/cn'
 import {
   ArrowCircleUp,
   Article,

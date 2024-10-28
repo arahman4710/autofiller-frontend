@@ -40,7 +40,7 @@ export const generateTodoItems = (data) => {
       <Sparkle size={size} />,
       'Install our chrome extension',
       'Our chrome extension tracks and autofills applications with one click. Once installed, navigate to a supported site and login to the chrome extension to get started.',
-      'https://chromewebstore.google.com/detail/canyon-track-apply-to-job/npekhmlmillbfcbohangleomoblkckih',
+      'https://chromewebstore.google.com/detail/rag-track-apply-to-job/npekhmlmillbfcbohangleomoblkckih',
       user?.usedChromeExtension,
       true
     ),

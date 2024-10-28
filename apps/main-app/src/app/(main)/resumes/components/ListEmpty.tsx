@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 
-import { Button } from '@canyon/ui/Button'
+import { Button } from '@rag/ui/Button'
 import { ArrowCircleRight } from '@phosphor-icons/react'
 
 import { ImportResumeFromLinkedinDialog } from '@/components/dialogs/ImportResumeFromLinkedinDialog'

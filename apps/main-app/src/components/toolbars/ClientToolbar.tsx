@@ -1,7 +1,7 @@
 'use client'
 
 import { useQuery } from '@apollo/client'
-import { Toolbar } from '@canyon/ui/Toolbar'
+import { Toolbar } from '@rag/ui/Toolbar'
 import { useParams } from 'next/navigation'
 
 import { ClientToolbar_ClientDocument } from '@gql/graphql'

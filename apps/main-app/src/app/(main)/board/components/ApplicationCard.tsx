@@ -1,10 +1,10 @@
 import { forwardRef, useEffect, useState } from 'react'
 
-import { Separator } from '@canyon/ui/Separator'
-import { Skeleton } from '@canyon/ui/Skeleton'
-import { TagPill } from '@canyon/ui/TagPill'
-import { cn } from '@canyon/ui/utils/cn'
-import { formatDate } from '@canyon/utils'
+import { Separator } from '@rag/ui/Separator'
+import { Skeleton } from '@rag/ui/Skeleton'
+import { TagPill } from '@rag/ui/TagPill'
+import { cn } from '@rag/ui/utils/cn'
+import { formatDate } from '@rag/utils'
 
 import { Applications_UsersJobsQuery } from '@gql/graphql'
 

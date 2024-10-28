@@ -2,9 +2,9 @@
 
 import { useState } from 'react'
 
-import { Button } from '@canyon/ui/Button'
-import { useToast } from '@canyon/ui/useToast'
-import { objectToQueryString } from '@canyon/utils'
+import { Button } from '@rag/ui/Button'
+import { useToast } from '@rag/ui/useToast'
+import { objectToQueryString } from '@rag/utils'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import { useRouter } from 'next/navigation'

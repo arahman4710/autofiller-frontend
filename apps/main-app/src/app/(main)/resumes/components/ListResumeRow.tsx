@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 
-import { IconText } from '@canyon/ui/IconText'
+import { IconText } from '@rag/ui/IconText'
 import {
   Popover,
   PopoverContent,
@@ -10,10 +10,10 @@ import {
   PopoverMenuItem,
   PopoverOverlay,
   PopoverTrigger,
-} from '@canyon/ui/Popover'
-import { Skeleton } from '@canyon/ui/Skeleton'
-import { cn } from '@canyon/ui/utils/cn'
-import { formatDate } from '@canyon/utils'
+} from '@rag/ui/Popover'
+import { Skeleton } from '@rag/ui/Skeleton'
+import { cn } from '@rag/ui/utils/cn'
+import { formatDate } from '@rag/utils'
 import { FileText } from '@phosphor-icons/react'
 import { ArchiveBox, ArrowSquareUp, Copy, DotsThree } from '@phosphor-icons/react'
 import Link from 'next/link'

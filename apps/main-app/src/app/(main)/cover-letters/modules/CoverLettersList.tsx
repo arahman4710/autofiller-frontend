@@ -1,9 +1,9 @@
 'use client'
 
 import { useSuspenseQuery } from '@apollo/experimental-nextjs-app-support/ssr'
-import { Dot } from '@canyon/ui/Dot'
-import { IconText } from '@canyon/ui/IconText'
-import { ListableCard } from '@canyon/ui/ListableCard'
+import { Dot } from '@rag/ui/Dot'
+import { IconText } from '@rag/ui/IconText'
+import { ListableCard } from '@rag/ui/ListableCard'
 import parse from 'html-react-parser'
 import { useRouter } from 'next/navigation'
 

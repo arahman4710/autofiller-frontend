@@ -2,16 +2,16 @@
 
 import { useState } from 'react'
 
-import { Button } from '@canyon/ui/Button'
+import { Button } from '@rag/ui/Button'
 import {
   Popover,
   PopoverContent,
   PopoverMenu,
   PopoverMenuItem,
   PopoverTrigger,
-} from '@canyon/ui/Popover'
-import { Skeleton } from '@canyon/ui/Skeleton'
-import { cn } from '@canyon/ui/utils/cn'
+} from '@rag/ui/Popover'
+import { Skeleton } from '@rag/ui/Skeleton'
+import { cn } from '@rag/ui/utils/cn'
 import { useDroppable } from '@dnd-kit/core'
 import { DotsThree, Plus } from '@phosphor-icons/react'
 

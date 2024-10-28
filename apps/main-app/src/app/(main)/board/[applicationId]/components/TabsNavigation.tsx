@@ -1,4 +1,4 @@
-import { TabsList, TabsTrigger } from '@canyon/ui/Tabs'
+import { TabsList, TabsTrigger } from '@rag/ui/Tabs'
 import { AsteriskSimple, Coins, GraduationCap, Lightbulb, Pulse } from '@phosphor-icons/react'
 
 export const TabsNavigation = () => {

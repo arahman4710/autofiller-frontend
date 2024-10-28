@@ -1,6 +1,6 @@
-import { Chip, ChipsContainer } from '@canyon/ui/Chip'
-import { IconText } from '@canyon/ui/IconText'
-import { cn } from '@canyon/ui/utils/cn'
+import { Chip, ChipsContainer } from '@rag/ui/Chip'
+import { IconText } from '@rag/ui/IconText'
+import { cn } from '@rag/ui/utils/cn'
 import { Plus, Sparkle } from '@phosphor-icons/react'
 
 interface ISuggestedChipsProps {

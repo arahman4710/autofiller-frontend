@@ -1,4 +1,4 @@
-import { PageLoader } from '@canyon/ui/PageLoader'
+import { PageLoader } from '@rag/ui/PageLoader'
 
 export default function Loading() {
   return <PageLoader />

@@ -4,10 +4,10 @@ import { useState } from 'react'
 
 import { useMutation } from '@apollo/client'
 import { useSuspenseQuery } from '@apollo/experimental-nextjs-app-support/ssr'
-import { Alert, AlertDescription, AlertTitle } from '@canyon/ui/Alert'
-import { Loader } from '@canyon/ui/Loader'
-import { Tabs, TabsContent } from '@canyon/ui/Tabs'
-import { useToast } from '@canyon/ui/useToast'
+import { Alert, AlertDescription, AlertTitle } from '@rag/ui/Alert'
+import { Loader } from '@rag/ui/Loader'
+import { Tabs, TabsContent } from '@rag/ui/Tabs'
+import { useToast } from '@rag/ui/useToast'
 import parse from 'html-react-parser'
 
 import {

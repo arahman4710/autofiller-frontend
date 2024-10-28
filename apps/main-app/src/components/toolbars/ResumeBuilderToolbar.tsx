@@ -2,9 +2,9 @@
 
 import { useMutation } from '@apollo/client'
 import { useQuery } from '@apollo/experimental-nextjs-app-support/ssr'
-import { Button } from '@canyon/ui/Button'
-import { IconText } from '@canyon/ui/IconText'
-import { Toolbar } from '@canyon/ui/Toolbar'
+import { Button } from '@rag/ui/Button'
+import { IconText } from '@rag/ui/IconText'
+import { Toolbar } from '@rag/ui/Toolbar'
 import { ArchiveBox, CaretLeft } from '@phosphor-icons/react'
 import Link from 'next/link'
 import { useParams } from 'next/navigation'

@@ -1,7 +1,7 @@
 'use client'
 
 import { useSuspenseQuery } from '@apollo/client'
-import { DataTable } from '@canyon/ui/DataTable'
+import { DataTable } from '@rag/ui/DataTable'
 import { useRouter } from 'next/navigation'
 
 import { ClientGroupClientList_ClientGroupsDocument } from '@gql/graphql'

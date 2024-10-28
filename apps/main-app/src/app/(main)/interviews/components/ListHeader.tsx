@@ -1,5 +1,5 @@
-import { Skeleton } from '@canyon/ui/Skeleton'
-import { cn } from '@canyon/ui/utils/cn'
+import { Skeleton } from '@rag/ui/Skeleton'
+import { cn } from '@rag/ui/utils/cn'
 
 import { ListRow } from './ListRow'
 

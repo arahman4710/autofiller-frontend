@@ -1,5 +1,5 @@
-import { MainShell } from '@canyon/ui/MainShell'
-import { Skeleton } from '@canyon/ui/Skeleton'
+import { MainShell } from '@rag/ui/MainShell'
+import { Skeleton } from '@rag/ui/Skeleton'
 
 export default function ResumeLoading() {
   return (

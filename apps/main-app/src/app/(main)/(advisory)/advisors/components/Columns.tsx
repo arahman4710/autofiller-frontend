@@ -1,6 +1,6 @@
 'use client'
 
-import { Button } from '@canyon/ui/Button'
+import { Button } from '@rag/ui/Button'
 import { ArrowDown, ArrowUp } from '@phosphor-icons/react'
 import { ColumnDef } from '@tanstack/react-table'
 

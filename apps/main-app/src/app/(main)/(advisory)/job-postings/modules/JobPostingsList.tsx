@@ -13,17 +13,17 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from '@canyon/ui/AlertDialog'
-import { Button } from '@canyon/ui/Button'
-import { DataTable } from '@canyon/ui/DataTable'
+} from '@rag/ui/AlertDialog'
+import { Button } from '@rag/ui/Button'
+import { DataTable } from '@rag/ui/DataTable'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@canyon/ui/DropdownMenu'
-import { IconText } from '@canyon/ui/IconText'
-import { formatMinMaxSalary } from '@canyon/utils'
+} from '@rag/ui/DropdownMenu'
+import { IconText } from '@rag/ui/IconText'
+import { formatMinMaxSalary } from '@rag/utils'
 import { ArchiveBox, DotsThree, Share } from '@phosphor-icons/react'
 import { useRouter } from 'next/navigation'
 import { useQueryState } from 'nuqs'

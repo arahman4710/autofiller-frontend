@@ -3,7 +3,7 @@
 import { useRef, useState } from 'react'
 
 import { useMutation, useSubscription } from '@apollo/client'
-import { useToast } from '@canyon/ui/useToast'
+import { useToast } from '@rag/ui/useToast'
 import Markdown from 'react-markdown'
 
 import {

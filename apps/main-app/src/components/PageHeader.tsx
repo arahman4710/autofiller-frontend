@@ -1,5 +1,5 @@
-import { IconText } from '@canyon/ui/IconText'
-import { cn } from '@canyon/ui/utils/cn'
+import { IconText } from '@rag/ui/IconText'
+import { cn } from '@rag/ui/utils/cn'
 
 interface IPageHeaderProps {
   className?: string

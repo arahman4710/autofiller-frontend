@@ -3,10 +3,10 @@
 import { useEffect, useState } from 'react'
 
 import { useMutation } from '@apollo/client'
-import { Button } from '@canyon/ui/Button'
-import { Dialog, DialogContent, DialogFooter } from '@canyon/ui/Dialog'
-import { Input } from '@canyon/ui/Input'
-import { Label } from '@canyon/ui/Label'
+import { Button } from '@rag/ui/Button'
+import { Dialog, DialogContent, DialogFooter } from '@rag/ui/Dialog'
+import { Input } from '@rag/ui/Input'
+import { Label } from '@rag/ui/Label'
 import { Wallet } from '@phosphor-icons/react'
 
 import {

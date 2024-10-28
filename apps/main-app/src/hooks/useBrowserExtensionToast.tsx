@@ -3,8 +3,8 @@
 import { useEffect, useState } from 'react'
 
 import { useQuery } from '@apollo/experimental-nextjs-app-support/ssr'
-import { Button } from '@canyon/ui/Button'
-import { useToast } from '@canyon/ui/useToast'
+import { Button } from '@rag/ui/Button'
+import { useToast } from '@rag/ui/useToast'
 import Link from 'next/link'
 
 import { UseBrowserExtensionToast_UserDocument } from '@gql/graphql'
@@ -42,7 +42,7 @@ export const useBrowserExtensionToast = () => {
           leftComponent: <AppIcon />,
           link: (
             <Link
-              href="https://chromewebstore.google.com/detail/canyon-track-apply-to-job/npekhmlmillbfcbohangleomoblkckih"
+              href="https://chromewebstore.google.com/detail/rag-track-apply-to-job/npekhmlmillbfcbohangleomoblkckih"
               target="_blank"
             >
               <Button

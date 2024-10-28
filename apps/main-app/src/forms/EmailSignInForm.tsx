@@ -1,5 +1,5 @@
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@canyon/ui/Form'
-import { Input } from '@canyon/ui/Input'
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@rag/ui/Form'
+import { Input } from '@rag/ui/Input'
 import { SubmitHandler, UseFormReturn } from 'react-hook-form'
 
 import { TEmailAuthSignInForm } from '@/forms/types'

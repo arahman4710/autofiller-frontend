@@ -1,5 +1,5 @@
-import { FormControl, FormField, FormItem, FormMessage } from '@canyon/ui/Form'
-import { Input } from '@canyon/ui/Input'
+import { FormControl, FormField, FormItem, FormMessage } from '@rag/ui/Form'
+import { Input } from '@rag/ui/Input'
 import { Gear } from '@phosphor-icons/react'
 import { useFormContext } from 'react-hook-form'
 

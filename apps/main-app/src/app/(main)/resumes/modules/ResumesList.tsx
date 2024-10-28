@@ -2,7 +2,7 @@
 
 import { useMutation } from '@apollo/client'
 import { useQuery, useSuspenseQuery } from '@apollo/experimental-nextjs-app-support/ssr'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@canyon/ui/Tabs'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@rag/ui/Tabs'
 import { AsteriskSimple, CircleDashed } from '@phosphor-icons/react'
 import { useRouter } from 'next/navigation'
 

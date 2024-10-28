@@ -1,6 +1,6 @@
 'use client'
 
-import { TooltipProvider } from '@canyon/ui/Tooltip'
+import { TooltipProvider } from '@rag/ui/Tooltip'
 import { ErrorBoundary, Provider } from '@rollbar/react'
 import { Session } from 'next-auth'
 

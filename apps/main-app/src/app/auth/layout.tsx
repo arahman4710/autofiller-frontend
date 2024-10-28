@@ -1,4 +1,4 @@
-import { CanyonLogoFull } from '@canyon/ui/CanyonLogo'
+import { CanyonLogoFull } from '@rag/ui/CanyonLogo'
 
 export default function AuthLayout({ children }: { children: React.ReactNode }) {
   return (

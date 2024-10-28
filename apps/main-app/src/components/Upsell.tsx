@@ -1,5 +1,5 @@
-import { Button } from '@canyon/ui/Button'
-import { Tooltip, TooltipContent, TooltipTrigger } from '@canyon/ui/Tooltip'
+import { Button } from '@rag/ui/Button'
+import { Tooltip, TooltipContent, TooltipTrigger } from '@rag/ui/Tooltip'
 import { CoinVertical } from '@phosphor-icons/react'
 
 import { SubscriptionPlanEnum } from '@/gql/__generated__/graphql'

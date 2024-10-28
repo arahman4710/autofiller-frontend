@@ -1,11 +1,11 @@
 'use client'
 
 import { useQuery } from '@apollo/client'
-import { Dot } from '@canyon/ui/Dot'
-import { ListDataTable } from '@canyon/ui/ListDataTable'
-import { TagPill } from '@canyon/ui/TagPill'
-import { cn } from '@canyon/ui/utils'
-import { formatDate } from '@canyon/utils'
+import { Dot } from '@rag/ui/Dot'
+import { ListDataTable } from '@rag/ui/ListDataTable'
+import { TagPill } from '@rag/ui/TagPill'
+import { cn } from '@rag/ui/utils'
+import { formatDate } from '@rag/utils'
 
 import { ClientBoard_ClientUsersJobsDocument, UsersJobsStatusEnum } from '@gql/graphql'
 

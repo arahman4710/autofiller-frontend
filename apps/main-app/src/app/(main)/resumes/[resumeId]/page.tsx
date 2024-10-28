@@ -1,4 +1,4 @@
-import { MainShell } from '@canyon/ui/MainShell'
+import { MainShell } from '@rag/ui/MainShell'
 import { Metadata } from 'next'
 
 import { ResumeBuilder } from '@/modules/resume-builder/ResumeBuilder'

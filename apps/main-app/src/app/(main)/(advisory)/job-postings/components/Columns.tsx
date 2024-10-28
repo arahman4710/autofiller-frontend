@@ -10,18 +10,18 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from '@canyon/ui/AlertDialog'
-import { Button } from '@canyon/ui/Button'
-import { Checkbox } from '@canyon/ui/Checkbox'
+} from '@rag/ui/AlertDialog'
+import { Button } from '@rag/ui/Button'
+import { Checkbox } from '@rag/ui/Checkbox'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@canyon/ui/DropdownMenu'
-import { ExpandableCell } from '@canyon/ui/ExpandableCell'
-import { cn } from '@canyon/ui/utils'
-import { trimUrl } from '@canyon/utils'
+} from '@rag/ui/DropdownMenu'
+import { ExpandableCell } from '@rag/ui/ExpandableCell'
+import { cn } from '@rag/ui/utils'
+import { trimUrl } from '@rag/utils'
 import { ArrowDown, ArrowUp, DotsThree } from '@phosphor-icons/react'
 import { ColumnDef } from '@tanstack/react-table'
 import Link from 'next/link'

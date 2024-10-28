@@ -1,7 +1,7 @@
 'use client'
 
 import { useSuspenseQuery } from '@apollo/client'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@canyon/ui/Tabs'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@rag/ui/Tabs'
 import { DotsNine, Files } from '@phosphor-icons/react'
 import { useQueryState } from 'nuqs'
 

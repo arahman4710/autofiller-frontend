@@ -1,5 +1,5 @@
-import { Loader } from '@canyon/ui/Loader'
-import { MainShell } from '@canyon/ui/MainShell'
+import { Loader } from '@rag/ui/Loader'
+import { MainShell } from '@rag/ui/MainShell'
 
 export default function InterviewLoading() {
   return (

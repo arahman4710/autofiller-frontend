@@ -10,7 +10,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from '@canyon/ui/AlertDialog'
+} from '@rag/ui/AlertDialog'
 
 interface IDestroyAlertDialogProps {
   confirmText?: string

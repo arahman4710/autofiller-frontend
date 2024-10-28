@@ -1,4 +1,4 @@
-import { IconText } from '@canyon/ui/IconText'
+import { IconText } from '@rag/ui/IconText'
 import { Users } from '@phosphor-icons/react'
 import Link from 'next/link'
 

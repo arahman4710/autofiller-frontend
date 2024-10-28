@@ -2,9 +2,9 @@
 
 import { useState } from 'react'
 
-import { Button } from '@canyon/ui/Button'
-import { IconText } from '@canyon/ui/IconText'
-import { objectToQueryString } from '@canyon/utils'
+import { Button } from '@rag/ui/Button'
+import { IconText } from '@rag/ui/IconText'
+import { objectToQueryString } from '@rag/utils'
 import { useSearchParams } from 'next/navigation'
 import { signIn } from 'next-auth/react'
 

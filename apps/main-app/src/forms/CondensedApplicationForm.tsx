@@ -1,7 +1,7 @@
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@canyon/ui/Form'
-import { Input } from '@canyon/ui/Input'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@canyon/ui/Select'
-import { Tiptap } from '@canyon/ui/Tiptap'
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@rag/ui/Form'
+import { Input } from '@rag/ui/Input'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@rag/ui/Select'
+import { Tiptap } from '@rag/ui/Tiptap'
 import { SubmitHandler, UseFormReturn } from 'react-hook-form'
 
 import { statusOptions } from '@/constants/usersJobStatus'

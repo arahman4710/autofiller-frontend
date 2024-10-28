@@ -1,8 +1,8 @@
 import { useState } from 'react'
 
 import { useMutation } from '@apollo/client'
-import { Alert, AlertDescription, AlertTitle } from '@canyon/ui/Alert'
-import { Button } from '@canyon/ui/Button'
+import { Alert, AlertDescription, AlertTitle } from '@rag/ui/Alert'
+import { Button } from '@rag/ui/Button'
 import {
   Dialog,
   DialogClose,
@@ -10,16 +10,16 @@ import {
   DialogFooter,
   DialogScreen,
   DialogScreenProvider,
-} from '@canyon/ui/Dialog'
-import { InputChips } from '@canyon/ui/InputChips'
+} from '@rag/ui/Dialog'
+import { InputChips } from '@rag/ui/InputChips'
 import {
   VerticalGroup,
   VerticalGroupColumn,
   VerticalGroupDescription,
   VerticalGroupRow,
   VerticalGroupTitle,
-} from '@canyon/ui/VerticalGroup'
-import { useToast } from '@canyon/ui/useToast'
+} from '@rag/ui/VerticalGroup'
+import { useToast } from '@rag/ui/useToast'
 import { AsteriskSimple, Info } from '@phosphor-icons/react'
 import { useRouter } from 'next/navigation'
 

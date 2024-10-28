@@ -2,9 +2,9 @@
 
 import { useState } from 'react'
 
-import { Button } from '@canyon/ui/Button'
-import { Toolbar } from '@canyon/ui/Toolbar'
-import { Tooltip, TooltipContent, TooltipTrigger } from '@canyon/ui/Tooltip'
+import { Button } from '@rag/ui/Button'
+import { Toolbar } from '@rag/ui/Toolbar'
+import { Tooltip, TooltipContent, TooltipTrigger } from '@rag/ui/Tooltip'
 import { PlusCircle, SpeakerHigh, SpeakerSlash } from '@phosphor-icons/react'
 
 import { NewInterviewDialog } from '@/components/dialogs/NewInterviewDialog'

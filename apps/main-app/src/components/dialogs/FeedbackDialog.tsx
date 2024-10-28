@@ -3,10 +3,10 @@
 import { useState } from 'react'
 
 import { useMutation } from '@apollo/client'
-import { Button } from '@canyon/ui/Button'
-import { Dialog, DialogClose, DialogContent, DialogFooter } from '@canyon/ui/Dialog'
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@canyon/ui/Form'
-import { Textarea } from '@canyon/ui/Textarea'
+import { Button } from '@rag/ui/Button'
+import { Dialog, DialogClose, DialogContent, DialogFooter } from '@rag/ui/Dialog'
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@rag/ui/Form'
+import { Textarea } from '@rag/ui/Textarea'
 import { Question } from '@phosphor-icons/react'
 import { useForm } from 'react-hook-form'
 

@@ -1,8 +1,8 @@
-import { Gauge } from '@canyon/ui/Gauge'
-import { IconText } from '@canyon/ui/IconText'
-import { Skeleton } from '@canyon/ui/Skeleton'
-import { cn } from '@canyon/ui/utils/cn'
-import { formatDate } from '@canyon/utils'
+import { Gauge } from '@rag/ui/Gauge'
+import { IconText } from '@rag/ui/IconText'
+import { Skeleton } from '@rag/ui/Skeleton'
+import { cn } from '@rag/ui/utils/cn'
+import { formatDate } from '@rag/utils'
 import { ChatText } from '@phosphor-icons/react'
 import Link from 'next/link'
 

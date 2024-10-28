@@ -3,9 +3,9 @@
 import { useEffect, useState } from 'react'
 
 import { useMutation, useQuery } from '@apollo/client'
-import { Button } from '@canyon/ui/Button'
-import { Dialog, DialogClose, DialogContent, DialogFooter, DialogTrigger } from '@canyon/ui/Dialog'
-import { useToast } from '@canyon/ui/useToast'
+import { Button } from '@rag/ui/Button'
+import { Dialog, DialogClose, DialogContent, DialogFooter, DialogTrigger } from '@rag/ui/Dialog'
+import { useToast } from '@rag/ui/useToast'
 import { PencilCircle, PlusCircle } from '@phosphor-icons/react'
 
 import {

@@ -1,5 +1,5 @@
 {
-  "name": "canyon",
+  "name": "rag",
   "private": true,
   "workspaces": [
     "apps/*",
@@ -16,7 +16,7 @@
     "clean:workspaces": "turbo clean"
   },
   "devDependencies": {
-    "@canyon/tsconfig": "workspace:*",
+    "@rag/tsconfig": "workspace:*",
     "@typescript-eslint/eslint-plugin": "^7.10.0",
     "eslint-plugin-perfectionist": "^2.10.0",
     "husky": "^9.0.11",

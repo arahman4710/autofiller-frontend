@@ -1,7 +1,7 @@
 'use client'
 
-import { Button } from '@canyon/ui/Button'
-import { Toolbar } from '@canyon/ui/Toolbar'
+import { Button } from '@rag/ui/Button'
+import { Toolbar } from '@rag/ui/Toolbar'
 import Link from 'next/link'
 
 import { Logo } from '@/components/assets/Logo'

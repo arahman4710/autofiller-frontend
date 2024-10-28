@@ -3,9 +3,9 @@
 import { useCallback, useState } from 'react'
 
 import { useQuery } from '@apollo/experimental-nextjs-app-support/ssr'
-import { Button } from '@canyon/ui/Button'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@canyon/ui/Select'
-import { Toolbar } from '@canyon/ui/Toolbar'
+import { Button } from '@rag/ui/Button'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@rag/ui/Select'
+import { Toolbar } from '@rag/ui/Toolbar'
 import { PlusCircle } from '@phosphor-icons/react'
 
 import { ResumesToolbar_ResumesDocument } from '@gql/graphql'

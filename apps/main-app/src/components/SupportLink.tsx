@@ -1,7 +1,7 @@
 export const SupportLink = () => {
   return (
-    <a className="text-stone-300 underline" href="mailto:support@usecanyon.com">
-      support@usecanyon.com
+    <a className="text-stone-300 underline" href="mailto:support@userag.com">
+      support@userag.com
     </a>
   )
 }

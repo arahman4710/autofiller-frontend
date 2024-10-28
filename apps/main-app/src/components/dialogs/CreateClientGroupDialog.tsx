@@ -3,8 +3,8 @@
 import { useState } from 'react'
 
 import { useMutation, useQuery } from '@apollo/client'
-import { Button } from '@canyon/ui/Button'
-import { Combobox, IComboboxOption } from '@canyon/ui/Combobox'
+import { Button } from '@rag/ui/Button'
+import { Combobox, IComboboxOption } from '@rag/ui/Combobox'
 import {
   Dialog,
   DialogClose,
@@ -12,10 +12,10 @@ import {
   DialogFooter,
   DialogScreen,
   DialogScreenProvider,
-} from '@canyon/ui/Dialog'
-import { Input } from '@canyon/ui/Input'
-import { Label } from '@canyon/ui/Label'
-import { useToast } from '@canyon/ui/useToast'
+} from '@rag/ui/Dialog'
+import { Input } from '@rag/ui/Input'
+import { Label } from '@rag/ui/Label'
+import { useToast } from '@rag/ui/useToast'
 
 import {
   CreateClientGroupDialog_AddUsersToClientGroupDocument,

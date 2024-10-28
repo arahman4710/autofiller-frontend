@@ -1,17 +1,17 @@
-import type { TAlertVariant } from '@canyon/ui/Alert'
+import type { TAlertVariant } from '@rag/ui/Alert'
 
 import { useEffect, useState } from 'react'
 
 import { useMutation, useQuery } from '@apollo/client'
-import { Alert, AlertDescription, AlertTitle } from '@canyon/ui/Alert'
-import { Avatar, AvatarFallback } from '@canyon/ui/Avatar'
-import { Button } from '@canyon/ui/Button'
-import { Dialog, DialogContent, DialogScreen, DialogScreenProvider } from '@canyon/ui/Dialog'
-import { IconText } from '@canyon/ui/IconText'
-import { Separator } from '@canyon/ui/Separator'
-import { Tooltip, TooltipContent, TooltipTrigger } from '@canyon/ui/Tooltip'
-import { useToast } from '@canyon/ui/useToast'
-import { cn } from '@canyon/ui/utils'
+import { Alert, AlertDescription, AlertTitle } from '@rag/ui/Alert'
+import { Avatar, AvatarFallback } from '@rag/ui/Avatar'
+import { Button } from '@rag/ui/Button'
+import { Dialog, DialogContent, DialogScreen, DialogScreenProvider } from '@rag/ui/Dialog'
+import { IconText } from '@rag/ui/IconText'
+import { Separator } from '@rag/ui/Separator'
+import { Tooltip, TooltipContent, TooltipTrigger } from '@rag/ui/Tooltip'
+import { useToast } from '@rag/ui/useToast'
+import { cn } from '@rag/ui/utils'
 import { Gear, User, Wallet } from '@phosphor-icons/react'
 
 import {

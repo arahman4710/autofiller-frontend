@@ -1,8 +1,8 @@
 'use client'
 
-import { IconText } from '@canyon/ui/IconText'
-import { Skeleton } from '@canyon/ui/Skeleton'
-import { cn } from '@canyon/ui/utils/cn'
+import { IconText } from '@rag/ui/IconText'
+import { Skeleton } from '@rag/ui/Skeleton'
+import { cn } from '@rag/ui/utils/cn'
 import { CheckCircle } from '@phosphor-icons/react'
 import Link from 'next/link'
 

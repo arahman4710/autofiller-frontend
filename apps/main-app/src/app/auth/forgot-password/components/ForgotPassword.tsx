@@ -3,9 +3,9 @@
 import { useState } from 'react'
 
 import { useMutation } from '@apollo/client'
-import { Alert, AlertDescription, AlertTitle } from '@canyon/ui/Alert'
-import { Button } from '@canyon/ui/Button'
-import { useToast } from '@canyon/ui/useToast'
+import { Alert, AlertDescription, AlertTitle } from '@rag/ui/Alert'
+import { Button } from '@rag/ui/Button'
+import { useToast } from '@rag/ui/useToast'
 
 import { ForgotPassword_AuthPasswordResetRequestDocument } from '@gql/graphql'
 

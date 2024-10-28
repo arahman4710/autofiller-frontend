@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/experimental-nextjs-app-support/ssr'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@canyon/ui/Select'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@rag/ui/Select'
 
 import { ResumesSelect_ResumesDocument } from '@gql/graphql'
 

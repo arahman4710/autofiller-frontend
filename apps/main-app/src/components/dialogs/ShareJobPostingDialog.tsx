@@ -3,12 +3,12 @@
 import { useEffect, useState } from 'react'
 
 import { useMutation, useQuery } from '@apollo/client'
-import { Button } from '@canyon/ui/Button'
-import { Combobox, IComboboxOption } from '@canyon/ui/Combobox'
-import { Dialog, DialogContent, DialogFooter } from '@canyon/ui/Dialog'
-import { Label } from '@canyon/ui/Label'
-import { ScrollArea } from '@canyon/ui/ScrollArea'
-import { useToast } from '@canyon/ui/useToast'
+import { Button } from '@rag/ui/Button'
+import { Combobox, IComboboxOption } from '@rag/ui/Combobox'
+import { Dialog, DialogContent, DialogFooter } from '@rag/ui/Dialog'
+import { Label } from '@rag/ui/Label'
+import { ScrollArea } from '@rag/ui/ScrollArea'
+import { useToast } from '@rag/ui/useToast'
 import { ShareFat } from '@phosphor-icons/react'
 
 import {

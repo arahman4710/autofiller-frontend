@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import { useMutation } from '@apollo/client'
-import { useToast } from '@canyon/ui/useToast'
+import { useToast } from '@rag/ui/useToast'
 
 import {
   ApplicationContent_UsersJobsDocument,

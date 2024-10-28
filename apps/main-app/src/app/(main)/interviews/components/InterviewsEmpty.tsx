@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 
-import { Button } from '@canyon/ui/Button'
+import { Button } from '@rag/ui/Button'
 import { ArrowCircleRight } from '@phosphor-icons/react'
 
 import { NewInterviewDialog } from '@/components/dialogs/NewInterviewDialog'

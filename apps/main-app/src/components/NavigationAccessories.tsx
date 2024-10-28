@@ -7,8 +7,8 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from '@canyon/ui/Drawer'
-import { IconText } from '@canyon/ui/IconText'
+} from '@rag/ui/Drawer'
+import { IconText } from '@rag/ui/IconText'
 import { Hammer, PuzzlePiece } from '@phosphor-icons/react'
 
 import { Devtool } from '@/__dev__/Devtool'
@@ -45,7 +45,7 @@ export const NavigationAccessories = ({}) => {
       {usedChromeExtension == false && (
         <AccessoryItem>
           <a
-            href="https://chromewebstore.google.com/detail/canyon-track-apply-to-job/npekhmlmillbfcbohangleomoblkckih"
+            href="https://chromewebstore.google.com/detail/rag-track-apply-to-job/npekhmlmillbfcbohangleomoblkckih"
             rel="noopener noreferrer"
             target="_blank"
           >

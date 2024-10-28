@@ -1,18 +1,18 @@
 import { useState } from 'react'
 
 import { useMutation } from '@apollo/client'
-import { Badge } from '@canyon/ui/Badge'
-import { Button } from '@canyon/ui/Button'
+import { Badge } from '@rag/ui/Badge'
+import { Button } from '@rag/ui/Button'
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from '@canyon/ui/Carousel'
-import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from '@canyon/ui/Sheet'
-import { Tooltip, TooltipContent, TooltipTrigger } from '@canyon/ui/Tooltip'
-import { cn } from '@canyon/ui/utils/cn'
+} from '@rag/ui/Carousel'
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from '@rag/ui/Sheet'
+import { Tooltip, TooltipContent, TooltipTrigger } from '@rag/ui/Tooltip'
+import { cn } from '@rag/ui/utils/cn'
 import Image from 'next/image'
 
 import { ResumesTemplateColorEnum, ResumesTemplateEnum } from '@gql/graphql'

@@ -1,9 +1,9 @@
 'use client'
 
 import { useQuery } from '@apollo/experimental-nextjs-app-support/ssr'
-import { Gauge } from '@canyon/ui/Gauge'
-import { Skeleton } from '@canyon/ui/Skeleton'
-import { cn } from '@canyon/ui/utils/cn'
+import { Gauge } from '@rag/ui/Gauge'
+import { Skeleton } from '@rag/ui/Skeleton'
+import { cn } from '@rag/ui/utils/cn'
 import { useParams, useRouter } from 'next/navigation'
 
 import { InterviewsSidebar_InterviewsDocument } from '@gql/graphql'

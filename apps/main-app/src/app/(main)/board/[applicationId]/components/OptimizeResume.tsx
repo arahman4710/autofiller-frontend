@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 
-import { Button } from '@canyon/ui/Button'
+import { Button } from '@rag/ui/Button'
 
 import { SubscriptionPlanEnum } from '@gql/graphql'
 

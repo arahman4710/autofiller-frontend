@@ -2,12 +2,12 @@
 
 import { useState } from 'react'
 
-import { Button } from '@canyon/ui/Button'
-import { IconText } from '@canyon/ui/IconText'
-import { DragHandle } from '@canyon/ui/SortableItem'
-import { Tooltip, TooltipContent, TooltipTrigger } from '@canyon/ui/Tooltip'
-import { WarningTooltip } from '@canyon/ui/WarningTooltip'
-import { cn } from '@canyon/ui/utils/cn'
+import { Button } from '@rag/ui/Button'
+import { IconText } from '@rag/ui/IconText'
+import { DragHandle } from '@rag/ui/SortableItem'
+import { Tooltip, TooltipContent, TooltipTrigger } from '@rag/ui/Tooltip'
+import { WarningTooltip } from '@rag/ui/WarningTooltip'
+import { cn } from '@rag/ui/utils/cn'
 import {
   CaretDown,
   CaretUp,

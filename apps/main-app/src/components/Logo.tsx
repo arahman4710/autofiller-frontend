@@ -1,6 +1,6 @@
 'use client'
 
-import { CanyonAdvisoryLogoFull, CanyonLogoFull, CanyonLogoProFull } from '@canyon/ui/CanyonLogo'
+import { CanyonAdvisoryLogoFull, CanyonLogoFull, CanyonLogoProFull } from '@rag/ui/CanyonLogo'
 
 import { useCurrentUser } from '@/hooks/useCurrentUser'
 

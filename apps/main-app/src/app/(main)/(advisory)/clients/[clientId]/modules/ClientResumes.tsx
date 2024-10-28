@@ -3,9 +3,9 @@
 import { useEffect, useState } from 'react'
 
 import { useQuery } from '@apollo/client'
-import { DataTable, TColumnDef } from '@canyon/ui/DataTable'
-import { EmptyState } from '@canyon/ui/EmptyState'
-import { formatDate } from '@canyon/utils'
+import { DataTable, TColumnDef } from '@rag/ui/DataTable'
+import { EmptyState } from '@rag/ui/EmptyState'
+import { formatDate } from '@rag/utils'
 import { useQueryState } from 'nuqs'
 
 import { ClientResumes_ClientDocument } from '@gql/graphql'

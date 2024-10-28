@@ -1,4 +1,4 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@canyon/ui/Accordion'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@rag/ui/Accordion'
 
 import { SupportLink } from '@/components/SupportLink'
 

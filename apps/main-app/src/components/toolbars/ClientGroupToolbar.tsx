@@ -3,8 +3,8 @@
 import { useState } from 'react'
 
 import { useQuery } from '@apollo/client'
-import { Button } from '@canyon/ui/Button'
-import { Toolbar } from '@canyon/ui/Toolbar'
+import { Button } from '@rag/ui/Button'
+import { Toolbar } from '@rag/ui/Toolbar'
 import { useParams } from 'next/navigation'
 
 import { ClientGroupToolbar_ClientGroupDocument } from '@gql/graphql'

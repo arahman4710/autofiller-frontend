@@ -1,4 +1,4 @@
-import { cn } from '@canyon/ui/utils'
+import { cn } from '@rag/ui/utils'
 import { Info } from '@phosphor-icons/react'
 
 import { Tooltip, TooltipContent, TooltipTrigger } from './Tooltip'

@@ -1,4 +1,4 @@
-import { cn } from '@canyon/ui/utils'
+import { cn } from '@rag/ui/utils'
 import { VariantProps, cva } from 'class-variance-authority'
 
 const tagPillVariants = cva('rounded-full text-sm text-white', {

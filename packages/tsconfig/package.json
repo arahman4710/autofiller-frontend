@@ -1,5 +1,5 @@
 {
-  "name": "@canyon/tsconfig",
+  "name": "@rag/tsconfig",
   "private": true,
   "version": "1.0.0",
   "files": [

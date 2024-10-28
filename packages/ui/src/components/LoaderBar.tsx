@@ -1,4 +1,4 @@
-import { cn } from '@canyon/ui/utils'
+import { cn } from '@rag/ui/utils'
 
 interface ILoaderBarProps {
   className?: string

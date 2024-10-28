@@ -1,5 +1,5 @@
 {
-  "extends": "@canyon/tsconfig/base.json",
+  "extends": "@rag/tsconfig/base.json",
   "compilerOptions": {
     "paths": {
       "@/*": ["./src/*"],

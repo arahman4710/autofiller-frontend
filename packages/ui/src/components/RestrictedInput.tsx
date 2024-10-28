@@ -1,4 +1,4 @@
-import { restrictKeyInput } from '@canyon/utils'
+import { restrictKeyInput } from '@rag/utils'
 
 import { IInputProps, Input } from './Input'
 

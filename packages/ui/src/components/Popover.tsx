@@ -2,7 +2,7 @@
 
 import { forwardRef } from 'react'
 
-import { Separator } from '@canyon/ui/Separator'
+import { Separator } from '@rag/ui/Separator'
 import * as PopoverPrimitive from '@radix-ui/react-popover'
 
 import { cn } from '../utils'

@@ -1,5 +1,5 @@
 {
-  "name": "@canyon/utils",
+  "name": "@rag/utils",
   "private": true,
   "version": "1.0.0",
   "scripts": {
@@ -8,7 +8,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@canyon/tsconfig": "workspace:*",
+    "@rag/tsconfig": "workspace:*",
     "date-fns": "latest"
   },
   "exports": {

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { Button } from '@canyon/ui/Button'
+import { Button } from '@rag/ui/Button'
 import { X } from '@phosphor-icons/react'
 
 import { Chip, ChipsContainer } from './Chip'

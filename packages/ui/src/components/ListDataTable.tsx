@@ -1,6 +1,6 @@
-import { EmptyState } from '@canyon/ui/EmptyState'
-import { LoaderBar } from '@canyon/ui/LoaderBar'
-import { ScrollArea } from '@canyon/ui/ScrollArea'
+import { EmptyState } from '@rag/ui/EmptyState'
+import { LoaderBar } from '@rag/ui/LoaderBar'
+import { ScrollArea } from '@rag/ui/ScrollArea'
 
 interface IItem {
   [key: string]: unknown

@@ -1,4 +1,4 @@
-import { formatDate } from '@canyon/utils'
+import { formatDate } from '@rag/utils'
 
 import { cn } from '../utils'
 import { Card } from './Card'

@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react'
 
-import { LoaderBar } from '@canyon/ui/LoaderBar'
+import { LoaderBar } from '@rag/ui/LoaderBar'
 import {
   Table,
   TableBody,
@@ -12,9 +12,9 @@ import {
   TableHeader,
   TableRow,
   tableVariants,
-} from '@canyon/ui/Table'
-import { cn } from '@canyon/ui/utils/cn'
-import { formatDate } from '@canyon/utils'
+} from '@rag/ui/Table'
+import { cn } from '@rag/ui/utils/cn'
+import { formatDate } from '@rag/utils'
 import {
   Cell,
   ColumnDef,

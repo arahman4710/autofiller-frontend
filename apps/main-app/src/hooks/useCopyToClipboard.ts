@@ -1,4 +1,4 @@
-import { useToast } from '@canyon/ui/useToast'
+import { useToast } from '@rag/ui/useToast'
 
 export const useCopyToClipboard = () => {
   const { toast } = useToast()

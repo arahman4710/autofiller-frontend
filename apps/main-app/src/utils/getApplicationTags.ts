@@ -1,4 +1,4 @@
-import { formatMinMaxSalary } from '@canyon/utils'
+import { formatMinMaxSalary } from '@rag/utils'
 
 import { UsersJobs, UsersJobsStatusEnum } from '@gql/graphql'
 

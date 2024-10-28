@@ -75,7 +75,7 @@ export const authOptions: (any?) => NextAuthOptions = (req = null) => ({
     sessionToken: {
       name: `${useSecureCookies ? '__Secure-' : ''}next-auth.session-token`,
       options: {
-        domain: useSecureCookies ? '.usecanyon.com' : 'localhost',
+        domain: useSecureCookies ? '.userag.com' : 'localhost',
         httpOnly: true,
         path: '/',
         sameSite: 'lax',

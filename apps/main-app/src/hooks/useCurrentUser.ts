@@ -1,6 +1,6 @@
 import { useQuery } from '@apollo/experimental-nextjs-app-support/ssr'
 
-import { SubscriptionPlanEnum, UseCurrentUser_UsersDocument, UsersRoleEnum } from '@gql/graphql'
+import { SubscriptionPlanEnum, UseCurrentUser_UsersDocument } from '@gql/graphql'
 
 export type TTokenTypes =
   | 'achievements'
@@ -23,8 +23,8 @@ export const useCurrentUser = () => {
 
   const isAdvisoryOrgAccount = Boolean(user?.isAdvisoryOrgAccount)
   const isAdvisoryClient = Boolean(user?.isAdvisoryClient)
-  const isAdvisor = user?.role === UsersRoleEnum.Advisor
-  const isAdvisorAdmin = user?.role === UsersRoleEnum.Admin
+  const isAdvisor = false // user?.role === UsersRoleEnum.Advisor
+  const isAdvisorAdmin = false //user?.role === UsersRoleEnum.Admin
 
   const tokens: TTokens = {
     achievements: user?.tokenAchievements,
@@ -45,8 +45,8 @@ export const useCurrentUser = () => {
     isLifetimePaidUser,
     isPaidPlan,
     loading,
-    plan: user?.plan,
-    role: user?.role,
+    // plan: user?.plan,
+    // role: user?.role,
     tokens,
     usedChromeExtension: user?.usedChromeExtension,
     user,

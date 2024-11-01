@@ -1,6 +1,0 @@
-query useCreateResume_resumes {
-  resumes {
-    id
-    name
-  }
-}

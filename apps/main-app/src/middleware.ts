@@ -2,10 +2,6 @@ import { NextResponse } from 'next/server'
 import { getToken } from 'next-auth/jwt'
 import { withAuth } from 'next-auth/middleware'
 
-import { UsersRoleEnum } from '@gql/graphql'
-
-import { advisoryOrgRoles } from '@/constants/usersRole'
-
 export default withAuth(
   async function middleware(req) {
     const token = await getToken({ req })
@@ -13,8 +9,8 @@ export default withAuth(
     const isAuthed = !!token
     const isAuthPage = pathName.startsWith('/auth') && pathName !== '/auth/signout'
 
-    const role = token?.role ?? UsersRoleEnum.Jobseeker
-    const isAdvisoryOrgAccount = advisoryOrgRoles.includes(role as UsersRoleEnum)
+    // const role = token?.role ?? UsersRoleEnum.Jobseeker
+    // const isAdvisoryOrgAccount = advisoryOrgRoles.includes(role as UsersRoleEnum)
 
     if (isAuthPage) {
       if (isAuthed) {
@@ -49,14 +45,10 @@ export default withAuth(
 
 export const config = {
   matcher: [
-    '/board/:path*',
-    '/resumes/:path*',
+    '/chat/:path*',
+    '/documents/:path*',
     '/dashboard',
-    '/interviews/:path*',
     '/auth/:path*',
-    '/clients/:path*',
     '/profile',
-    '/advisors/:path*',
-    '/cover-letters/:path*',
   ],
 }

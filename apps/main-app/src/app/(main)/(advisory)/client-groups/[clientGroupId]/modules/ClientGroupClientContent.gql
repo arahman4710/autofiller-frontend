@@ -1,6 +1,0 @@
-query ClientGroupClientContent_clientGroups($clientGroupId: ID!) {
-  clientGroups(clientGroupIds: [$clientGroupId]) {
-    id
-    name
-  }
-}

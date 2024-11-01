@@ -1,6 +1,0 @@
-query ResumesSelect_resumes($archived: Boolean, $optimized: Boolean) {
-  resumes(archived: $archived, aiGenerated: $optimized) {
-    id
-    name
-  }
-}

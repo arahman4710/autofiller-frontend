@@ -1,6 +1,0 @@
-query ResumesToolbar_resumes($archived: Boolean) {
-  resumes(archived: $archived) {
-    id
-    name
-  }
-}

@@ -1,6 +1,0 @@
-query NewResumeDialog_resumes {
-  resumes {
-    id
-    name
-  }
-}

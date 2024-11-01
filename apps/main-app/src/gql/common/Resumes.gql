@@ -1,5 +1,0 @@
-query Resumes {
-	resumes {
-		id
-	}
-}

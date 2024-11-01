@@ -1,6 +1,0 @@
-query ClientGroupToolbar_ClientGroup($clientGroupId: ID!) {
-  clientGroups(clientGroupIds: [$clientGroupId]) {
-    id
-    name
-  }
-}

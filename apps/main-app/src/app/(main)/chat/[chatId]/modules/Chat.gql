@@ -1,0 +1,21 @@
+query Chat_getChat($chatId: [ID!]) {
+  chats(chatIds: $chatId) {
+    id
+    status
+    messages {
+      fromUser
+      message
+    }
+  }
+}
+
+mutation Chat_addMessage($chatId: String!, $message: String!) {
+  chatAddMessage(chatId: $chatId, message: $message) {
+    id
+    status
+    messages {
+      fromUser
+      message
+    }
+  }
+}

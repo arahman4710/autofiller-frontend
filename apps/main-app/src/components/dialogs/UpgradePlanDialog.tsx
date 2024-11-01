@@ -21,7 +21,7 @@ import { motion } from 'framer-motion'
 
 import { PricingTable } from '@/components/PricingTable'
 import { ProBadge } from '@/components/ProBadge'
-import { useBillingPlan } from '@/hooks/useBillingPlan'
+// import { useBillingPlan } from '@/hooks/useBillingPlan'
 import { useCurrentUser } from '@/hooks/useCurrentUser'
 import { trackEvent } from '@/lib/utils/analytics'
 import { TBillingPlanFrequency } from '@/types/pricing'

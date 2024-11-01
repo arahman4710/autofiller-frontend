@@ -8,6 +8,7 @@ import {
 } from '@gql/zod'
 
 import { ApplicationFormSchema } from '@/forms/hooks/useApplicationForm'
+import { AddBusinessNameFormSchema } from '@/forms/hooks/useAddBusinessNameForm'
 import { EmailAuthSignInFormSchema } from '@/forms/hooks/useEmailAuthSignInForm'
 import { EmailAuthSignUpFormSchema } from '@/forms/hooks/useEmailAuthSignUpForm'
 import { EmailVerifyFormSchema } from '@/forms/hooks/useEmailVerifyForm'
@@ -23,6 +24,7 @@ const CoverLetterFormSchema = UsersJobsCoverLetterInputObjectSchema()
 
 export type TResumeBuilderForm = z.infer<typeof ResumeBuilderFormSchema>
 export type TApplicationForm = z.infer<typeof ApplicationFormSchema>
+export type TAddBusinessNameForm = z.infer<typeof AddBusinessNameFormSchema>
 export type TUserForm = z.infer<typeof UserFormSchema>
 export type TResetPasswordForm = z.infer<typeof ResetPasswordFormSchema>
 export type TEmailVerifyForm = z.infer<typeof EmailVerifyFormSchema>

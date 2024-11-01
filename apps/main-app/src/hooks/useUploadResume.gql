@@ -1,6 +1,0 @@
-query useUploadResume_resumes {
-  resumes {
-    id
-    name
-  }
-}

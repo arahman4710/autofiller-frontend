@@ -1,6 +1,0 @@
-query ClientBoard_clientUsersJobs($archived: Boolean, $clientId: ID!) {
-  clientUsersJobs(archived: $archived, clientId: $clientId) {
-    id
-    ...UsersJobs
-  }
-}

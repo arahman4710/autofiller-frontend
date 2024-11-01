@@ -1,6 +1,0 @@
-mutation CreateResume($name: String!) {
-  createResume(name: $name) {
-    id
-    name
-  }
-}

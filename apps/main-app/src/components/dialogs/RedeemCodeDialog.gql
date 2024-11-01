@@ -1,6 +1,0 @@
-mutation RedeemCodeDialog_subscriptionsRedeemLtdPromoCode($promoCode: String!) {
-  subscriptionsRedeemLtdPromoCode(promoCode: $promoCode) {
-    id
-    plan
-  }
-}

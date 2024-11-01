@@ -1,9 +1,0 @@
-query InterviewsSidebar_interviews {
-  interviews {
-    id
-    status
-    interviewType
-    score
-    jobTitle
-  }
-}

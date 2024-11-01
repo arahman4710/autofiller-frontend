@@ -1,3 +1,0 @@
-mutation Feedback_feedbackCreate($subject: String, $feedback: String!) {
-  createFeedback(subject: $subject, feedback: $feedback)
-}

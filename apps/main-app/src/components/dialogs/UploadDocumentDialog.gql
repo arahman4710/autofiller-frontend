@@ -1,0 +1,6 @@
+mutation uploadDocument($uploadSignedId: ID!, $name: String!) {
+  uploadDocument(uploadSignedId: $uploadSignedId, name: $name) {
+    id
+    name
+  }
+}

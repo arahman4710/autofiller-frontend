@@ -1,18 +1,21 @@
 import 'next-auth'
 
-import { UsersRoleEnum } from '@gql/graphql'
-
 declare module 'next-auth' {
+  // eslint-disable-next-line
+  interface Business {
+    id: string
+    name: string
+  }
+
   // eslint-disable-next-line
   interface User {
     id: string
-    role: UsersRoleEnum
     token: string
+    business: Business
   }
 
   // eslint-disable-next-line
   interface Session {
-    role: UsersRoleEnum
     token: string
     user: User
   }

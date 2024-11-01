@@ -2,7 +2,10 @@ fragment AuthResponse on AuthResponse {
   token
   user {
     id
-    role
+    business {
+      id
+      name
+    }
   }
 }
 

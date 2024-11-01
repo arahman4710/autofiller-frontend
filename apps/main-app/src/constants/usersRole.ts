@@ -1,3 +1,3 @@
-import { UsersRoleEnum } from '@gql/graphql'
+// import { UsersRoleEnum } from '@gql/graphql'
 
-export const advisoryOrgRoles = [UsersRoleEnum.Admin, UsersRoleEnum.Advisor]
+// export const advisoryOrgRoles = [UsersRoleEnum.Admin, UsersRoleEnum.Advisor]

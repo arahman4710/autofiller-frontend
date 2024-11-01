@@ -1,26 +1,12 @@
 fragment Users on Users {
   id
-  uniqueId
-  role
   email
   firstName
   lastName
-  plan
-  tokenCoverLetter
-  tokenInterviewQuestions
-  tokenJobMatch
-  tokenProfessionalSummary
-  tokenSalaryInsights
-  tokenLearnSkills
-  tokenAchievements
-  tokenInterview
-  usedChromeExtension
-  numUploadedResumes
-  numStartedInterviews
-  referralTokens
-  hasSubscription
-  isAdvisoryClient
-  isAdvisoryOrgAccount
+  business {
+    id
+    name
+  }
 }
 
 query useCurrentUser_users {

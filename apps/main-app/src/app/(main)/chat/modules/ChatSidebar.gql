@@ -1,0 +1,5 @@
+query ChatSidebar_chats {
+  chats {
+    id
+  }
+}

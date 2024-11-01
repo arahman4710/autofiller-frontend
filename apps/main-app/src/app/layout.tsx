@@ -8,7 +8,6 @@ import { Metadata } from 'next'
 import Script from 'next/script'
 import { getServerSession } from 'next-auth/next'
 
-import { BrowserExtensionToaster } from '@/components/BrowserExtensionToaster'
 import { authOptions } from '@/lib/auth'
 import { rollbarScript } from '@/lib/rollbar'
 
@@ -49,7 +48,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           {children}
           <SpeedInsights />
           <Toaster />
-          <BrowserExtensionToaster />
         </Providers>
       </body>
     </html>

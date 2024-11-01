@@ -1,3 +1,0 @@
-mutation FeedbackDialog_createFeedback($subject: String, $feedback: String!) {
-  createFeedback(subject: $subject, feedback: $feedback)
-}

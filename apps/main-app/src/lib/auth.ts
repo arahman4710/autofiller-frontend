@@ -10,7 +10,6 @@ import {
   CredentialsAuthenticationEmailVerifyDocument,
   CredentialsAuthenticationSignInDocument,
   ProviderAuthenticationDocument,
-  UsersRoleEnum,
 } from '@gql/graphql'
 
 import { makeApolloClient } from './apolloWrapper'
@@ -54,11 +53,9 @@ export const authOptions: (any?) => NextAuthOptions = (req = null) => ({
 
         token.accessToken = sessionToken
         token.id = providerUser?.id
-        token.role = providerUser?.role ?? UsersRoleEnum.Jobseeker
       } else if (account?.type === 'credentials') {
         token.accessToken = user.token
         token.id = user.id
-        token.role = user.role
       }
 
       return token
@@ -66,7 +63,6 @@ export const authOptions: (any?) => NextAuthOptions = (req = null) => ({
     async session({ session, token }) {
       session.token = token.accessToken as string
       session.user.id = token.id as string
-      session.user.role = token.role as UsersRoleEnum
 
       return session
     },
@@ -113,7 +109,6 @@ export const authOptions: (any?) => NextAuthOptions = (req = null) => ({
 
         return {
           id: user?.id ?? '',
-          role: user?.role ?? UsersRoleEnum.Jobseeker,
           token: sessionToken,
         }
       },
@@ -154,7 +149,6 @@ export const authOptions: (any?) => NextAuthOptions = (req = null) => ({
 
           return {
             id: user?.id ?? '',
-            role: user?.role ?? UsersRoleEnum.Jobseeker,
             token: sessionToken,
           }
         } catch (error) {

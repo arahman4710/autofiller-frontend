@@ -1,6 +1,0 @@
-mutation uploadResume($uploadSignedId: ID!, $name: String!) {
-  uploadResume(uploadSignedId: $uploadSignedId, name: $name) {
-    id
-    name
-  }
-}

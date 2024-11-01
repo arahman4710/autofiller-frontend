@@ -1,5 +1,0 @@
-query InterviewsToolbar_interviews {
-  interviews {
-    id
-  }
-}

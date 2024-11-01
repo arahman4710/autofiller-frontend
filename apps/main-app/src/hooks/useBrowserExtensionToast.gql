@@ -1,6 +1,0 @@
-query useBrowserExtensionToast_user {
-  user {
-    id
-    usedChromeExtension
-  }
-}

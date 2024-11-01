@@ -1,15 +1,16 @@
 'use client'
 
-import { CanyonAdvisoryLogoFull, CanyonLogoFull, CanyonLogoProFull } from '@rag/ui/CanyonLogo'
+import { CanyonLogoFull, CanyonLogoProFull } from '@rag/ui/CanyonLogo'
 
 import { useCurrentUser } from '@/hooks/useCurrentUser'
 
 export const Logo = () => {
   const { isAdvisoryOrgAccount, isPaidPlan } = useCurrentUser()
 
-  if (isAdvisoryOrgAccount) {
-    return <CanyonAdvisoryLogoFull />
-  }
+  return (
+    <div>
+      RetailMind
+    </div>)
 
-  return isPaidPlan ? <CanyonLogoProFull /> : <CanyonLogoFull />
+  // return isPaidPlan ? <CanyonLogoProFull /> : <CanyonLogoFull />
 }

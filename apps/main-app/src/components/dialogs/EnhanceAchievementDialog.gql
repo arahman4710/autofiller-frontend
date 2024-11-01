@@ -1,3 +1,0 @@
-mutation EnhanceAchievementDialog_generateOneJobAchievement($workPositionId: ID!, $index: Int!, $keywords: [String!]) {
-  generateOneJobAchievement(workPositionId: $workPositionId, index: $index, keywords: $keywords)
-}

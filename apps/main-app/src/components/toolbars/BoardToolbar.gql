@@ -1,5 +1,0 @@
-query BoardToolbar_UsersJobs {
-  usersJobs {
-    id
-  }
-}

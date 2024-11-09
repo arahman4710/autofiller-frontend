@@ -21,24 +21,24 @@ export const ListDocumentRow = ({
 }: IListDocumentRowProps) => {
   return (
     <>
-      hi
+      hi 
     </>
     // <div 
-      // className="cursor-pointer"
-      // onClick={() => {
-      // if (documentUrl && window != null) {
-      //   window&.open(documentUrl, '_blank')&.focus();
-      // }}}
-    // >
-      {/* <Shell isLast={isLast}>
-        <IconText
-          className="gap-3 font-mono"
-          leftIcon={<FileText className="text-muted-foreground text-lg" />}
-        >
-          {documentName || <span className="text-muted-foreground">(empty title)</span>}
-        </IconText>
-      </Shell> */}
-    {/* </div> */}
+    //   className="cursor-pointer"
+    //   onClick={() => {
+    //   if (documentUrl && window != null) {
+    //     window&.open(documentUrl, '_blank')&.focus();
+    //   }}}
+    //   >
+    //   <Shell isLast={isLast}>
+    //     <IconText
+    //       className="gap-3 font-mono"
+    //       leftIcon={<FileText className="text-muted-foreground text-lg" />}
+    //     >
+    //       {documentName || <span className="text-muted-foreground">(empty title)</span>}
+    //     </IconText>
+    //   </Shell>
+    // </div>
   )
 }
 

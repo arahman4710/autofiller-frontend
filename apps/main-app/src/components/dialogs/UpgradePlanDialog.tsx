@@ -140,7 +140,7 @@ const PricingPlanCards = ({
   selectedPricing: string
 }) => {
   const [isCreateSubscriptionLoading, setIsCreateSubscriptionLoading] = useState<boolean>(false)
-  const { createSubscription } = useBillingPlan()
+  // const { createSubscription } = useBillingPlan()
   const { isPaidPlan } = useCurrentUser()
 
   const handleUpgradePlan = () => {
@@ -148,9 +148,9 @@ const PricingPlanCards = ({
 
     trackEvent(`${EVENT_PREFIX} - clicked Upgraded to Pro`, { frequency: selectedPricing })
 
-    createSubscription({
-      selectedBillingFrequency: selectedPricing as TBillingPlanFrequency,
-    })
+    // createSubscription({
+    //   selectedBillingFrequency: selectedPricing as TBillingPlanFrequency,
+    // })
   }
 
   const limitedFeatures = [

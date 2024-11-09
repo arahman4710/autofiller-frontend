@@ -17,7 +17,6 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
 import { AccountSettingsDialog } from '@/components/dialogs/AccountSettingsDialog'
-import { FeedbackDialog } from '@/components/dialogs/FeedbackDialog'
 import { RedeemCodeDialog } from '@/components/dialogs/RedeemCodeDialog'
 import { ReferralsDialog } from '@/components/dialogs/ReferralsDialog'
 import { useCurrentUser } from '@/hooks/useCurrentUser'
@@ -29,7 +28,6 @@ export const ProfileButton = () => {
 
   const [isReferralsDialogOpen, setIsReferralsDialogOpen] = useState<boolean>(false)
   const [isRedeemCodeDialogOpen, setIsRedeemCodeDialogOpen] = useState<boolean>(false)
-  const [isFeedbackDialogOpen, setIsFeedbackDialogOpen] = useState<boolean>(false)
   const [isAccountSettingsDialogOpen, setIsAccountSettingsDialogOpen] = useState<boolean>(false)
 
   const handleReferralsClick = () => {
@@ -68,9 +66,6 @@ export const ProfileButton = () => {
               <IconText leftIcon={<Gift />}>Refer a Friend</IconText>
             </PopoverMenuItem>
           )}
-          <PopoverMenuItem onClick={() => setIsFeedbackDialogOpen(true)}>
-            <IconText leftIcon={<Question />}>Submit Feedback</IconText>
-          </PopoverMenuItem>
           <PopoverMenuSeparator />
           <PopoverMenuItem onClick={() => setIsAccountSettingsDialogOpen(true)}>
             <IconText leftIcon={<Gear />}>Account Settings</IconText>
@@ -83,7 +78,6 @@ export const ProfileButton = () => {
         setIsDialogOpen={setIsReferralsDialogOpen}
       />
       <RedeemCodeDialog open={isRedeemCodeDialogOpen} setOpen={setIsRedeemCodeDialogOpen} />
-      <FeedbackDialog open={isFeedbackDialogOpen} setOpen={setIsFeedbackDialogOpen} />
       <AccountSettingsDialog
         open={isAccountSettingsDialogOpen}
         setOpen={setIsAccountSettingsDialogOpen}

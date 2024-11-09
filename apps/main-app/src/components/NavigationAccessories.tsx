@@ -16,7 +16,7 @@ import { ProfileButton } from '@/components/ProfileButton'
 import { useCurrentUser } from '@/hooks/useCurrentUser'
 
 export const NavigationAccessories = ({}) => {
-  const { usedChromeExtension, user } = useCurrentUser()
+  const { user } = useCurrentUser()
 
   if (!user) {
     return null
@@ -41,17 +41,6 @@ export const NavigationAccessories = ({}) => {
             </div>
           </DrawerContent>
         </Drawer>
-      )}
-      {usedChromeExtension == false && (
-        <AccessoryItem>
-          <a
-            href="https://chromewebstore.google.com/detail/rag-track-apply-to-job/npekhmlmillbfcbohangleomoblkckih"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <IconText leftIcon={<PuzzlePiece />}>Download Extension</IconText>
-          </a>
-        </AccessoryItem>
       )}
       <div className="mt-3">
         <ProfileButton />

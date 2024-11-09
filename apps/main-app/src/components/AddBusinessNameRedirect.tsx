@@ -7,8 +7,6 @@ export const AddBusinessNameRedirect = () => {
   const { user } = useCurrentUser()
   const router = useRouter()
 
-  console.log("WHAT")
-  console.log(user?.business)
   if (user?.business?.name == "") {
     router.replace('/add-business-name')
   }

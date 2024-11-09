@@ -15,7 +15,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  */
 const documents = {
     "mutation addBusinessName($name: String!) {\n  updateBusiness(name: $name) {\n    id\n    name\n  }\n}": types.AddBusinessNameDocument,
-    "query Chat_getChat($chatId: [ID!]) {\n  chats(chatIds: $chatId) {\n    id\n    status\n    messages {\n      fromUser\n      message\n    }\n  }\n}\n\nmutation Chat_addMessage($chatId: String!, $message: String!) {\n  chatAddMessage(chatId: $chatId, message: $message) {\n    id\n    status\n    messages {\n      fromUser\n      message\n    }\n  }\n}": types.Chat_GetChatDocument,
+    "query Chat_getChat($chatId: [ID!]) {\n  chats(chatIds: $chatId) {\n    id\n    status\n    messages {\n      fromUser\n      message\n    }\n  }\n}\n\nsubscription ChatSubscription {\n  chat {\n    content\n    chatId\n    initial\n    requestId\n    i\n  }\n}\n\nmutation Chat_addMessage($chatId: String!, $message: String!) {\n  chatAddMessage(chatId: $chatId, message: $message) {\n    id\n    status\n    messages {\n      fromUser\n      message\n    }\n  }\n}": types.Chat_GetChatDocument,
     "mutation Chat_StartChat {\n  chatStart {\n    id\n  }\n}": types.Chat_StartChatDocument,
     "query ChatSidebar_chats {\n  chats {\n    id\n  }\n}": types.ChatSidebar_ChatsDocument,
     "query DocumentsList_allDocuments {\n  documents {\n    id\n    name\n    url\n  }\n}": types.DocumentsList_AllDocumentsDocument,
@@ -49,7 +49,7 @@ export function gql(source: "mutation addBusinessName($name: String!) {\n  updat
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "query Chat_getChat($chatId: [ID!]) {\n  chats(chatIds: $chatId) {\n    id\n    status\n    messages {\n      fromUser\n      message\n    }\n  }\n}\n\nmutation Chat_addMessage($chatId: String!, $message: String!) {\n  chatAddMessage(chatId: $chatId, message: $message) {\n    id\n    status\n    messages {\n      fromUser\n      message\n    }\n  }\n}"): (typeof documents)["query Chat_getChat($chatId: [ID!]) {\n  chats(chatIds: $chatId) {\n    id\n    status\n    messages {\n      fromUser\n      message\n    }\n  }\n}\n\nmutation Chat_addMessage($chatId: String!, $message: String!) {\n  chatAddMessage(chatId: $chatId, message: $message) {\n    id\n    status\n    messages {\n      fromUser\n      message\n    }\n  }\n}"];
+export function gql(source: "query Chat_getChat($chatId: [ID!]) {\n  chats(chatIds: $chatId) {\n    id\n    status\n    messages {\n      fromUser\n      message\n    }\n  }\n}\n\nsubscription ChatSubscription {\n  chat {\n    content\n    chatId\n    initial\n    requestId\n    i\n  }\n}\n\nmutation Chat_addMessage($chatId: String!, $message: String!) {\n  chatAddMessage(chatId: $chatId, message: $message) {\n    id\n    status\n    messages {\n      fromUser\n      message\n    }\n  }\n}"): (typeof documents)["query Chat_getChat($chatId: [ID!]) {\n  chats(chatIds: $chatId) {\n    id\n    status\n    messages {\n      fromUser\n      message\n    }\n  }\n}\n\nsubscription ChatSubscription {\n  chat {\n    content\n    chatId\n    initial\n    requestId\n    i\n  }\n}\n\nmutation Chat_addMessage($chatId: String!, $message: String!) {\n  chatAddMessage(chatId: $chatId, message: $message) {\n    id\n    status\n    messages {\n      fromUser\n      message\n    }\n  }\n}"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

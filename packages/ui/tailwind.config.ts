@@ -98,11 +98,11 @@ const config: Config = {
           foreground: colors.stone[400],
         },
         primary: {
-          DEFAULT: colors.stone[600],
+          DEFAULT: colors.white,
           foreground: colors.stone[300],
         },
         secondary: {
-          DEFAULT: colors.stone[600],
+          DEFAULT: colors.white,
         },
         success: {
           DEFAULT: colors.lime[600],

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 
-import { useMutation } from '@apollo/client'
+import { useMutation, useSubscription } from '@apollo/client'
 import { useSuspenseQuery } from '@apollo/experimental-nextjs-app-support/ssr'
 import { Loader } from '@rag/ui/Loader'
 import { Textarea } from '@rag/ui/Textarea'
@@ -13,6 +13,8 @@ import {
   Chat_GetChatDocument,
   Chat_AddMessageDocument,
   ChatsStatusEnum,
+  ChatSubscriptionDocument,
+  ChatSubscriptionSubscription
 } from '@gql/graphql'
 
 import { IntervieweeIcon } from '@/components/IntervieweeIcon'
@@ -25,6 +27,9 @@ interface IChatProps {
 }
 
 export const Chat = ({ chatId }: IChatProps) => {
+  const refChatArray = useRef<ChatSubscriptionSubscription["chat"][]>([])
+  const [newMessage, setNewMessage] = useState('')
+
   const [currMessage, setCurrMessage] = useState('')
   const [voiceSpeaking, setVoiceSpeaking] = useState(false)
   const lastMessageSaid = useRef(false)
@@ -42,6 +47,29 @@ export const Chat = ({ chatId }: IChatProps) => {
     variables: {
       chatId: [chatId],
     },
+  })
+
+  const compareSubscriptionData = (a, b) => {
+    return (a.i || 0) - (b.i || 0)
+  }
+
+  useSubscription(ChatSubscriptionDocument, {
+    onData: ({ data: { data } }) => {
+      if (data?.chat?.initial == true) {
+        setNewMessage('')
+      }
+      if (
+        data?.chat?.content &&
+        data?.chat.chatId == chatId
+      ) {
+        refChatArray.current.push(data.chat)
+        refChatArray.current.sort(compareSubscriptionData)
+        setNewMessage(refChatArray.current.map((c) => c.content).join(''))
+        const messagesElements = document.getElementsByClassName("message")
+        messagesElements[messagesElements.length - 1].scrollIntoView(false)
+      }
+    },
+    variables: {},
   })
 
   let voice: Maybe<SpeechSynthesisVoice> = null
@@ -77,9 +105,15 @@ export const Chat = ({ chatId }: IChatProps) => {
     sayMessage(lastMessage.message)
   }
   const messages = data?.chats?.[0]?.messages || []
+  let allMessages = messages
+  if (messages.length > 0 && messages[messages.length - 1].fromUser == true && newMessage.length > 0) {
+    allMessages = allMessages.concat([{fromUser: false, message: newMessage}])
+  }
   const status = data?.chats?.[0]?.status || ChatsStatusEnum.Started
 
   const handleAddMessage = async () => {
+    setNewMessage('')
+    refChatArray.current = []
     const response = await addMessage({
       variables: {
         chatId,
@@ -127,15 +161,15 @@ export const Chat = ({ chatId }: IChatProps) => {
   }, [inputMessageRef.current])
 
   return (
-    <div className="flex h-full flex-col justify-between gap-4">
+    <div className="chat-body flex h-full flex-col justify-between gap-4">
       <div
         className={cn(
           'overflow-y-auto px-2',
           status === ChatsStatusEnum.Finished ? 'h-full' : 'h-[80vh]'
         )}
       >
-        {messages.map((message, index) => (
-          <div className="mb-6 flex items-start gap-6" key={index}>
+        {allMessages.map((message, index) => (
+          <div className="message mb-6 flex items-start gap-6" key={index}>
             <div className="h-8 w-8">
               {message.fromUser ? <IntervieweeIcon name={name} /> : <InterviewerIcon />}
             </div>

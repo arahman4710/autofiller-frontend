@@ -9,6 +9,16 @@ query Chat_getChat($chatId: [ID!]) {
   }
 }
 
+subscription ChatSubscription {
+  chat {
+    content
+    chatId
+    initial
+    requestId
+    i
+  }
+}
+
 mutation Chat_addMessage($chatId: String!, $message: String!) {
   chatAddMessage(chatId: $chatId, message: $message) {
     id

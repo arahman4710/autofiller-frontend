@@ -1,9 +1,6 @@
 'use client'
 
-import { useMutation } from '@apollo/client'
-import { useQuery, useSuspenseQuery } from '@apollo/experimental-nextjs-app-support/ssr'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@canyon/ui/Tabs'
-import { AsteriskSimple, CircleDashed } from '@phosphor-icons/react'
+import { useQuery } from '@apollo/experimental-nextjs-app-support/ssr'
 import { useRouter } from 'next/navigation'
 
 import {

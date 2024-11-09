@@ -40,7 +40,9 @@ export const ListDocumentRow = ({
   return (
     <div className="cursor-pointer" onClick={() => {
       trackEvent('User clicked on a document')
-      window.open(documentUrl, '_blank').focus();
+      if (documentUrl && window != null) {
+        window&.open(documentUrl, '_blank')&.focus();
+      }
     }}>
       <Shell isLast={isLast}>
         <IconText

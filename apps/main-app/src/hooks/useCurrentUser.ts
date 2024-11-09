@@ -18,37 +18,20 @@ export const useCurrentUser = () => {
   const { data, loading } = useQuery(UseCurrentUser_UsersDocument)
   const user = data?.user
   const paidPlans = [SubscriptionPlanEnum.Pro, SubscriptionPlanEnum.ProQuarterly]
-  const isPaidPlan = user?.plan ? paidPlans.includes(user.plan) : false
-  const isLifetimePaidUser = isPaidPlan && !user?.hasSubscription
+  // const isPaidPlan = user?.plan ? paidPlans.includes(user.plan) : false
+  const isPaidPlan = true
+  // const isLifetimePaidUser = isPaidPlan && !user?.hasSubscription
 
-  const isAdvisoryOrgAccount = Boolean(user?.isAdvisoryOrgAccount)
-  const isAdvisoryClient = Boolean(user?.isAdvisoryClient)
   const isAdvisor = false // user?.role === UsersRoleEnum.Advisor
   const isAdvisorAdmin = false //user?.role === UsersRoleEnum.Admin
-
-  const tokens: TTokens = {
-    achievements: user?.tokenAchievements,
-    coverLetter: user?.tokenCoverLetter,
-    interview: user?.tokenInterview,
-    interviewQuestions: user?.tokenInterviewQuestions,
-    jobMatch: user?.tokenJobMatch,
-    learnSkills: user?.tokenLearnSkills,
-    professionalSummary: user?.tokenProfessionalSummary,
-    salaryInsights: user?.tokenSalaryInsights,
-  }
 
   return {
     isAdvisor,
     isAdvisorAdmin,
-    isAdvisoryClient,
-    isAdvisoryOrgAccount,
-    isLifetimePaidUser,
     isPaidPlan,
     loading,
     // plan: user?.plan,
     // role: user?.role,
-    tokens,
-    usedChromeExtension: user?.usedChromeExtension,
     user,
   }
 }

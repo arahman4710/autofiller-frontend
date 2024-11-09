@@ -17,17 +17,11 @@ import Link from 'next/link'
 
 import { AccountSettingsDialog } from '@/components/dialogs/AccountSettingsDialog'
 import { useCurrentUser } from '@/hooks/useCurrentUser'
-import { trackEvent } from '@/lib/utils/analytics'
 
 export const ProfileButton = () => {
   const { user } = useCurrentUser()
 
   const [isAccountSettingsDialogOpen, setIsAccountSettingsDialogOpen] = useState<boolean>(false)
-
-  const handleReferralsClick = () => {
-    setIsReferralsDialogOpen(true)
-    trackEvent('User clicked referrals')
-  }
 
   return (
     <Popover>

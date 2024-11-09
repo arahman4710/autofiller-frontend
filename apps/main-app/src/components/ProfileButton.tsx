@@ -17,8 +17,6 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 
 import { AccountSettingsDialog } from '@/components/dialogs/AccountSettingsDialog'
-import { RedeemCodeDialog } from '@/components/dialogs/RedeemCodeDialog'
-import { ReferralsDialog } from '@/components/dialogs/ReferralsDialog'
 import { useCurrentUser } from '@/hooks/useCurrentUser'
 import { trackEvent } from '@/lib/utils/analytics'
 
@@ -73,11 +71,6 @@ export const ProfileButton = () => {
         </PopoverMenu>
       </PopoverContent>
 
-      <ReferralsDialog
-        isDialogOpen={isReferralsDialogOpen}
-        setIsDialogOpen={setIsReferralsDialogOpen}
-      />
-      <RedeemCodeDialog open={isRedeemCodeDialogOpen} setOpen={setIsRedeemCodeDialogOpen} />
       <AccountSettingsDialog
         open={isAccountSettingsDialogOpen}
         setOpen={setIsAccountSettingsDialogOpen}

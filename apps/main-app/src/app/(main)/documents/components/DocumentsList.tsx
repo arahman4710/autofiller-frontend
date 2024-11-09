@@ -41,7 +41,7 @@ export const DocumentsList = () => {
             key={document.id}
             documentId={document.id}
             documentName={document.name}
-            documentUrl={document.url}
+            documentUrl={document.url || ''}
             />
           ))}
         </div>

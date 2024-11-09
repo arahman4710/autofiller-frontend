@@ -1,12 +1,8 @@
 'use client'
 
-import { useState } from 'react'
-
 import { IconText } from '@rag/ui/IconText'
 import { cn } from '@rag/ui/utils/cn'
 import { FileText } from '@phosphor-icons/react'
-
-import { trackEvent } from '@/lib/utils/analytics'
 
 import { IListRowProps, ListRow } from './ListRow'
 
@@ -24,21 +20,25 @@ export const ListDocumentRow = ({
   documentUrl,
 }: IListDocumentRowProps) => {
   return (
-    <div className="cursor-pointer" onClick={() => {
-      trackEvent('User clicked on a document')
-      if (documentUrl && window != null) {
-        window&.open(documentUrl, '_blank')&.focus();
-      }
-    }}>
-      <Shell isLast={isLast}>
+    <>
+      hi
+    </>
+    // <div 
+      // className="cursor-pointer"
+      // onClick={() => {
+      // if (documentUrl && window != null) {
+      //   window&.open(documentUrl, '_blank')&.focus();
+      // }}}
+    // >
+      {/* <Shell isLast={isLast}>
         <IconText
           className="gap-3 font-mono"
           leftIcon={<FileText className="text-muted-foreground text-lg" />}
         >
           {documentName || <span className="text-muted-foreground">(empty title)</span>}
         </IconText>
-      </Shell>
-    </div>
+      </Shell> */}
+    {/* </div> */}
   )
 }
 

@@ -7,17 +7,12 @@ import { useQuery } from '@apollo/experimental-nextjs-app-support/ssr'
 import { Button } from '@rag/ui/Button'
 import { Dialog, DialogClose, DialogContent, DialogFooter } from '@rag/ui/Dialog'
 import { Dropzone } from '@rag/ui/Dropzone'
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@rag/ui/Form'
-import { Input } from '@rag/ui/Input'
 import { useToast } from '@rag/ui/useToast'
 import { PlusCircle } from '@phosphor-icons/react'
 
 import { UploadDocumentDocument, DocumentsList_AllDocumentsDocument } from '@gql/graphql'
 
-import { useNewResumeForm } from '@/forms/hooks/useNewResumeForm'
-import { useUpgradePlanDialog } from '@/hooks/contexts/useUpgradePlanDialog'
 import { useCurrentUser } from '@/hooks/useCurrentUser'
-import { generateResumeTitle } from '@/utils/generateResumeTitle'
 import { uploadFile } from '@/utils/uploadFile'
 
 interface IUploadDocumentDialogProps {

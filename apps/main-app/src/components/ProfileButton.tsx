@@ -14,18 +14,14 @@ import {
 } from '@rag/ui/Popover'
 import { Barcode, Gear, Gift, Question, SignOut, User } from '@phosphor-icons/react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 
 import { AccountSettingsDialog } from '@/components/dialogs/AccountSettingsDialog'
 import { useCurrentUser } from '@/hooks/useCurrentUser'
 import { trackEvent } from '@/lib/utils/analytics'
 
 export const ProfileButton = () => {
-  const { isAdvisoryOrgAccount, isPaidPlan, loading, user } = useCurrentUser()
-  const router = useRouter()
+  const { user } = useCurrentUser()
 
-  const [isReferralsDialogOpen, setIsReferralsDialogOpen] = useState<boolean>(false)
-  const [isRedeemCodeDialogOpen, setIsRedeemCodeDialogOpen] = useState<boolean>(false)
   const [isAccountSettingsDialogOpen, setIsAccountSettingsDialogOpen] = useState<boolean>(false)
 
   const handleReferralsClick = () => {
@@ -53,17 +49,6 @@ export const ProfileButton = () => {
               <IconText leftIcon={<SignOut />}>Sign Out</IconText>
             </Link>
           </PopoverMenuItem>
-          <PopoverMenuSeparator />
-          {!isPaidPlan && !isAdvisoryOrgAccount && (
-            <PopoverMenuItem onClick={() => setIsRedeemCodeDialogOpen(true)}>
-              <IconText leftIcon={<Barcode />}>Redeem Code</IconText>
-            </PopoverMenuItem>
-          )}
-          {!isAdvisoryOrgAccount && (
-            <PopoverMenuItem onClick={handleReferralsClick}>
-              <IconText leftIcon={<Gift />}>Refer a Friend</IconText>
-            </PopoverMenuItem>
-          )}
           <PopoverMenuSeparator />
           <PopoverMenuItem onClick={() => setIsAccountSettingsDialogOpen(true)}>
             <IconText leftIcon={<Gear />}>Account Settings</IconText>

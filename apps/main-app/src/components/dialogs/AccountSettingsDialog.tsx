@@ -223,14 +223,14 @@ const ProfileSettings = () => {
 }
 
 const BillingSettings = () => {
-  const { isAdvisoryOrgAccount, isPaidPlan } = useCurrentUser()
+  const { isPaidPlan } = useCurrentUser()
 
   return (
     <div>
       <SettingHeader subtitle="Manage your billing details" title="Billing" />
       <SettingContent>
         <div className="flex flex-col justify-between">
-          <BillingPlan plan={isAdvisoryOrgAccount ? 'advisory' : isPaidPlan ? 'pro' : 'free'} />
+          <BillingPlan plan={isPaidPlan ? 'pro' : 'free'} />
           <div className="text-muted-foreground mt-5 text-sm">
             Questions? Contact <SupportLink />.
           </div>
@@ -242,7 +242,6 @@ const BillingSettings = () => {
 
 const BillingPlan = ({ plan }: { plan: 'advisory' | 'free' | 'pro' }) => {
   // const { manageSubscription } = useBillingPlan()
-  const { isLifetimePaidUser } = useCurrentUser()
   const upgradePlanDialog = useUpgradePlanDialog()
 
   const isAdvisor = plan === 'advisory'
@@ -272,7 +271,6 @@ const BillingPlan = ({ plan }: { plan: 'advisory' | 'free' | 'pro' }) => {
         <div className="flex w-full items-center justify-between">
           <div className="flex flex-row items-center gap-2">
             {tierBadge}{' '}
-            {isLifetimePaidUser && <div className="text-muted-foreground text-sm">[Lifetime]</div>}
           </div>
           {/* {actionButton} */}
         </div>

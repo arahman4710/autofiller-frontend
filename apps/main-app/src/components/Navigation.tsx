@@ -41,7 +41,7 @@ export const Navigation = () => {
   const { queryParams } = useQueryParams()
   const upgradePlanDialog = useUpgradePlanDialog()
   const shouldOpenUpgradeDialog = queryParams?.get('open_upgrade_dialog') == 'true'
-  const { isAdvisoryOrgAccount, isPaidPlan, loading: currentUserIsLoading, user } = useCurrentUser()
+  const { loading: currentUserIsLoading, user } = useCurrentUser()
 
   const mainNavItems = (): TNavItem[] => {
     if (user?.business?.name == "") {

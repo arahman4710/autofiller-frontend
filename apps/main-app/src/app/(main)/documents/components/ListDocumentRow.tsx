@@ -23,8 +23,6 @@ export const ListDocumentRow = ({
   documentName,
   documentUrl,
 }: IListDocumentRowProps) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-
   return (
     <div className="cursor-pointer" onClick={() => {
       trackEvent('User clicked on a document')

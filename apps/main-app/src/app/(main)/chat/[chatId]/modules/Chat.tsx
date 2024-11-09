@@ -20,7 +20,6 @@ import {
 import { IntervieweeIcon } from '@/components/IntervieweeIcon'
 import { InterviewerIcon } from '@/components/InterviewerIcon'
 import { useCurrentUser } from '@/hooks/useCurrentUser'
-import { useInterviewStore } from '@/store/interviewStore'
 
 interface IChatProps {
     chatId: string
@@ -35,7 +34,7 @@ export const Chat = ({ chatId }: IChatProps) => {
   const lastMessageSaid = useRef(false)
   const bottomMessageRef = useRef<HTMLDivElement>(null)
   const inputMessageRef = useRef<HTMLTextAreaElement>(null)
-  const enableVoice = useInterviewStore((state) => state.enableVoice)
+  const enableVoice = false
   const [addMessage, { loading: isAddMessageMutationLoading }] = useMutation(
     Chat_AddMessageDocument
   )

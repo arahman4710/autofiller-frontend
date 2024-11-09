@@ -27,7 +27,7 @@ import { UserForm } from '@/forms/UserForm'
 import { useUserForm } from '@/forms/hooks/useUserForm'
 import { useUserFormReset } from '@/forms/hooks/useUserFormReset'
 import { useUpgradePlanDialog } from '@/hooks/contexts/useUpgradePlanDialog'
-import { useBillingPlan } from '@/hooks/useBillingPlan'
+// import { useBillingPlan } from '@/hooks/useBillingPlan'
 import { useCurrentUser } from '@/hooks/useCurrentUser'
 import { useDelayedLoading } from '@/hooks/useDelayedLoading'
 import { useFormAutoSave } from '@/hooks/useFormAutoSave'
@@ -241,7 +241,7 @@ const BillingSettings = () => {
 }
 
 const BillingPlan = ({ plan }: { plan: 'advisory' | 'free' | 'pro' }) => {
-  const { manageSubscription } = useBillingPlan()
+  // const { manageSubscription } = useBillingPlan()
   const { isLifetimePaidUser } = useCurrentUser()
   const upgradePlanDialog = useUpgradePlanDialog()
 
@@ -249,13 +249,13 @@ const BillingPlan = ({ plan }: { plan: 'advisory' | 'free' | 'pro' }) => {
   const isPro = plan === 'pro'
   const isFree = plan === 'free'
 
-  const actionButton = isFree ? (
-    <Button onClick={() => upgradePlanDialog.setOpen(true)} variant="cta">
-      Upgrade Plan
-    </Button>
-  ) : isPro && !isLifetimePaidUser ? (
-    <Button onClick={() => manageSubscription()}>Manage Subscription</Button>
-  ) : null
+  // const actionButton = isFree ? (
+  //   <Button onClick={() => upgradePlanDialog.setOpen(true)} variant="cta">
+  //     Upgrade Plan
+  //   </Button>
+  // ) : isPro && !isLifetimePaidUser ? (
+  //   <Button onClick={() => manageSubscription()}>Manage Subscription</Button>
+  // ) : null
 
   const tierBadge = isAdvisor ? (
     <AdvisoryBadge className="text-md" />
@@ -274,7 +274,7 @@ const BillingPlan = ({ plan }: { plan: 'advisory' | 'free' | 'pro' }) => {
             {tierBadge}{' '}
             {isLifetimePaidUser && <div className="text-muted-foreground text-sm">[Lifetime]</div>}
           </div>
-          {actionButton}
+          {/* {actionButton} */}
         </div>
       </div>
     </div>

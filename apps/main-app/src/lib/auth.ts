@@ -71,7 +71,7 @@ export const authOptions: (any?) => NextAuthOptions = (req = null) => ({
     sessionToken: {
       name: `${useSecureCookies ? '__Secure-' : ''}next-auth.session-token`,
       options: {
-        domain: useSecureCookies ? '.userag.com' : 'localhost',
+        domain: useSecureCookies ? 'ecomm-rag-app-00b12e8466f4.herokuapp.com' : 'localhost',
         httpOnly: true,
         path: '/',
         sameSite: 'lax',

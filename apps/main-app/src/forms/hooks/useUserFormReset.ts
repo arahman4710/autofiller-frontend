@@ -16,10 +16,6 @@ export const useUserFormReset = ({ form, user }: IUseUserFormResetFormParams) =>
     () => ({
       firstName: user?.firstName,
       lastName: user?.lastName,
-      linkedinUrl: user?.linkedinUrl,
-      location: user?.location,
-      phoneNumber: user?.phoneNumber,
-      website: user?.website,
     }),
     [user]
   )
@@ -29,10 +25,6 @@ export const useUserFormReset = ({ form, user }: IUseUserFormResetFormParams) =>
       ...form.formState.defaultValues,
       firstName: userValues.firstName || '',
       lastName: userValues.lastName || '',
-      linkedinUrl: userValues?.linkedinUrl || '',
-      location: userValues.location || '',
-      phoneNumber: userValues.phoneNumber || '',
-      website: userValues?.website || '',
     })
   }, [userValues, form, user])
 }

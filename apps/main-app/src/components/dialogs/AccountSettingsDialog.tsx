@@ -44,7 +44,7 @@ export const AccountSettingsDialog = ({ open, setOpen }: IAccountSettingsDialogP
 
   const menuItems = [
     { icon: <User />, label: 'Profile' },
-    { icon: <Wallet />, label: 'Billing' },
+    // { icon: <Wallet />, label: 'Billing' },
   ]
 
   useEffect(() => {
@@ -173,10 +173,6 @@ const ProfileSettings = () => {
           attributes: {
             firstName: formValues.firstName,
             lastName: formValues.lastName,
-            linkedinUrl: formValues.linkedinUrl,
-            location: formValues.location,
-            phoneNumber: formValues.phoneNumber,
-            website: formValues.website,
           },
         },
       })
@@ -198,15 +194,6 @@ const ProfileSettings = () => {
   return (
     <div>
       <SettingHeader
-        alert={
-          !isAdvisor && !isAdvisorAdmin
-            ? {
-                description:
-                  'Changes to your profile will also apply to your resumes and cover letters.',
-                variant: 'information',
-              }
-            : undefined
-        }
         subtitle="Manage your personal details"
         title="Profile"
       />

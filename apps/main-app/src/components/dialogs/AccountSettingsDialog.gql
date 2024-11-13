@@ -2,10 +2,6 @@ fragment UsersUpdate on Users {
   id
   firstName
   lastName
-  phoneNumber
-  location
-  website
-  linkedinUrl
 }
 
 query AccountSettingsDialog_user {

@@ -44,62 +44,6 @@ export const UserForm = ({ form, onSubmit }: IUserFormProps) => {
               )}
             />
           </div>
-          <div className="flex flex-row space-x-6">
-            <FormField
-              control={form.control}
-              name="phoneNumber"
-              render={({ field }) => (
-                <FormItem className="w-full">
-                  <FormLabel>Phone Number </FormLabel>
-                  <FormControl>
-                    <Input {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="location"
-              render={({ field }) => (
-                <FormItem className="w-full">
-                  <FormLabel>Location </FormLabel>
-                  <FormControl>
-                    <Input {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
-          <div className="flex flex-row space-x-6">
-            <FormField
-              control={form.control}
-              name="website"
-              render={({ field }) => (
-                <FormItem className="w-full">
-                  <FormLabel>Website</FormLabel>
-                  <FormControl>
-                    <Input {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="linkedinUrl"
-              render={({ field }) => (
-                <FormItem className="w-full">
-                  <FormLabel>LinkedIn</FormLabel>
-                  <FormControl>
-                    <Input {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
         </div>
       </form>
     </Form>

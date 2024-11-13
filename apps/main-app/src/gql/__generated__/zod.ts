@@ -333,19 +333,19 @@ export type EmailVerify_EmailVerifyAllowedQueryVariables = Exact<{
 
 export type EmailVerify_EmailVerifyAllowedQuery = { __typename?: 'Query', emailVerifyAllowed?: { __typename?: 'Users', firstName?: string | null, lastName?: string | null, email: string } | null };
 
-export type UsersUpdateFragment = { __typename?: 'Users', id: string, firstName?: string | null, lastName?: string | null, phoneNumber?: string | null, location?: string | null, website?: string | null, linkedinUrl?: string | null };
+export type UsersUpdateFragment = { __typename?: 'Users', id: string, firstName?: string | null, lastName?: string | null };
 
 export type AccountSettingsDialog_UserQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type AccountSettingsDialog_UserQuery = { __typename?: 'Query', user: { __typename?: 'Users', id: string, firstName?: string | null, lastName?: string | null, phoneNumber?: string | null, location?: string | null, website?: string | null, linkedinUrl?: string | null } };
+export type AccountSettingsDialog_UserQuery = { __typename?: 'Query', user: { __typename?: 'Users', id: string, firstName?: string | null, lastName?: string | null } };
 
 export type AccountSettingsDialog_UpdateUserMutationVariables = Exact<{
   attributes: UsersInputObject;
 }>;
 
 
-export type AccountSettingsDialog_UpdateUserMutation = { __typename?: 'Mutation', updateUser: { __typename?: 'Users', id: string, firstName?: string | null, lastName?: string | null, phoneNumber?: string | null, location?: string | null, website?: string | null, linkedinUrl?: string | null } };
+export type AccountSettingsDialog_UpdateUserMutation = { __typename?: 'Mutation', updateUser: { __typename?: 'Users', id: string, firstName?: string | null, lastName?: string | null } };
 
 export type UploadDocumentMutationVariables = Exact<{
   uploadSignedId: Scalars['ID']['input'];

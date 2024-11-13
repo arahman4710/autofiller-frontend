@@ -7,10 +7,6 @@ import { TUserForm } from '@/forms/types'
 export const UserFormSchema = z.object({
   firstName: z.string().min(1, "First name can't be empty"),
   lastName: z.string().min(1, "Last name can't be empty"),
-  linkedinUrl: z.string().optional(),
-  location: z.string().optional(),
-  phoneNumber: z.string().optional(),
-  website: z.string().optional(),
 })
 
 interface IUseUserFormParams {
@@ -21,10 +17,6 @@ export const useUserForm = ({ preloadedValues }: IUseUserFormParams = {}) => {
   const defaultValues = {
     firstName: '',
     lastName: '',
-    linkedinUrl: '',
-    location: '',
-    phoneNumber: '',
-    website: '',
   }
 
   const form = useForm<TUserForm>({

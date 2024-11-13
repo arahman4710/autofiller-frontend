@@ -2,6 +2,7 @@ import Link from 'next/link'
 
 import { Logo } from '@/components/Logo'
 import { Navigation } from '@/components/Navigation'
+import { NavigationAccessories } from '@/components/NavigationAccessories'
 
 export const Sidebar = () => {
   return (
@@ -11,6 +12,7 @@ export const Sidebar = () => {
       </Link>
       <div className="mt-6 flex h-full flex-col justify-between">
         <Navigation />
+        <NavigationAccessories />
       </div>
     </div>
   )

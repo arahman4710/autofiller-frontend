@@ -25,14 +25,21 @@ type Chat {
 type ChatPayload {
   chatId: ID!
   content: String!
+  final: Boolean!
   i: Int
   initial: Boolean!
   requestId: String!
 }
 
 type ChatsMessage {
+  chatMessageSources: [ChatsMessageSource!]!
   fromUser: Boolean!
   message: String!
+}
+
+type ChatsMessageSource {
+  document: Document!
+  score: Float!
 }
 
 enum ChatsStatusEnum {
@@ -51,6 +58,7 @@ type Document {
 scalar ISO8601DateTime
 
 type Mutation {
+  archiveDocument(documentId: ID!): Document!
   authPasswordResetRequest(email: String!): String!
   authProviderAuthenticate(data: String!, firstName: String, lastName: String, provider: AuthProviderTypeEnum!, referredByUserUniqueId: ID, resumeUniqueId: ID): AuthResponse!
   authResetPassword(newPassword: String!, resetPasswordToken: String!): String!

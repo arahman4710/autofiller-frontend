@@ -20,6 +20,7 @@ import {
 import { IntervieweeIcon } from '@/components/IntervieweeIcon'
 import { InterviewerIcon } from '@/components/InterviewerIcon'
 import { useCurrentUser } from '@/hooks/useCurrentUser'
+import { ReadCvLogo } from '@phosphor-icons/react'
 
 interface IChatProps {
     chatId: string
@@ -31,6 +32,7 @@ export const Chat = ({ chatId }: IChatProps) => {
 
   const [currMessage, setCurrMessage] = useState('')
   const [voiceSpeaking, setVoiceSpeaking] = useState(false)
+  const [messageLoading, setMessageLoading] = useState(false)
   const lastMessageSaid = useRef(false)
   const bottomMessageRef = useRef<HTMLDivElement>(null)
   const inputMessageRef = useRef<HTMLTextAreaElement>(null)
@@ -42,7 +44,7 @@ export const Chat = ({ chatId }: IChatProps) => {
   const { user } = useCurrentUser()
   const name = `${user?.firstName} ${user?.lastName}`
 
-  const { data } = useSuspenseQuery(Chat_GetChatDocument, {
+  const { data, refetch } = useSuspenseQuery(Chat_GetChatDocument, {
     variables: {
       chatId: [chatId],
     },
@@ -56,16 +58,20 @@ export const Chat = ({ chatId }: IChatProps) => {
     onData: ({ data: { data } }) => {
       if (data?.chat?.initial == true) {
         setNewMessage('')
+        setMessageLoading(true)
       }
       if (
-        data?.chat?.content &&
-        data?.chat.chatId == chatId
+        data?.chat?.chatId == chatId
       ) {
         refChatArray.current.push(data.chat)
         refChatArray.current.sort(compareSubscriptionData)
         setNewMessage(refChatArray.current.map((c) => c.content).join(''))
         const messagesElements = document.getElementsByClassName("message")
-        messagesElements[messagesElements.length - 1].scrollIntoView(false)
+        messagesElements[messagesElements.length - 1]?.scrollIntoView(false)
+        if (data?.chat?.final) {
+          setMessageLoading(false)
+          refetch()
+        }
       }
     },
     variables: {},
@@ -106,7 +112,7 @@ export const Chat = ({ chatId }: IChatProps) => {
   const messages = data?.chats?.[0]?.messages || []
   let allMessages = messages
   if (messages.length > 0 && messages[messages.length - 1].fromUser == true && newMessage.length > 0) {
-    allMessages = allMessages.concat([{fromUser: false, message: newMessage}])
+    allMessages = allMessages.concat([{fromUser: false, message: newMessage, chatMessageSources: []}])
   }
   const status = data?.chats?.[0]?.status || ChatsStatusEnum.Started
 
@@ -159,6 +165,21 @@ export const Chat = ({ chatId }: IChatProps) => {
     }
   }, [inputMessageRef.current])
 
+  const handleDocumentClick = (url) => {
+    if (url && window != null) {
+      window?.open(url, '_blank')?.focus();
+    }
+  }
+
+  const isLikelySource = (score, index) => {
+    if (score > 0.4) {
+      return true
+    }
+    if (index == 1) {
+      return true
+    }
+  }
+
   return (
     <div className="chat-body flex h-full flex-col justify-between gap-4">
       <div
@@ -181,10 +202,29 @@ export const Chat = ({ chatId }: IChatProps) => {
               >
                 {message.message}
               </Markdown>
+              {message.chatMessageSources.length > 0 && 
+              (
+                <div className="mt-6">
+                  <div className="flex text-lg mb-2 gap-1 items-center"> 
+                    <ReadCvLogo/>
+                    <p> Sources </p>
+                  </div>
+                  <div className="flex gap-4">
+                    {message.chatMessageSources?.map((chatMessageSource, index) => (
+                      <div 
+                        className="cursor-pointer text-sm border-border-secondary bg-background-contrast px-3 py-3.5 max-h-[200px] w-[200px]"
+                        onClick={() => handleDocumentClick(chatMessageSource.document.url)}
+                       >
+                        {chatMessageSource.document.name} {isLikelySource(chatMessageSource.score, index) && (<div>[Likely source]</div>)}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         ))}
-        {isAddMessageMutationLoading && <Loader />}
+        {(isAddMessageMutationLoading || (newMessage == '' && messageLoading == true)) && <Loader />}
         <div ref={bottomMessageRef} />
       </div>
       <div className="gap sticky flex min-h-[49px] flex-row pr-6">
@@ -192,7 +232,7 @@ export const Chat = ({ chatId }: IChatProps) => {
           <Textarea
             autoFocus={true}
             className="border-border-accent bg-background/40 min-h-[40px] w-full"
-            disabled={voiceSpeaking || isAddMessageMutationLoading}
+            disabled={voiceSpeaking || isAddMessageMutationLoading || messageLoading}
             key="message"
             onChange={(e) => setCurrMessage(e.target.value)}
             onKeyDown={(e) => {

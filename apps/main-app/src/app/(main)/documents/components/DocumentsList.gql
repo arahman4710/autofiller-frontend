@@ -5,3 +5,9 @@ query DocumentsList_allDocuments {
     url
   }
 }
+
+mutation DocumentsList_archivedDocument($id: ID!) {
+  archiveDocument(documentId: $id) {
+    id
+  }
+}

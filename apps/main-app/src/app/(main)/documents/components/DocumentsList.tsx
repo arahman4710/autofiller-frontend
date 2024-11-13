@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 
 import {
   DocumentsList_AllDocumentsDocument,
+  DocumentsList_ArchivedDocumentDocument,
 } from '@gql/graphql'
 
 import { useUpgradePlanDialog } from '@/hooks/contexts/useUpgradePlanDialog'
@@ -15,6 +16,7 @@ import { TViewQueryParam } from '@/types/navigation'
 import { ListDocumentRow } from './ListDocumentRow'
 import { ListContent } from './ListContent'
 import { ListHeader } from './ListHeader'
+import { useMutation } from '@apollo/client'
 
 const MAX_RESUMES = 3
 
@@ -24,6 +26,14 @@ export const DocumentsList = () => {
   const viewQueryParam = queryParams?.get('view')
   const upgradePlanDialog = useUpgradePlanDialog()
   const { isPaidPlan } = useCurrentUser()
+
+  const [archiveDocument] = useMutation(DocumentsList_ArchivedDocumentDocument, {
+    refetchQueries: [DocumentsList_AllDocumentsDocument]
+  })
+
+  const handleArchiveDocument = async (documentId) => {
+    archiveDocument({ variables: {id: documentId } })
+  }
 
   const { data: allDocumentsData } = useQuery(DocumentsList_AllDocumentsDocument)
   const allDocuments = allDocumentsData?.documents ?? []
@@ -37,6 +47,7 @@ export const DocumentsList = () => {
         <div>
           {allDocuments.map((document, index) => (
             <ListDocumentRow
+            archiveDocument={() => handleArchiveDocument(document.id)}
             isLast={index === allDocuments.length - 1}
             key={document.id}
             documentId={document.id}

@@ -47,6 +47,7 @@ export type ChatPayload = {
   __typename?: 'ChatPayload';
   chatId: Scalars['ID']['output'];
   content: Scalars['String']['output'];
+  final: Scalars['Boolean']['output'];
   i?: Maybe<Scalars['Int']['output']>;
   initial: Scalars['Boolean']['output'];
   requestId: Scalars['String']['output'];
@@ -54,8 +55,15 @@ export type ChatPayload = {
 
 export type ChatsMessage = {
   __typename?: 'ChatsMessage';
+  chatMessageSources: Array<ChatsMessageSource>;
   fromUser: Scalars['Boolean']['output'];
   message: Scalars['String']['output'];
+};
+
+export type ChatsMessageSource = {
+  __typename?: 'ChatsMessageSource';
+  document: Document;
+  score: Scalars['Float']['output'];
 };
 
 export enum ChatsStatusEnum {
@@ -73,6 +81,7 @@ export type Document = {
 
 export type Mutation = {
   __typename?: 'Mutation';
+  archiveDocument: Document;
   authPasswordResetRequest: Scalars['String']['output'];
   authProviderAuthenticate: AuthResponse;
   authResetPassword: Scalars['String']['output'];
@@ -84,6 +93,11 @@ export type Mutation = {
   updateUser: Users;
   uploadDocument: Document;
   userEmailVerify: AuthResponse;
+};
+
+
+export type MutationArchiveDocumentArgs = {
+  documentId: Scalars['ID']['input'];
 };
 
 
@@ -253,12 +267,12 @@ export type Chat_GetChatQueryVariables = Exact<{
 }>;
 
 
-export type Chat_GetChatQuery = { __typename?: 'Query', chats: Array<{ __typename?: 'Chat', id: string, status: ChatsStatusEnum, messages: Array<{ __typename?: 'ChatsMessage', fromUser: boolean, message: string }> }> };
+export type Chat_GetChatQuery = { __typename?: 'Query', chats: Array<{ __typename?: 'Chat', id: string, status: ChatsStatusEnum, messages: Array<{ __typename?: 'ChatsMessage', fromUser: boolean, message: string, chatMessageSources: Array<{ __typename?: 'ChatsMessageSource', score: number, document: { __typename?: 'Document', name: string, url?: string | null } }> }> }> };
 
 export type ChatSubscriptionSubscriptionVariables = Exact<{ [key: string]: never; }>;
 
 
-export type ChatSubscriptionSubscription = { __typename?: 'Subscription', chat: { __typename?: 'ChatPayload', content: string, chatId: string, initial: boolean, requestId: string, i?: number | null } };
+export type ChatSubscriptionSubscription = { __typename?: 'Subscription', chat: { __typename?: 'ChatPayload', content: string, chatId: string, initial: boolean, requestId: string, i?: number | null, final: boolean } };
 
 export type Chat_AddMessageMutationVariables = Exact<{
   chatId: Scalars['String']['input'];
@@ -282,6 +296,13 @@ export type DocumentsList_AllDocumentsQueryVariables = Exact<{ [key: string]: ne
 
 
 export type DocumentsList_AllDocumentsQuery = { __typename?: 'Query', documents: Array<{ __typename?: 'Document', id: string, name: string, url?: string | null }> };
+
+export type DocumentsList_ArchivedDocumentMutationVariables = Exact<{
+  id: Scalars['ID']['input'];
+}>;
+
+
+export type DocumentsList_ArchivedDocumentMutation = { __typename?: 'Mutation', archiveDocument: { __typename?: 'Document', id: string } };
 
 export type ForgotPassword_AuthPasswordResetRequestMutationVariables = Exact<{
   email: Scalars['String']['input'];

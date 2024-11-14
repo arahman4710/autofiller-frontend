@@ -71,7 +71,7 @@ export const authOptions: (any?) => NextAuthOptions = (req = null) => ({
     sessionToken: {
       name: `${useSecureCookies ? '__Secure-' : ''}next-auth.session-token`,
       options: {
-        domain: useSecureCookies ? '.herokuapp.com' : 'localhost',
+        domain: useSecureCookies ? '.skugrep.xyz' : 'localhost',
         httpOnly: true,
         path: '/',
         sameSite: 'lax',

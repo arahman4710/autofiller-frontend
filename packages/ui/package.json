@@ -12,7 +12,7 @@
     "./Button": "./src/components/Button.tsx",
     "./Calendar": "./src/components/Calendar.tsx",
     "./CalendarMonthYear": "./src/components/CalendarMonthYear.tsx",
-    "./CanyonLogo": "./src/assets/CanyonLogo.tsx",
+    "./Logo": "./src/assets/Logo.tsx",
     "./Card": "./src/components/Card.tsx",
     "./Carousel": "./src/components/Carousel.tsx",
     "./Checkbox": "./src/components/Checkbox.tsx",

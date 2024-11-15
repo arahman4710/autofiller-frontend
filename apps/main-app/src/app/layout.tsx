@@ -19,11 +19,11 @@ import './globals.css'
 import '@rag/ui/globals.css'
 
 export const metadata: Metadata = {
-  description: 'Canyon makes it easy to apply, track, and prepare for jobs.',
+  description: 'SKUGrep.',
   icons: { icon: '/favicon.ico' },
   title: {
-    default: 'Canyon',
-    template: 'Canyon • %s',
+    default: 'SKUGrep',
+    template: 'SKUGrep • %s',
   },
 }
 

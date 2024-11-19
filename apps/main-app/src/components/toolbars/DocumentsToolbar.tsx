@@ -25,7 +25,7 @@ export const DocumentsToolbar = () => {
       <div className="flex flex-row items-center gap-2">
         <Button
           leftIcon={<GoogleDriveLogo size={16} weight="bold" />}
-          onClick={login}
+          onClick={_ => login()}
           size="sm"
           variant="outline"
           >

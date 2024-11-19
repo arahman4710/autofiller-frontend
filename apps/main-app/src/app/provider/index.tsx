@@ -26,7 +26,7 @@ interface IProviders {
 
 export const Providers = ({ children, token }: IProviders) => {
   return (
-    <GoogleOAuthProvider clientId={process.env.GOOGLE_DRIVE_CLIENT_ID || ''}>
+    <GoogleOAuthProvider clientId={process.env.GOOGLE_DRIVE_CLIENT_ID || '996936391552-48m5evvm2obhvmf5f6bala937jrtaaht.apps.googleusercontent.com'}>
       <Provider config={rollbarConfig}>
         <ErrorBoundary>
           <AuthProvider>

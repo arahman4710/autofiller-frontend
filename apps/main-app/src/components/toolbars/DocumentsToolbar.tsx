@@ -37,7 +37,7 @@ export const DocumentsToolbar = () => {
         size="sm"
         variant="cta"
         >
-          Upload document
+          Upload document 
         </Button>
         <UploadDocumentDialog open={uploadDocumentDialogOpen} setOpen={setuploadDocumentDialogOpen} />
       </div>

@@ -1,23 +1,26 @@
 'use client'
 
-import { useCallback, useState } from 'react'
+import { useState } from 'react'
 
 import { Button } from '@rag/ui/Button'
 import { Toolbar } from '@rag/ui/Toolbar'
 import { GoogleDriveLogo, PlusCircle } from '@phosphor-icons/react'
 
 import { UploadDocumentDialog } from '@/components/dialogs/UploadDocumentDialog'
-import { GoogleLogin } from '@react-oauth/google';
-import { googleLogout, useGoogleLogin } from '@react-oauth/google';
+import { useGoogleLogin } from '@react-oauth/google';
+import { useCurrentUser } from '@/hooks/useCurrentUser'
 
 
 
 export const DocumentsToolbar = () => {
   const [uploadDocumentDialogOpen, setuploadDocumentDialogOpen] = useState<boolean>(false)
+  const { user } = useCurrentUser()
 
   const login = useGoogleLogin({
-    onSuccess: (codeResponse) => console.log(codeResponse),
-    onError: (error) => console.log('Login Failed:', error)
+    flow: 'auth-code',
+    ux_mode: "redirect",
+    state: `${user?.id}`,
+    redirect_uri: "https://api.skugrep.xyz/drive/callback",
   });
 
   return (

@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Ubuntu Mono';
+  src: url('/fonts/Ubuntu-Mono.ttf');
+  font-weight: normal;
+}
+
+body {
+  color: rgb(255, 255, 255);
+  background: linear-gradient(to bottom, transparent, rgb(0, 0, 0)) rgb(0, 0, 0);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+:-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-stone-600;
+  border-radius: 4px;
+  padding-right: 2px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-stone-500;
+}
+
+.animate-header-slide-down-fade {
+  animation: header-slide-down-fade 1s ease-in-out;
+}
+
+@keyframes header-slide-down-fade {
+  0% {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-slide-up {
+  animation: hero-animation 1s ease-in-out;
+}
+
+@keyframes hero-animation {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.noise {
+  background: url('/noise.svg');
+  filter: contrast(170%) brightness(1000%);
+}

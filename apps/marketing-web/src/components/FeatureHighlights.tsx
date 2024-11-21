@@ -2,9 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 
-import { Carousel, CarouselContent, CarouselItem } from '@canyon/ui/Carousel'
-import { Skeleton } from '@canyon/ui/Skeleton'
-import { cn } from '@canyon/ui/utils/cn'
+import { cn } from '@rag/ui/utils/cn'
 import {
   DotFilledIcon,
   MagicWandIcon,

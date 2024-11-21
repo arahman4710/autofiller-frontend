@@ -1,9 +1,9 @@
 'use client'
 
-import { Badge } from '@canyon/ui/Badge'
-import { Button } from '@canyon/ui/Button'
-import { Card, CardContent } from '@canyon/ui/Card'
-import { cn } from '@canyon/ui/utils/cn'
+import { Badge } from '@rag/ui/Badge'
+import { Button } from '@rag/ui/Button'
+import { Card, CardContent } from '@rag/ui/Card'
+import { cn } from '@rag/ui/utils/cn'
 import { CheckCircledIcon } from '@radix-ui/react-icons'
 import { motion } from 'framer-motion'
 
@@ -59,7 +59,7 @@ export const Plan = ({
         <Button
           fullWidth={true}
           onClick={() => {
-            window.open('https://app.usecanyon.com/auth/signup')
+            window.open('https://app.skugrep.xyz/auth/signup')
           }}
           size="lg"
           variant={isHighlighted ? 'ctaBlue' : 'default'}

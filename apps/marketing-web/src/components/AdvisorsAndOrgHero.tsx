@@ -1,6 +1,5 @@
 'use client'
 
-import { Badge } from '@canyon/ui/Badge'
 import { MagicWandIcon } from '@radix-ui/react-icons'
 import { motion } from 'framer-motion'
 import Image from 'next/image'

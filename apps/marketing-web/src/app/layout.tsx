@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 import { Suspense } from 'react'
 
-import { cn } from '@canyon/ui/utils/cn'
+import { cn } from '@rag/ui/utils/cn'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Inter } from 'next/font/google'
 
@@ -12,14 +12,14 @@ import { Header } from '@/components/Header'
 import PostHogPageView from '@/lib/posthog/PostHogPageView'
 
 import './globals.css'
-import '@canyon/ui/globals.css'
+import '@rag/ui/globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  description: 'Canyon makes it easy to apply, track, and prepare for jobs.',
+  description: 'SKUGrep.',
   icons: { icon: '/favicon.ico' },
-  title: 'Canyon – The Modern Career Platform',
+  title: 'SKUGrep',
 }
 
 export default function RootLayout({

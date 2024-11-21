@@ -1,4 +1,4 @@
-import { cn } from '@canyon/ui/utils/cn'
+import { cn } from '@rag/ui/utils/cn'
 import { ChevronRightIcon } from '@radix-ui/react-icons'
 import Link from 'next/link'
 
@@ -20,7 +20,7 @@ export const GetStartedButton = ({
         'group flex w-fit cursor-pointer items-center gap-2 rounded-full bg-white/20 px-4 py-2 transition transition-all duration-300 ease-in-out ease-in-out hover:bg-white/30',
         className
       )}
-      href={href ?? 'https://app.usecanyon.com/auth/signup'}
+      href={href ?? 'https://app.skugrep.xyz/auth/signup'}
       {...props}
     >
       {text}

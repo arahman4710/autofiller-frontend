@@ -1,8 +1,8 @@
 'use client'
 import { useEffect, useState } from 'react'
 
-import { CanyonLogoFull } from '@canyon/ui/CanyonLogo'
-import { cn } from '@canyon/ui/utils/cn'
+import { LogoFull } from '@rag/ui/Logo'
+import { cn } from '@rag/ui/utils/cn'
 import { CheckCircledIcon, DotFilledIcon } from '@radix-ui/react-icons'
 import Link from 'next/link'
 
@@ -21,36 +21,36 @@ export const Footer = () => {
   ]
 
   const siteMap = [
-    {
-      links: [
-        {
-          href: '/features',
-          label: 'Features',
-        },
-        {
-          href: '/pricing',
-          label: 'Pricing',
-        },
-        {
-          href: '/advisors-and-organizations',
-          label: 'Advisors & Organizations',
-        },
-        {
-          href: 'https://chrome.google.com/webstore/detail/npekhmlmillbfcbohangleomoblkckih?authuser=0&hl=en',
-          label: 'Browser Extension',
-        },
-      ],
-      title: 'Product',
-    },
+    // {
+    //   links: [
+    //     {
+    //       href: '/features',
+    //       label: 'Features',
+    //     },
+    //     {
+    //       href: '/pricing',
+    //       label: 'Pricing',
+    //     },
+    //     {
+    //       href: '/advisors-and-organizations',
+    //       label: 'Advisors & Organizations',
+    //     },
+    //     {
+    //       href: 'https://chrome.google.com/webstore/detail/npekhmlmillbfcbohangleomoblkckih?authuser=0&hl=en',
+    //       label: 'Browser Extension',
+    //     },
+    //   ],
+    //   title: 'Product',
+    // },
     {
       links: [
         // { href: '/about', label: 'About' },
+        // {
+        //   href: '/career-center',
+        //   label: 'Blog',
+        // },
         {
-          href: '/career-center',
-          label: 'Blog',
-        },
-        {
-          href: 'mailto:support@usecanyon.com',
+          href: 'mailto:support@skugrep.xyz',
           label: 'Contact Us',
         },
       ],
@@ -77,15 +77,7 @@ export const Footer = () => {
     <footer className="container rounded-lg py-[40px] text-sm">
       <div className="flex flex-col items-start justify-between pb-8 md:flex-row">
         <div className="flex flex-col">
-          <CanyonLogoFull />
-          {/* <a
-            className="border-0.5 mt-4 flex cursor-pointer items-center gap-4 rounded-lg border-green-300 px-4 py-2"
-            href="mailto:support@usecanyon.com"
-          >
-            <label className="flex items-center gap-2 text-xs text-green-200">
-              <CheckCircledIcon className="h-3text-green-400 w-3" /> 24/7 Support Available
-            </label>
-          </a> */}
+          <LogoFull />
         </div>
 
         <div className="mt-5 flex items-start gap-10 pr-4 md:mt-0">
@@ -116,16 +108,16 @@ export const Footer = () => {
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-center md:justify-start">
             <a
               className="hidden cursor-pointer items-center gap-1 md:flex"
-              href="https://status.usecanyon.com"
+              href="https://status.skugrep.xyz"
               target="_blank"
-              title="Canyon Status Page"
+              title="SKUGrep Status Page"
             >
               <DotFilledIcon
                 className={cn('h-4 w-4', hasDegredations ? 'text-amber-400' : 'text-green-400')}
               />
               {hasDegredations ? 'Systems Degraded' : 'Systems Operational'}
             </a>
-            <span>© 2024 Canyon</span>
+            <span>© 2024 SKUGrep</span>
           </div>
         </div>
       </div>

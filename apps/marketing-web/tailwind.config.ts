@@ -1,6 +1,6 @@
 import type { Config } from 'tailwindcss'
 
-import baseConfig from '@canyon/ui/tailwind.config'
+import baseConfig from '@rag/ui/tailwind.config'
 import plaiceholder from '@plaiceholder/tailwindcss'
 import fs from 'node:fs'
 import path from 'node:path'

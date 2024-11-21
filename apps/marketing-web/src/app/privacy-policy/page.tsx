@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 import { SectionHeader } from '@/components/SectionHeader'
 
 export const metadata: Metadata = {
-  title: 'Canyon • Privacy Policy',
+  title: 'SKUGrep • Privacy Policy',
 }
 
 export default function PrivacyPolicyPage() {
@@ -15,13 +15,13 @@ export default function PrivacyPolicyPage() {
         <section>
           <i>Last updated on January 16, 2024</i>
           <p>
-            Canyon operates the <a href="https://www.usecanyon.com">https://www.usecanyon.com</a>{' '}
+            SKUGrep operates the <a href="https://www.skugrep.xyz">https://www.skugrep.xyz</a>{' '}
             website, which provides the SERVICE.
           </p>
           <p>
             This page is used to inform website visitors regarding our policies with the collection,
             use, and disclosure of Personal Information if anyone decided to use our Service, the
-            Canyon website.
+            SKUGrep website.
           </p>
           <p>
             If you choose to use our Service, then you agree to the collection and use of
@@ -32,7 +32,7 @@ export default function PrivacyPolicyPage() {
           <p>
             The terms used in this Privacy Policy have the same meanings as in our Terms and
             Conditions, which is accessible at{' '}
-            <a href="https://www.usecanyon.com">https://www.usecanyon.com</a>, unless otherwise
+            <a href="https://www.skugrep.xyz">https://www.skugrep.xyz</a>, unless otherwise
             defined in this Privacy Policy.
           </p>
         </section>
@@ -148,7 +148,7 @@ export default function PrivacyPolicyPage() {
           <h2>9. Contact Us</h2>
           <p>
             If you have any questions or suggestions about our Privacy Policy, do not hesitate to
-            contact us at <a href="mailto:support@usecanyon.com">support@usecanyon.com</a>.
+            contact us at <a href="mailto:support@skugrep.xyz">support@skugrep.xyz</a>.
           </p>
         </section>
       </article>

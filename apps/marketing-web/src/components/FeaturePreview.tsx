@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from 'react'
 
-import { Carousel, CarouselContent, CarouselItem, type TCarouselApi } from '@canyon/ui/Carousel'
-import { cn } from '@canyon/ui/utils/cn'
+import { Carousel, CarouselContent, CarouselItem, type TCarouselApi } from '@rag/ui/Carousel'
+import { cn } from '@rag/ui/utils/cn'
 import { CopyIcon, FaceIcon, Pencil2Icon } from '@radix-ui/react-icons'
 
 export const FeaturePreview = () => {

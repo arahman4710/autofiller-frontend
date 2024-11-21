@@ -2,8 +2,8 @@
 
 import { useState } from 'react'
 
-import { CanyonLogoFull } from '@canyon/ui/CanyonLogo'
-import { cn } from '@canyon/ui/utils/cn'
+import { LogoFull } from '@rag/ui/Logo'
+import { cn } from '@rag/ui/utils/cn'
 import { HamburgerMenuIcon } from '@radix-ui/react-icons'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
@@ -18,16 +18,16 @@ const links = [
     path: '/',
     title: 'Home',
   },
-  {
-    name: 'advisors',
-    path: '/advisors-and-organizations',
-    title: 'Advisors and Organizations',
-  },
-  {
-    name: 'pricing',
-    path: '/pricing',
-    title: 'Pricing',
-  },
+  // {
+  //   name: 'advisors',
+  //   path: '/advisors-and-organizations',
+  //   title: 'Advisors and Organizations',
+  // },
+  // {
+  //   name: 'pricing',
+  //   path: '/pricing',
+  //   title: 'Pricing',
+  // },
 ]
 
 const listVariant = {
@@ -71,8 +71,8 @@ export function Header() {
     >
       <nav className="flex h-[50px] w-full items-center justify-between rounded-lg bg-[#121212] bg-opacity-70 px-4 backdrop-blur-xl backdrop-filter md:bg-transparent">
         <Link className="cursor-pointer" href="/">
-          <span className="sr-only">Canyon Logo</span>
-          <CanyonLogoFull />
+          <span className="sr-only">SKUGrep Logo</span>
+          <LogoFull />
         </Link>
 
         <ul className="mx-3 hidden space-x-2 text-sm font-medium md:flex">
@@ -105,7 +105,7 @@ export function Header() {
         <div className="hidden w-[240px] items-center justify-end gap-4 text-sm md:flex">
           <Link
             className="hover:text-text/80 px-4 transition-all ease-in-out"
-            href="https://app.usecanyon.com/auth/signin"
+            href="https://app.skugrep.xyz/auth/signin"
           >
             Sign In
           </Link>
@@ -129,8 +129,8 @@ export function Header() {
         >
           <div className="relative mt-4 flex justify-between p-3 px-4">
             <button onClick={handleToggleMenu} type="button">
-              <span className="sr-only">Canyon Logo</span>
-              <CanyonLogoFull />
+              <span className="sr-only">SKUGrep Logo</span>
+              <LogoFull />
             </button>
 
             <button
@@ -184,7 +184,7 @@ export function Header() {
               >
                 <Link
                   className="text-muted-foreground text-xl"
-                  href="https://app.usecanyon.com/auth/signin"
+                  href="https://app.skugrep.xyz/auth/signin"
                 >
                   Sign in
                 </Link>

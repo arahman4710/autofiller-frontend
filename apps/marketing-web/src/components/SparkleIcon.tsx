@@ -1,4 +1,4 @@
-import { cn } from '@canyon/ui/utils/cn'
+import { cn } from '@rag/ui/utils/cn'
 
 export const SparkleIcon = ({ className }: { className?: string }) => {
   return (

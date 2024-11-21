@@ -1,11 +1,11 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@canyon/ui/Accordion'
-import { Badge } from '@canyon/ui/Badge'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@rag/ui/Accordion'
+import { Badge } from '@rag/ui/Badge'
 import {
   SwitchTabs,
   SwitchTabsContent,
   SwitchTabsList,
   SwitchTabsTrigger,
-} from '@canyon/ui/SwitchTabs'
+} from '@rag/ui/SwitchTabs'
 import { Metadata } from 'next'
 
 import { Plans } from '@/components/Plans'
@@ -13,7 +13,7 @@ import { SectionHeader } from '@/components/SectionHeader'
 
 export const metadata: Metadata = {
   description: 'Plans made to fit your needs. Get started today.',
-  title: 'Canyon • Pricing',
+  title: 'SKUGrep • Pricing',
 }
 
 export default function PricingPage() {
@@ -30,11 +30,6 @@ export default function PricingPage() {
     {
       answer: 'All payments can made via credit card using our secure payment processor, Stripe.',
       question: 'What are my payment options?',
-    },
-    {
-      answer:
-        'Yes, we have discounted student plans. Please reach out to support@usecanyon.com using your .edu email address.',
-      question: 'Do you have student plans?',
     },
   ]
   return (
@@ -88,7 +83,7 @@ export default function PricingPage() {
         </Accordion>
         <div className="mt-10">
           Additional questions?{' '}
-          <a className="text-emerald-200" href="mailto:support@canyon.so">
+          <a className="text-emerald-200" href="mailto:support@skugrep.xyz">
             Contact support
           </a>
           .

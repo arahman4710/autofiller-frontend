@@ -2,14 +2,13 @@
 
 import { useEffect, useRef, useState } from 'react'
 
-import { cn } from '@rag/ui/utils/cn'
 import {
   DotFilledIcon,
   MagicWandIcon,
   SewingPinFilledIcon,
   TargetIcon,
 } from '@radix-ui/react-icons'
-import Autoscroll from 'embla-carousel-auto-scroll'
+import { cn } from '@rag/ui/utils/cn'
 import { motion, stagger, useAnimation, useInView } from 'framer-motion'
 import Image from 'next/image'
 

@@ -2,9 +2,9 @@
 
 import { useState } from 'react'
 
+import { HamburgerMenuIcon } from '@radix-ui/react-icons'
 import { LogoFull } from '@rag/ui/Logo'
 import { cn } from '@rag/ui/utils/cn'
-import { HamburgerMenuIcon } from '@radix-ui/react-icons'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'

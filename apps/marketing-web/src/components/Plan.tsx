@@ -1,10 +1,10 @@
 'use client'
 
+import { CheckCircledIcon } from '@radix-ui/react-icons'
 import { Badge } from '@rag/ui/Badge'
 import { Button } from '@rag/ui/Button'
 import { Card, CardContent } from '@rag/ui/Card'
 import { cn } from '@rag/ui/utils/cn'
-import { CheckCircledIcon } from '@radix-ui/react-icons'
 import { motion } from 'framer-motion'
 
 interface IPlanProps {

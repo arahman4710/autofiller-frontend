@@ -1,9 +1,9 @@
 'use client'
 import { useEffect, useState } from 'react'
 
+import { CheckCircledIcon, DotFilledIcon } from '@radix-ui/react-icons'
 import { LogoFull } from '@rag/ui/Logo'
 import { cn } from '@rag/ui/utils/cn'
-import { CheckCircledIcon, DotFilledIcon } from '@radix-ui/react-icons'
 import Link from 'next/link'
 
 export const Footer = () => {

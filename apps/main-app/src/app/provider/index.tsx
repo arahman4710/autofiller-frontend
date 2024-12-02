@@ -1,7 +1,7 @@
 'use client'
 
-import { GoogleOAuthProvider } from '@react-oauth/google';
 import { TooltipProvider } from '@rag/ui/Tooltip'
+import { GoogleOAuthProvider } from '@react-oauth/google';
 import { ErrorBoundary, Provider } from '@rollbar/react'
 import { Session } from 'next-auth'
 

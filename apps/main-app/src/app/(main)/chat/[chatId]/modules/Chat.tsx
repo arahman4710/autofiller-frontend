@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 
 import { useMutation, useSubscription } from '@apollo/client'
 import { useSuspenseQuery } from '@apollo/experimental-nextjs-app-support/ssr'
+import { ReadCvLogo } from '@phosphor-icons/react'
 import { Loader } from '@rag/ui/Loader'
 import { Textarea } from '@rag/ui/Textarea'
 import { cn } from '@rag/ui/utils/cn'
@@ -17,7 +18,6 @@ import {
   ChatsStatusEnum,
 } from '@gql/graphql'
 
-import { ReadCvLogo } from '@phosphor-icons/react'
 import { IntervieweeIcon } from '@/components/IntervieweeIcon'
 import { InterviewerIcon } from '@/components/InterviewerIcon'
 import { useCurrentUser } from '@/hooks/useCurrentUser'

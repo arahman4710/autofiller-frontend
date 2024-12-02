@@ -1,7 +1,6 @@
 'use client'
 
 import { WarningOctagon } from '@phosphor-icons/react'
-
 import { Switch } from '@rag/ui/Switch'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@rag/ui/Tooltip'
 import { cn } from '@rag/ui/utils/cn'

@@ -2,12 +2,12 @@
 
 import { Button } from '@rag/ui/Button'
 
+import { useMutation } from '@apollo/client'
 import {
     Chat_StartChatDocument,
     ChatSidebar_ChatsDocument,
   } from '@gql/graphql'
 
-import { useMutation } from '@apollo/client'
 import { useRouter } from 'next/navigation'
 
 export const StartChat = () => {

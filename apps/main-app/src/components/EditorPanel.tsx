@@ -1,7 +1,7 @@
 'use client'
 
-import { type VariantProps, cva } from 'class-variance-authority'
 import { useState } from 'react'
+import { type VariantProps, cva } from 'class-variance-authority'
 
 import {
   CaretDown,

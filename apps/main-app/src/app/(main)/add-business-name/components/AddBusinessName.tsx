@@ -1,20 +1,14 @@
 'use client'
 
-import { useState } from 'react'
-
-import { useSuspenseQuery } from '@apollo/experimental-nextjs-app-support/ssr'
+import { useMutation } from '@apollo/client'
 import { Button } from '@rag/ui/Button'
 import { useToast } from '@rag/ui/useToast'
-import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { useSearchParams } from 'next/navigation'
-import { signIn } from 'next-auth/react'
 
 import { PageHeader } from '@/components/PageHeader'
 import { AddBusinessNameDocument, UseCurrentUser_UsersDocument } from '@/gql/__generated__/graphql'
 import { ADD_BUSINESS_NAME_FORM_ID, AddBusinessNameForm } from '@/forms/AddBusinessNameForm'
 import { useAddBusinessNameForm } from '@/forms/hooks/useAddBusinessNameForm'
-import { useMutation } from '@apollo/client'
 
 export const AddBusinessName = () => {
   const { errorToast } = useToast()

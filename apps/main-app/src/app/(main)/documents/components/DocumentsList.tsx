@@ -2,31 +2,17 @@
 
 import { useMutation } from '@apollo/client'
 import { useQuery } from '@apollo/experimental-nextjs-app-support/ssr'
-import { useRouter } from 'next/navigation'
 
 import {
   DocumentsList_AllDocumentsDocument,
   DocumentsList_ArchivedDocumentDocument,
 } from '@gql/graphql'
 
-import { useUpgradePlanDialog } from '@/hooks/contexts/useUpgradePlanDialog'
-import { useCurrentUser } from '@/hooks/useCurrentUser'
-import { useQueryParams } from '@/hooks/useQueryParams'
-import { TViewQueryParam } from '@/types/navigation'
-
 import { ListContent } from './ListContent'
 import { ListDocumentRow } from './ListDocumentRow'
 import { ListHeader } from './ListHeader'
 
-const MAX_RESUMES = 3
-
 export const DocumentsList = () => {
-  const { queryParams } = useQueryParams<{ view?: TViewQueryParam }>()
-  const router = useRouter()
-  const viewQueryParam = queryParams?.get('view')
-  const upgradePlanDialog = useUpgradePlanDialog()
-  const { isPaidPlan } = useCurrentUser()
-
   const [archiveDocument] = useMutation(DocumentsList_ArchivedDocumentDocument, {
     refetchQueries: [DocumentsList_AllDocumentsDocument]
   })
@@ -48,10 +34,10 @@ export const DocumentsList = () => {
           {allDocuments.map((document, index) => (
             <ListDocumentRow
             archiveDocument={() => handleArchiveDocument(document.id)}
-            isLast={index === allDocuments.length - 1}
             documentId={document.id}
             documentName={document.name}
             documentUrl={document.url || ''}
+            isLast={index === allDocuments.length - 1}
             key={document.id}
             />
           ))}

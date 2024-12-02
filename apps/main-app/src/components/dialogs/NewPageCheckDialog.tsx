@@ -1,8 +1,9 @@
 'use client'
 
+import { useMutation } from '@apollo/client'
+
 import { useRouter } from 'next/navigation'
 
-import { useMutation } from '@apollo/client'
 import { Browser } from '@phosphor-icons/react'
 import { Button } from '@rag/ui/Button'
 import { Dialog, DialogClose, DialogContent, DialogTrigger } from '@rag/ui/Dialog'
@@ -15,8 +16,8 @@ import { useToast } from '@rag/ui/useToast'
 
 import {
   NewPageCheckDialog_CreatePageCheckDocument,
-  PageChecksList_AllPageChecksDocument,
   PageCheckIntervalEnum,
+  PageChecksList_AllPageChecksDocument,
   PageCheckTypeEnum,
 } from '@gql/graphql'
 

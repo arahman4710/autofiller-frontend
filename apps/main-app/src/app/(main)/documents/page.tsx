@@ -1,5 +1,3 @@
-import { PageHeader } from '@/components/PageHeader'
-import { Files } from '@phosphor-icons/react'
 import { MainShell } from '@rag/ui/MainShell'
 import { Metadata } from 'next'
 import DocumentsHeader from './components/DocumentsHeader'

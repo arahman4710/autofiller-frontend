@@ -2,9 +2,9 @@
 
 import { useState } from 'react'
 
+import { PlusCircle } from '@phosphor-icons/react'
 import { Button } from '@rag/ui/Button'
 import { Toolbar } from '@rag/ui/Toolbar'
-import { PlusCircle } from '@phosphor-icons/react'
 
 import { NewPageCheckDialog } from '@/components/dialogs/NewPageCheckDialog'
 

@@ -1,7 +1,8 @@
 "use client"
 
-import { useCurrentUser } from '@/hooks/useCurrentUser'
 import { useRouter } from 'next/navigation'
+
+import { useCurrentUser } from '@/hooks/useCurrentUser'
 
 export const AddBusinessNameRedirect = () => {
   const { user } = useCurrentUser()

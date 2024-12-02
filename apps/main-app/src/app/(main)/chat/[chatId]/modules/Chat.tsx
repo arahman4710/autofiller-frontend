@@ -10,17 +10,17 @@ import { cn } from '@rag/ui/utils/cn'
 import Markdown from 'react-markdown'
 
 import {
-  Chat_GetChatDocument,
   Chat_AddMessageDocument,
-  ChatsStatusEnum,
+  Chat_GetChatDocument,
   ChatSubscriptionDocument,
-  ChatSubscriptionSubscription
+  ChatSubscriptionSubscription,
+  ChatsStatusEnum,
 } from '@gql/graphql'
 
+import { ReadCvLogo } from '@phosphor-icons/react'
 import { IntervieweeIcon } from '@/components/IntervieweeIcon'
 import { InterviewerIcon } from '@/components/InterviewerIcon'
 import { useCurrentUser } from '@/hooks/useCurrentUser'
-import { ReadCvLogo } from '@phosphor-icons/react'
 
 interface IChatProps {
     chatId: string
@@ -112,7 +112,7 @@ export const Chat = ({ chatId }: IChatProps) => {
   const messages = data?.chats?.[0]?.messages || []
   let allMessages = messages
   if (messages.length > 0 && messages[messages.length - 1].fromUser == true && newMessage.length > 0) {
-    allMessages = allMessages.concat([{fromUser: false, message: newMessage, chatMessageSources: []}])
+    allMessages = allMessages.concat([{chatMessageSources: [], fromUser: false, message: newMessage}])
   }
   const status = data?.chats?.[0]?.status || ChatsStatusEnum.Started
 

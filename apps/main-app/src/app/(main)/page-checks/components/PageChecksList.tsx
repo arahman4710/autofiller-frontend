@@ -1,6 +1,7 @@
 'use client'
 
 import { useQuery } from '@apollo/experimental-nextjs-app-support/ssr'
+import { useMutation } from '@apollo/client'
 import { useRouter } from 'next/navigation'
 
 import {
@@ -13,10 +14,9 @@ import { useCurrentUser } from '@/hooks/useCurrentUser'
 import { useQueryParams } from '@/hooks/useQueryParams'
 import { TViewQueryParam } from '@/types/navigation'
 
-import { ListPageChecksRow } from './ListPageChecksRow'
 import { ListContent } from './ListContent'
 import { ListHeader } from './ListHeader'
-import { useMutation } from '@apollo/client'
+import { ListPageChecksRow } from './ListPageChecksRow'
 
 export const PageChecksList = () => {
   const { queryParams } = useQueryParams<{ view?: TViewQueryParam }>()

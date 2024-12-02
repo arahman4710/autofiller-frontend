@@ -1,6 +1,7 @@
 'use client'
 
 import { useParams, usePathname } from 'next/navigation'
+
 import { DocumentsToolbar } from './toolbars/DocumentsToolbar'
 import { PageChecksToolbar } from './toolbars/PageChecksToolbar'
 

@@ -1,5 +1,6 @@
 import { MainShell } from '@rag/ui/MainShell'
 import { Metadata } from 'next'
+
 import { StartChat } from './components/StartChat'
 
 export const metadata: Metadata = {

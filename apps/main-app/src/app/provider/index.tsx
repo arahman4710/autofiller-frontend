@@ -1,5 +1,6 @@
 'use client'
 
+import { GoogleOAuthProvider } from '@react-oauth/google';
 import { TooltipProvider } from '@rag/ui/Tooltip'
 import { ErrorBoundary, Provider } from '@rollbar/react'
 import { Session } from 'next-auth'
@@ -9,7 +10,6 @@ import { AuthProvider } from '@/app/provider/Auth'
 import { GlobalDialogsProvider } from '@/app/provider/GlobalDialogsProvider'
 import { PostHogProvider } from '@/app/provider/Posthog'
 import { rollbarConfig } from '@/lib/rollbar'
-import { GoogleOAuthProvider } from '@react-oauth/google';
 
 
 // MSW is not properly supported for TurboPack (or NextJS v14+ in general)

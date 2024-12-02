@@ -3,14 +3,13 @@
 import { useEffect, useState } from 'react'
 
 import { useLazyQuery, useMutation } from '@apollo/client'
-import { useQuery } from '@apollo/experimental-nextjs-app-support/ssr'
+import { PlusCircle } from '@phosphor-icons/react'
 import { Button } from '@rag/ui/Button'
 import { Dialog, DialogClose, DialogContent, DialogFooter } from '@rag/ui/Dialog'
 import { Dropzone } from '@rag/ui/Dropzone'
 import { useToast } from '@rag/ui/useToast'
-import { PlusCircle } from '@phosphor-icons/react'
 
-import { UploadDocumentDocument, DocumentsList_AllDocumentsDocument } from '@gql/graphql'
+import { DocumentsList_AllDocumentsDocument, UploadDocumentDocument, } from '@gql/graphql'
 
 import { useCurrentUser } from '@/hooks/useCurrentUser'
 import { uploadFile } from '@/utils/uploadFile'
@@ -66,8 +65,8 @@ export const UploadDocumentDialog = ({ open, setOpen }: IUploadDocumentDialogPro
       if (fileSignedId) {
         await uploadDocument({
             variables: {
-            uploadSignedId: fileSignedId,
             name: fileName,
+            uploadSignedId: fileSignedId,
             }
         })
       } 
@@ -92,10 +91,10 @@ export const UploadDocumentDialog = ({ open, setOpen }: IUploadDocumentDialogPro
         onDropAccepted={handleUploadResume}
       />
       <Button
-        onClick={handleSubmit}
         className="mt-4"
         fullWidth={true}
         loading={loading}
+        onClick={handleSubmit}
         size="lg"
         type="submit"
         variant="cta"

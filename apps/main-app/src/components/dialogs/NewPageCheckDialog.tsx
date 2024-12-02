@@ -1,30 +1,28 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRouter } from 'next/navigation'
 
 import { useMutation } from '@apollo/client'
-import { useQuery } from '@apollo/experimental-nextjs-app-support/ssr'
+import { Browser } from '@phosphor-icons/react'
 import { Button } from '@rag/ui/Button'
 import { Dialog, DialogClose, DialogContent, DialogTrigger } from '@rag/ui/Dialog'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@rag/ui/Form'
 import { Input } from '@rag/ui/Input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@rag/ui/Select'
+import { Switch } from '@rag/ui/Switch'
 import { Tiptap } from '@rag/ui/Tiptap'
 import { useToast } from '@rag/ui/useToast'
-import { Browser } from '@phosphor-icons/react'
-import { useRouter } from 'next/navigation'
 
 import {
-  PageChecksList_AllPageChecksDocument,
-  PageCheckTypeEnum,
   NewPageCheckDialog_CreatePageCheckDocument,
+  PageChecksList_AllPageChecksDocument,
   PageCheckIntervalEnum,
+  PageCheckTypeEnum,
 } from '@gql/graphql'
 
 import { usePageCheckForm } from '@/forms/hooks/usePageCheckForm'
-import { useUpgradePlanDialog } from '@/hooks/contexts/useUpgradePlanDialog'
+// import { useUpgradePlanDialog } from '@/hooks/contexts/useUpgradePlanDialog'
 import { useCurrentUser } from '@/hooks/useCurrentUser'
-import { Switch } from '@rag/ui/Switch'
 
 interface INewInterviewDialogProps {
   open: boolean
@@ -46,8 +44,8 @@ export const NewPageCheckDialog = ({ open, setOpen }: INewInterviewDialogProps) 
 
   const { form } = usePageCheckForm()
   const pageCheckTypeOptions: Record<PageCheckTypeEnum, string> = {
-    [PageCheckTypeEnum.JobTitles]: 'Company open jobs scanner',
     [PageCheckTypeEnum.Generic]: 'Generic',
+    [PageCheckTypeEnum.JobTitles]: 'Company open jobs scanner',
   }
   const checkIntervalOptions: Record<PageCheckIntervalEnum, string> = {
     [PageCheckIntervalEnum.Daily]: 'Daily',

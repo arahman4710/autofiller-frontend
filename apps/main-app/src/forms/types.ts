@@ -5,9 +5,9 @@ import { EmailAuthSignInFormSchema } from '@/forms/hooks/useEmailAuthSignInForm'
 import { EmailAuthSignUpFormSchema } from '@/forms/hooks/useEmailAuthSignUpForm'
 import { EmailVerifyFormSchema } from '@/forms/hooks/useEmailVerifyForm'
 import { ForgotPasswordFormSchema } from '@/forms/hooks/useForgotPasswordForm'
+import { PageCheckFormSchema } from '@/forms/hooks/usePageCheckForm'
 import { ResetPasswordFormSchema } from '@/forms/hooks/useResetPasswordForm'
 import { UserFormSchema } from '@/forms/hooks/useUserForm'
-import { PageCheckFormSchema } from '@/forms/hooks/usePageCheckForm'
 
 export type TAddBusinessNameForm = z.infer<typeof AddBusinessNameFormSchema>
 export type TUserForm = z.infer<typeof UserFormSchema>

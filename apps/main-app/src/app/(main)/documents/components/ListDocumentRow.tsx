@@ -1,8 +1,9 @@
 'use client'
 
+import { useState } from 'react'
 
+import { ArchiveBox, DotsThree, FileText } from '@phosphor-icons/react'
 import { IconText } from '@rag/ui/IconText'
-import { cn } from '@rag/ui/utils/cn'
 import {
   Popover,
   PopoverContent,
@@ -11,25 +12,24 @@ import {
   PopoverOverlay,
   PopoverTrigger,
 } from '@rag/ui/Popover'
-import { ArchiveBox, DotsThree, FileText } from '@phosphor-icons/react'
+import { cn } from '@rag/ui/utils/cn'
 
 import { IListRowProps, ListRow } from './ListRow'
-import { useState } from 'react'
 
 interface IListDocumentRowProps {
   archiveDocument: () => void
-  isLast?: boolean
   documentId: string
   documentName: string
   documentUrl: string
+  isLast?: boolean
 }
 
 export const ListDocumentRow = ({
   archiveDocument,
-  isLast,
   documentId,
   documentName,
   documentUrl,
+  isLast,
 }: IListDocumentRowProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 

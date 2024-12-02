@@ -1,5 +1,6 @@
 'use client'
 
+import { useMutation } from '@apollo/client'
 import { useQuery } from '@apollo/experimental-nextjs-app-support/ssr'
 import { useRouter } from 'next/navigation'
 
@@ -13,10 +14,9 @@ import { useCurrentUser } from '@/hooks/useCurrentUser'
 import { useQueryParams } from '@/hooks/useQueryParams'
 import { TViewQueryParam } from '@/types/navigation'
 
-import { ListDocumentRow } from './ListDocumentRow'
 import { ListContent } from './ListContent'
+import { ListDocumentRow } from './ListDocumentRow'
 import { ListHeader } from './ListHeader'
-import { useMutation } from '@apollo/client'
 
 const MAX_RESUMES = 3
 
@@ -49,10 +49,10 @@ export const DocumentsList = () => {
             <ListDocumentRow
             archiveDocument={() => handleArchiveDocument(document.id)}
             isLast={index === allDocuments.length - 1}
-            key={document.id}
             documentId={document.id}
             documentName={document.name}
             documentUrl={document.url || ''}
+            key={document.id}
             />
           ))}
         </div>

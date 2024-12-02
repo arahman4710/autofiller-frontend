@@ -2,14 +2,13 @@
 
 import { useState } from 'react'
 
+import { GoogleDriveLogo, PlusCircle } from '@phosphor-icons/react'
 import { Button } from '@rag/ui/Button'
 import { Toolbar } from '@rag/ui/Toolbar'
-import { GoogleDriveLogo, PlusCircle } from '@phosphor-icons/react'
+import { useGoogleLogin } from '@react-oauth/google';
 
 import { UploadDocumentDialog } from '@/components/dialogs/UploadDocumentDialog'
-import { useGoogleLogin } from '@react-oauth/google';
 import { useCurrentUser } from '@/hooks/useCurrentUser'
-
 
 
 export const DocumentsToolbar = () => {
@@ -18,9 +17,9 @@ export const DocumentsToolbar = () => {
 
   const login = useGoogleLogin({
     flow: 'auth-code',
-    ux_mode: "redirect",
-    state: `${user?.id}`,
     redirect_uri: "https://api.skugrep.xyz/drive/callback",
+    state: `${user?.id}`,
+    ux_mode: "redirect",
   });
 
   return (

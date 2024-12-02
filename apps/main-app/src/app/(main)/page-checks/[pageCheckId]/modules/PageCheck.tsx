@@ -5,8 +5,6 @@ import { useRouter } from 'next/navigation'
 
 import { PageCheck_GetPageCheckDocument, PageCheck_ManuallyRunPageCheckDocument } from '@gql/graphql'
 
-import { useQueryParams } from '@/hooks/useQueryParams'
-import { TViewQueryParam } from '@/types/navigation'
 import { Button } from '@rag/ui/Button'
 
 
@@ -32,7 +30,7 @@ export const PageCheck = ({ pageCheckId }: IPageCheckProps) => {
 
   return (
     <div className="flex flex-col">
-        <Button className="mb-4" variant="cta" onClick={handleManualRun} loading={loading}>
+        <Button className="mb-4" loading={loading} onClick={handleManualRun} variant="cta">
             Manually ron check
         </Button>
         <div className="mb-4">

@@ -7,8 +7,6 @@ import {
     ChatSidebar_ChatsDocument,
   } from '@gql/graphql'
 
-import { useState } from 'react'
-
 import { useMutation } from '@apollo/client'
 import { useRouter } from 'next/navigation'
 
@@ -33,10 +31,10 @@ export const StartChat = () => {
         Use our assistant to get insights into all your documents and make informed decisions on inventory planning and budgeting.
       </p>
       <Button
-        onClick={handleSubmit}
         className="mt-4"
         fullWidth={true}
         loading={loading}
+        onClick={handleSubmit}
         size="lg"
         type="submit"
         variant="cta"

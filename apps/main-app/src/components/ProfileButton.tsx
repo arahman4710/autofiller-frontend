@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 
+import { Barcode, Gear, Gift, Question, SignOut, User } from '@phosphor-icons/react'
 import { Avatar, AvatarFallback, AvatarImage } from '@rag/ui/Avatar'
 import { IconText } from '@rag/ui/IconText'
 import {
@@ -12,7 +13,6 @@ import {
   PopoverMenuSeparator,
   PopoverTrigger,
 } from '@rag/ui/Popover'
-import { Barcode, Gear, Gift, Question, SignOut, User } from '@phosphor-icons/react'
 import Link from 'next/link'
 
 import { AccountSettingsDialog } from '@/components/dialogs/AccountSettingsDialog'

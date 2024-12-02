@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { createContext } from 'react'
 
+import { ArrowCircleUp, CheckCircle } from '@phosphor-icons/react'
 import { Alert } from '@rag/ui/Alert'
 import { Badge } from '@rag/ui/Badge'
 import { Button } from '@rag/ui/Button'
@@ -16,7 +17,6 @@ import {
   SwitchTabsTrigger,
 } from '@rag/ui/SwitchTabs'
 import { cn } from '@rag/ui/utils/cn'
-import { ArrowCircleUp, CheckCircle } from '@phosphor-icons/react'
 import { motion } from 'framer-motion'
 
 import { PricingTable } from '@/components/PricingTable'

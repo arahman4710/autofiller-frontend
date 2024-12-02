@@ -2,15 +2,10 @@
 
 import { cloneElement, useEffect, useMemo, useState } from 'react'
 
-import { useQuery, useSuspenseQuery } from '@apollo/client'
+import { Browser } from '@phosphor-icons/react'
 import { Badge } from '@rag/ui/Badge'
 import { IconText } from '@rag/ui/IconText'
 import { cn } from '@rag/ui/utils/cn'
-import {
-  ReadCvLogo,
-  Chat,
-  Browser,
-} from '@phosphor-icons/react'
 import Link, { LinkProps } from 'next/link'
 import { usePathname } from 'next/navigation'
 

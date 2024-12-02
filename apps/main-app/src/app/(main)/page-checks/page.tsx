@@ -1,5 +1,6 @@
 import { MainShell } from '@rag/ui/MainShell'
 import { Metadata } from 'next'
+
 import PageChecksHeader from './components/PageChecksHeader'
 import { PageChecksList } from './components/PageChecksList'
 

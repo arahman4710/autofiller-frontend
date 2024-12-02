@@ -45,14 +45,17 @@ export const Hero = () => {
     <motion.section>
       <div className="hero-slide-up container mt-[32px] flex flex-col pb-[64px] md:mt-[74px]">
         <h1 className="hidden text-[64px] font-medium leading-tight md:block">
-          Access your ecommerce data faster
+          Save time by letting us monitor your pages
         </h1>
         <h1 className="text-[30px] font-medium leading-tight md:hidden">
-          Access your ecommerce data faster
+          Save time by letting us monitor your pages
         </h1>
 
         <p className="mt-4 max-w-[500px] text-[18px] leading-relaxed text-white/70 md:mt-6">
-          <span className="text-neutral-100">An AI based operations agent for your ecommerce data. An all-in-one tool for job seekers</span> 
+          <span className="text-neutral-100">
+            {' '}
+            An AI page monitor that tracks website changes so you don&apos;t have to{' '}
+          </span>
         </p>
 
         <GetStartedButton

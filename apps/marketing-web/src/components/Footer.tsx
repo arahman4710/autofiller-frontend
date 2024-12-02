@@ -110,14 +110,14 @@ export const Footer = () => {
               className="hidden cursor-pointer items-center gap-1 md:flex"
               href="https://status.skugrep.xyz"
               target="_blank"
-              title="SKUGrep Status Page"
+              title="Page Tracker Status Page"
             >
               <DotFilledIcon
                 className={cn('h-4 w-4', hasDegredations ? 'text-amber-400' : 'text-green-400')}
               />
               {hasDegredations ? 'Systems Degraded' : 'Systems Operational'}
             </a>
-            <span>© 2024 SKUGrep</span>
+            <span>© 2024 PageTracker</span>
           </div>
         </div>
       </div>

@@ -46,6 +46,7 @@ export default withAuth(
 export const config = {
   matcher: [
     '/chat/:path*',
+    '/page-checks/:path*',
     '/documents/:path*',
     '/dashboard',
     '/auth/:path*',

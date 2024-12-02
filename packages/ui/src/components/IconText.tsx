@@ -12,7 +12,7 @@ interface IIconTextProps extends React.HTMLAttributes<HTMLDivElement> {
   rightIcon?: React.ReactNode
 }
 
-const iconTextVariants = cva('flex items-center whitespace-nowrap', {
+const iconTextVariants = cva('flex items-center', {
   defaultVariants: {
     gap: 'md',
   },

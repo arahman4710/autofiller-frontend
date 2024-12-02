@@ -9,6 +9,7 @@ import { cn } from '@rag/ui/utils/cn'
 import {
   ReadCvLogo,
   Chat,
+  Browser,
 } from '@phosphor-icons/react'
 import Link, { LinkProps } from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -48,17 +49,23 @@ export const Navigation = () => {
       return []
     }
     return [
+        // {
+        //   enabled: true,
+        //   href: '/chat',
+        //   icon: <Chat />,
+        //   name: 'Chat',
+        // },
+        // {
+        //   enabled: true,
+        //   href: '/documents',
+        //   icon: <ReadCvLogo />,
+        //   name: 'Documents',
+        // },
         {
           enabled: true,
-          href: '/chat',
-          icon: <Chat />,
-          name: 'Chat',
-        },
-        {
-          enabled: true,
-          href: '/documents',
-          icon: <ReadCvLogo />,
-          name: 'Documents',
+          href: '/page-checks',
+          icon: <Browser />,
+          name: 'Page Checks',
         },
       ]
   }

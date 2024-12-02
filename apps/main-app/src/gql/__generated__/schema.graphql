@@ -59,6 +59,7 @@ scalar ISO8601DateTime
 
 type Mutation {
   archiveDocument(documentId: ID!): Document!
+  archivePageCheck(pageCheckId: ID!): PageCheck!
   authPasswordResetRequest(email: String!): String!
   authProviderAuthenticate(data: String!, firstName: String, lastName: String, provider: AuthProviderTypeEnum!, referredByUserUniqueId: ID, resumeUniqueId: ID): AuthResponse!
   authResetPassword(newPassword: String!, resetPasswordToken: String!): String!
@@ -66,16 +67,51 @@ type Mutation {
   authSignUp(email: String!, firstName: String, lastName: String, referredByUserUniqueId: ID, resumeUniqueId: ID): AuthResponse!
   chatAddMessage(chatId: String!, message: String!): Chat!
   chatStart: Chat!
+  createPageCheck(checkInterval: PageCheckIntervalEnum!, multiplePages: Boolean, pageCheckType: PageCheckTypeEnum!, prompt: String, resultType: PageCheckResultTypeEnum!, url: String!): PageCheck!
+  manuallyRunPageCheck(pageCheckId: ID!): PageCheck!
   updateBusiness(name: String!): Business!
   updateUser(attributes: UsersInputObject!): Users!
   uploadDocument(name: String!, uploadSignedId: ID!): Document!
   userEmailVerify(emailVerificationCode: String!, firstName: String!, lastName: String!, password: String!): AuthResponse!
+  userExchangeGoogleOauthCode(code: String!): AuthResponse!
+}
+
+type PageCheck {
+  checkInterval: PageCheckIntervalEnum!
+  id: ID!
+  pageCheckResults: [PageCheckResultType!]!
+  pageUrl: String!
+  prompt: String
+  resultType: PageCheckResultTypeEnum!
+}
+
+enum PageCheckIntervalEnum {
+  DAILY
+  WEEKLY
+}
+
+type PageCheckResultType {
+  createdAt: ISO8601DateTime!
+  id: ID!
+  result: String!
+  sameResultAsLastRun: Boolean!
+}
+
+enum PageCheckResultTypeEnum {
+  MULTIPLE
+  SINGLE
+}
+
+enum PageCheckTypeEnum {
+  GENERIC
+  JOB_TITLES
 }
 
 type Query {
   chats(chatIds: [ID!]): [Chat!]!
   documents(documentIds: [ID!]): [Document!]!
   emailVerifyAllowed(emailVerificationCode: String!): Users
+  pageChecks(pageCheckIds: [ID!]): [PageCheck!]!
   resetPasswordAllowed(resetPasswordToken: String!): Boolean!
   user: Users!
 }
@@ -132,8 +168,4 @@ type Users {
 input UsersInputObject {
   firstName: String
   lastName: String
-  linkedinUrl: String
-  location: String
-  phoneNumber: String
-  website: String
 }

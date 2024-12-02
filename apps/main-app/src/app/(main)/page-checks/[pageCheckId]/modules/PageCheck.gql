@@ -1,0 +1,31 @@
+query PageCheck_getPageCheck($pageCheckIds: [ID!]) {
+  pageChecks(pageCheckIds: $pageCheckIds) {
+    id
+    pageUrl
+    checkInterval
+    resultType
+    prompt
+    pageCheckResults {
+      id
+      createdAt
+      result
+      sameResultAsLastRun
+    }
+  }
+}
+
+mutation PageCheck_manuallyRunPageCheck($id: ID!) {
+  manuallyRunPageCheck(pageCheckId: $id) {
+    id
+    pageUrl
+    checkInterval
+    resultType
+    prompt
+    pageCheckResults {
+      id
+      createdAt
+      result
+      sameResultAsLastRun
+    }
+  }
+}

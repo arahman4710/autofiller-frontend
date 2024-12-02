@@ -1,0 +1,14 @@
+query PageChecksList_allPageChecks {
+  pageChecks {
+    id
+    pageUrl
+    checkInterval
+    resultType
+  }
+}
+
+mutation PageChecksList_archivedPageCheck($id: ID!) {
+  archivePageCheck(pageCheckId: $id) {
+    id
+  }
+}

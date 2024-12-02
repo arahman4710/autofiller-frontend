@@ -82,6 +82,7 @@ export type Document = {
 export type Mutation = {
   __typename?: 'Mutation';
   archiveDocument: Document;
+  archivePageCheck: PageCheck;
   authPasswordResetRequest: Scalars['String']['output'];
   authProviderAuthenticate: AuthResponse;
   authResetPassword: Scalars['String']['output'];
@@ -89,15 +90,23 @@ export type Mutation = {
   authSignUp: AuthResponse;
   chatAddMessage: Chat;
   chatStart: Chat;
+  createPageCheck: PageCheck;
+  manuallyRunPageCheck: PageCheck;
   updateBusiness: Business;
   updateUser: Users;
   uploadDocument: Document;
   userEmailVerify: AuthResponse;
+  userExchangeGoogleOauthCode: AuthResponse;
 };
 
 
 export type MutationArchiveDocumentArgs = {
   documentId: Scalars['ID']['input'];
+};
+
+
+export type MutationArchivePageCheckArgs = {
+  pageCheckId: Scalars['ID']['input'];
 };
 
 
@@ -143,6 +152,21 @@ export type MutationChatAddMessageArgs = {
 };
 
 
+export type MutationCreatePageCheckArgs = {
+  checkInterval: PageCheckIntervalEnum;
+  multiplePages?: InputMaybe<Scalars['Boolean']['input']>;
+  pageCheckType: PageCheckTypeEnum;
+  prompt?: InputMaybe<Scalars['String']['input']>;
+  resultType: PageCheckResultTypeEnum;
+  url: Scalars['String']['input'];
+};
+
+
+export type MutationManuallyRunPageCheckArgs = {
+  pageCheckId: Scalars['ID']['input'];
+};
+
+
 export type MutationUpdateBusinessArgs = {
   name: Scalars['String']['input'];
 };
@@ -166,11 +190,50 @@ export type MutationUserEmailVerifyArgs = {
   password: Scalars['String']['input'];
 };
 
+
+export type MutationUserExchangeGoogleOauthCodeArgs = {
+  code: Scalars['String']['input'];
+};
+
+export type PageCheck = {
+  __typename?: 'PageCheck';
+  checkInterval: PageCheckIntervalEnum;
+  id: Scalars['ID']['output'];
+  pageCheckResults: Array<PageCheckResultType>;
+  pageUrl: Scalars['String']['output'];
+  prompt?: Maybe<Scalars['String']['output']>;
+  resultType: PageCheckResultTypeEnum;
+};
+
+export enum PageCheckIntervalEnum {
+  Daily = 'DAILY',
+  Weekly = 'WEEKLY'
+}
+
+export type PageCheckResultType = {
+  __typename?: 'PageCheckResultType';
+  createdAt: Scalars['ISO8601DateTime']['output'];
+  id: Scalars['ID']['output'];
+  result: Scalars['String']['output'];
+  sameResultAsLastRun: Scalars['Boolean']['output'];
+};
+
+export enum PageCheckResultTypeEnum {
+  Multiple = 'MULTIPLE',
+  Single = 'SINGLE'
+}
+
+export enum PageCheckTypeEnum {
+  Generic = 'GENERIC',
+  JobTitles = 'JOB_TITLES'
+}
+
 export type Query = {
   __typename?: 'Query';
   chats: Array<Chat>;
   documents: Array<Document>;
   emailVerifyAllowed?: Maybe<Users>;
+  pageChecks: Array<PageCheck>;
   resetPasswordAllowed: Scalars['Boolean']['output'];
   user: Users;
 };
@@ -188,6 +251,11 @@ export type QueryDocumentsArgs = {
 
 export type QueryEmailVerifyAllowedArgs = {
   emailVerificationCode: Scalars['String']['input'];
+};
+
+
+export type QueryPageChecksArgs = {
+  pageCheckIds?: InputMaybe<Array<Scalars['ID']['input']>>;
 };
 
 
@@ -249,10 +317,6 @@ export type Users = {
 export type UsersInputObject = {
   firstName?: InputMaybe<Scalars['String']['input']>;
   lastName?: InputMaybe<Scalars['String']['input']>;
-  linkedinUrl?: InputMaybe<Scalars['String']['input']>;
-  location?: InputMaybe<Scalars['String']['input']>;
-  phoneNumber?: InputMaybe<Scalars['String']['input']>;
-  website?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type AddBusinessNameMutationVariables = Exact<{
@@ -304,6 +368,32 @@ export type DocumentsList_ArchivedDocumentMutationVariables = Exact<{
 
 export type DocumentsList_ArchivedDocumentMutation = { __typename?: 'Mutation', archiveDocument: { __typename?: 'Document', id: string } };
 
+export type PageCheck_GetPageCheckQueryVariables = Exact<{
+  pageCheckIds?: InputMaybe<Array<Scalars['ID']['input']> | Scalars['ID']['input']>;
+}>;
+
+
+export type PageCheck_GetPageCheckQuery = { __typename?: 'Query', pageChecks: Array<{ __typename?: 'PageCheck', id: string, pageUrl: string, checkInterval: PageCheckIntervalEnum, resultType: PageCheckResultTypeEnum, prompt?: string | null, pageCheckResults: Array<{ __typename?: 'PageCheckResultType', id: string, createdAt: any, result: string, sameResultAsLastRun: boolean }> }> };
+
+export type PageCheck_ManuallyRunPageCheckMutationVariables = Exact<{
+  id: Scalars['ID']['input'];
+}>;
+
+
+export type PageCheck_ManuallyRunPageCheckMutation = { __typename?: 'Mutation', manuallyRunPageCheck: { __typename?: 'PageCheck', id: string, pageUrl: string, checkInterval: PageCheckIntervalEnum, resultType: PageCheckResultTypeEnum, prompt?: string | null, pageCheckResults: Array<{ __typename?: 'PageCheckResultType', id: string, createdAt: any, result: string, sameResultAsLastRun: boolean }> } };
+
+export type PageChecksList_AllPageChecksQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type PageChecksList_AllPageChecksQuery = { __typename?: 'Query', pageChecks: Array<{ __typename?: 'PageCheck', id: string, pageUrl: string, checkInterval: PageCheckIntervalEnum, resultType: PageCheckResultTypeEnum }> };
+
+export type PageChecksList_ArchivedPageCheckMutationVariables = Exact<{
+  id: Scalars['ID']['input'];
+}>;
+
+
+export type PageChecksList_ArchivedPageCheckMutation = { __typename?: 'Mutation', archivePageCheck: { __typename?: 'PageCheck', id: string } };
+
 export type ForgotPassword_AuthPasswordResetRequestMutationVariables = Exact<{
   email: Scalars['String']['input'];
 }>;
@@ -346,6 +436,18 @@ export type AccountSettingsDialog_UpdateUserMutationVariables = Exact<{
 
 
 export type AccountSettingsDialog_UpdateUserMutation = { __typename?: 'Mutation', updateUser: { __typename?: 'Users', id: string, firstName?: string | null, lastName?: string | null } };
+
+export type NewPageCheckDialog_CreatePageCheckMutationVariables = Exact<{
+  url: Scalars['String']['input'];
+  checkInterval: PageCheckIntervalEnum;
+  resultType: PageCheckResultTypeEnum;
+  pageCheckType: PageCheckTypeEnum;
+  prompt?: InputMaybe<Scalars['String']['input']>;
+  multiplePages: Scalars['Boolean']['input'];
+}>;
+
+
+export type NewPageCheckDialog_CreatePageCheckMutation = { __typename?: 'Mutation', createPageCheck: { __typename?: 'PageCheck', id: string } };
 
 export type UploadDocumentMutationVariables = Exact<{
   uploadSignedId: Scalars['ID']['input'];
@@ -420,15 +522,17 @@ export const AuthProviderTypeEnumSchema = z.nativeEnum(AuthProviderTypeEnum);
 
 export const ChatsStatusEnumSchema = z.nativeEnum(ChatsStatusEnum);
 
+export const PageCheckIntervalEnumSchema = z.nativeEnum(PageCheckIntervalEnum);
+
+export const PageCheckResultTypeEnumSchema = z.nativeEnum(PageCheckResultTypeEnum);
+
+export const PageCheckTypeEnumSchema = z.nativeEnum(PageCheckTypeEnum);
+
 export const SubscriptionPlanEnumSchema = z.nativeEnum(SubscriptionPlanEnum);
 
 export function UsersInputObjectSchema(): z.ZodObject<Properties<UsersInputObject>> {
   return z.object({
     firstName: z.string().nullish(),
-    lastName: z.string().nullish(),
-    linkedinUrl: z.string().nullish(),
-    location: z.string().nullish(),
-    phoneNumber: z.string().nullish(),
-    website: z.string().nullish()
+    lastName: z.string().nullish()
   })
 }

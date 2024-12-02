@@ -1,10 +1,8 @@
 'use client'
 
 import { useMutation, useQuery } from '@apollo/client'
-
-import { useRouter } from 'next/navigation'
-
 import { Button } from '@rag/ui/Button'
+import { useRouter } from 'next/navigation'
 
 import { PageCheck_GetPageCheckDocument, PageCheck_ManuallyRunPageCheckDocument } from '@gql/graphql'
 

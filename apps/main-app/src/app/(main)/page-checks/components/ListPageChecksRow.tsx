@@ -3,8 +3,6 @@
 import { useState } from 'react'
 
 import { ArchiveBox, Browser, DotsThree } from '@phosphor-icons/react'
-import Link from 'next/link'
-
 import { IconText } from '@rag/ui/IconText'
 import {
   Popover,
@@ -15,6 +13,7 @@ import {
   PopoverTrigger,
 } from '@rag/ui/Popover'
 import { cn } from '@rag/ui/utils/cn'
+import Link from 'next/link'
 
 import { PageCheckIntervalEnum } from '@/gql/__generated__/graphql'
 

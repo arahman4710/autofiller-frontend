@@ -2,8 +2,6 @@
 
 import { useMutation } from '@apollo/client'
 import { Browser } from '@phosphor-icons/react'
-import { useRouter } from 'next/navigation'
-
 import { Button } from '@rag/ui/Button'
 import { Dialog, DialogClose, DialogContent, DialogTrigger } from '@rag/ui/Dialog'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@rag/ui/Form'
@@ -12,6 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Switch } from '@rag/ui/Switch'
 import { Tiptap } from '@rag/ui/Tiptap'
 import { useToast } from '@rag/ui/useToast'
+import { useRouter } from 'next/navigation'
 
 import {
   NewPageCheckDialog_CreatePageCheckDocument,

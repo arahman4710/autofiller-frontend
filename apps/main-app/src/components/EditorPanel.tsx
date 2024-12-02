@@ -12,15 +12,13 @@ import {
   Sparkle,
   Trash,
 } from '@phosphor-icons/react'
-
-import { type VariantProps, cva } from 'class-variance-authority'
-
 import { Button } from '@rag/ui/Button'
 import { IconText } from '@rag/ui/IconText'
 import { DragHandle } from '@rag/ui/SortableItem'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@rag/ui/Tooltip'
 import { WarningTooltip } from '@rag/ui/WarningTooltip'
 import { cn } from '@rag/ui/utils/cn'
+import { type VariantProps, cva } from 'class-variance-authority'
 
 import { DestroyAlertDialog } from '@/components/dialogs/DestroyAlertDialog'
 

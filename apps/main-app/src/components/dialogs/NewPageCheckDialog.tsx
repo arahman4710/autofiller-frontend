@@ -1,10 +1,9 @@
 'use client'
 
 import { useMutation } from '@apollo/client'
-
+import { Browser } from '@phosphor-icons/react'
 import { useRouter } from 'next/navigation'
 
-import { Browser } from '@phosphor-icons/react'
 import { Button } from '@rag/ui/Button'
 import { Dialog, DialogClose, DialogContent, DialogTrigger } from '@rag/ui/Dialog'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@rag/ui/Form'
@@ -17,8 +16,8 @@ import { useToast } from '@rag/ui/useToast'
 import {
   NewPageCheckDialog_CreatePageCheckDocument,
   PageCheckIntervalEnum,
-  PageChecksList_AllPageChecksDocument,
   PageCheckTypeEnum,
+  PageChecksList_AllPageChecksDocument,
 } from '@gql/graphql'
 
 import { usePageCheckForm } from '@/forms/hooks/usePageCheckForm'

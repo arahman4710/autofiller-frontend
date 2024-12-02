@@ -6,9 +6,9 @@ import { useToast } from '@rag/ui/useToast'
 import { useRouter } from 'next/navigation'
 
 import { PageHeader } from '@/components/PageHeader'
-import { AddBusinessNameDocument, UseCurrentUser_UsersDocument } from '@/gql/__generated__/graphql'
 import { ADD_BUSINESS_NAME_FORM_ID, AddBusinessNameForm } from '@/forms/AddBusinessNameForm'
 import { useAddBusinessNameForm } from '@/forms/hooks/useAddBusinessNameForm'
+import { AddBusinessNameDocument, UseCurrentUser_UsersDocument } from '@/gql/__generated__/graphql'
 
 export const AddBusinessName = () => {
   const { errorToast } = useToast()

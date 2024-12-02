@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { type VariantProps, cva } from 'class-variance-authority'
 
 import {
   CaretDown,
@@ -13,6 +12,9 @@ import {
   Sparkle,
   Trash,
 } from '@phosphor-icons/react'
+
+import { type VariantProps, cva } from 'class-variance-authority'
+
 import { Button } from '@rag/ui/Button'
 import { IconText } from '@rag/ui/IconText'
 import { DragHandle } from '@rag/ui/SortableItem'

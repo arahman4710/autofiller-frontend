@@ -1,6 +1,6 @@
+import { MainShell } from '@rag/ui/MainShell'
 import { Metadata } from 'next'
 
-import { MainShell } from '@rag/ui/MainShell'
 import DocumentsHeader from './components/DocumentsHeader'
 import { DocumentsList } from './components/DocumentsList'
 

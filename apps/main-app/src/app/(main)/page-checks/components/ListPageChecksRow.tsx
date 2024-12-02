@@ -1,9 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
 
 import { ArchiveBox, Browser, DotsThree } from '@phosphor-icons/react'
+import Link from 'next/link'
+
 import { IconText } from '@rag/ui/IconText'
 import {
   Popover,
@@ -16,6 +17,7 @@ import {
 import { cn } from '@rag/ui/utils/cn'
 
 import { PageCheckIntervalEnum } from '@/gql/__generated__/graphql'
+
 import { IListRowProps, ListRow } from './ListRow'
 
 export const checkIntervalToString: Record<PageCheckIntervalEnum, string> = {

@@ -27,7 +27,7 @@ export default async function SignIn({ searchParams }: { searchParams?: Record<s
         <>
           <h1 className="mb-1 text-3xl font-semibold tracking-tight">Welcome back</h1>
           <p className="text-muted-foreground mb-8">
-            New to PageTracker?{' '}
+            New to Pagetracker?{' '}
             <Link className="underline" href={signupUrl}>
               Sign up
             </Link>

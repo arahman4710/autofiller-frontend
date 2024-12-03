@@ -59,18 +59,18 @@ export const Footer = () => {
   ]
 
   useEffect(() => {
-    const checkOperationaStatus = async () => {
-      try {
-        const response = await fetch('/api/checkly')
-        const data = await response.json()
+    // const checkOperationaStatus = async () => {
+    //   try {
+    //     const response = await fetch('/api/checkly')
+    //     const data = await response.json()
 
-        if (data.hasDegredations) {
-          setHasDegredations(true)
-        }
-      } catch (error) {}
-    }
+    //     if (data.hasDegredations) {
+    //       setHasDegredations(true)
+    //     }
+    //   } catch (error) {}
+    // }
 
-    checkOperationaStatus()
+    // checkOperationaStatus()
   }, [])
 
   return (
@@ -106,17 +106,14 @@ export const Footer = () => {
             ))}
           </div>
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-center md:justify-start">
-            <a
+            <p
               className="hidden cursor-pointer items-center gap-1 md:flex"
-              href="https://status.skugrep.xyz"
-              target="_blank"
-              title="Page Tracker Status Page"
             >
               <DotFilledIcon
                 className={cn('h-4 w-4', hasDegredations ? 'text-amber-400' : 'text-green-400')}
               />
               {hasDegredations ? 'Systems Degraded' : 'Systems Operational'}
-            </a>
+            </p>
             <span>© 2024 PageTracker</span>
           </div>
         </div>

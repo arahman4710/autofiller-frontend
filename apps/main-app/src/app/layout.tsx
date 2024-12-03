@@ -19,11 +19,11 @@ import './globals.css'
 import '@rag/ui/globals.css'
 
 export const metadata: Metadata = {
-  description: 'SKUGrep.',
+  description: 'Pagetracker.',
   icons: { icon: '/favicon.ico' },
   title: {
-    default: 'SKUGrep',
-    template: 'SKUGrep • %s',
+    default: 'Pagetracker',
+    template: 'Pagetracker • %s',
   },
 }
 

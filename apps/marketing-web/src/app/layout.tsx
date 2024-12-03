@@ -17,9 +17,9 @@ import '@rag/ui/globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  description: 'SKUGrep.',
+  description: 'Pagetracker.',
   icons: { icon: '/favicon.ico' },
-  title: 'SKUGrep',
+  title: 'Pagetracker',
 }
 
 export default function RootLayout({

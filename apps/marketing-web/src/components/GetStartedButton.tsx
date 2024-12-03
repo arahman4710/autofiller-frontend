@@ -20,7 +20,7 @@ export const GetStartedButton = ({
         'group flex w-fit cursor-pointer items-center gap-2 rounded-full bg-white/20 px-4 py-2 transition transition-all duration-300 ease-in-out ease-in-out hover:bg-white/30',
         className
       )}
-      href={href ?? 'https://app.skugrep.xyz/auth/signup'}
+      href={href ?? 'https://app.pagetracker.biz/auth/signup'}
       {...props}
     >
       {text}

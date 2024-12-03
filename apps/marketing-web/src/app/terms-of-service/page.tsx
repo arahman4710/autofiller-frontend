@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 import { SectionHeader } from '@/components/SectionHeader'
 
 export const metadata: Metadata = {
-  title: 'SKUGrep • Terms of Service',
+  title: 'Pagetracker • Terms of Service',
 }
 
 export default function TermsOfService() {
@@ -16,9 +16,9 @@ export default function TermsOfService() {
           <i>Last updated on June 13, 2024</i>
           <h2>1. Terms of Service</h2>
           <p>
-            Welcome to SKUGrep (&quot;we&quot;, &quot;our&quot;, &quot;us&quot;). By accessing or
+            Welcome to Pagetracker (&quot;we&quot;, &quot;our&quot;, &quot;us&quot;). By accessing or
             using our software available at{' '}
-            <a href="https://skugrep.xyz">https://skugrep.xyz</a>, you agree to comply with and
+            <a href="https://Pagetracker.biz">https://Pagetracker.biz</a>, you agree to comply with and
             be bound by these Terms of Service (&quot;Terms&quot;). If you do not agree with these
             Terms, please do not use our software.
           </p>
@@ -161,11 +161,11 @@ export default function TermsOfService() {
           <h2>11. Contact Us</h2>
           <p>
             If you have any questions about these Terms, please contact us at{' '}
-            <a href="mailto:support@skugrep.xyz">support@skugrep.xyz</a>.
+            <a href="mailto:support@Pagetracker.biz">support@Pagetracker.biz</a>.
           </p>
           <p>
             For more information on how we handle your data, please refer to our{' '}
-            <a href="https://skugrep.xyz/privacy-policy">Privacy Policy</a>.
+            <a href="https://Pagetracker.biz/privacy-policy">Privacy Policy</a>.
           </p>
         </section>
       </article>

@@ -31,7 +31,7 @@ export const PageCheck = ({ pageCheckId }: IPageCheckProps) => {
   return (
     <div className="flex flex-col">
         <Button className="mb-4" loading={loading} onClick={handleManualRun} variant="cta">
-            Manually ron check
+            Manually run check
         </Button>
         <div className="mb-4">
             ({pageCheck?.checkInterval}) {pageCheck?.pageUrl}

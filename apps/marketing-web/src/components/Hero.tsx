@@ -54,7 +54,7 @@ export const Hero = () => {
         <p className="mt-4 max-w-[500px] text-[18px] leading-relaxed text-white/70 md:mt-6">
           <span className="text-neutral-100">
             {' '}
-            An AI page monitor that tracks website changes so you don&apos;t have to{' '}
+            Our AI monitors web pages and alerts you when important website changes happen
           </span>
         </p>
 

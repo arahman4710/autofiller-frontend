@@ -10,6 +10,7 @@ declare module '@tanstack/react-table' {
     isShortDate?: boolean
     isPinned?: boolean
     disableTruncate?: boolean
+    width?: number
   }
 
   interface TableMeta<TData extends RowData, TValue> {

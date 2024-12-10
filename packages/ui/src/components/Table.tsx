@@ -100,7 +100,7 @@ const TableCell = forwardRef<HTMLTableCellElement, React.TdHTMLAttributes<HTMLTa
   ({ className, ...props }, ref) => (
     <td
       className={cn(
-        'border-border h-[35px] text-nowrap border-r px-4 align-middle group-[.minimal]:border-r-0 [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]',
+        'border-border h-[35px] text-wrap border-r px-4 align-middle group-[.minimal]:border-r-0 [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]',
         className
       )}
       ref={ref}

@@ -98,7 +98,7 @@ const config: Config = {
           foreground: colors.stone[400],
         },
         primary: {
-          DEFAULT: colors.white,
+          DEFAULT: colors.stone[600],
           foreground: colors.stone[300],
         },
         secondary: {

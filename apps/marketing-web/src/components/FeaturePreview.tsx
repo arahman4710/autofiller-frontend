@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 
-import { CopyIcon, FaceIcon, Pencil2Icon } from '@radix-ui/react-icons'
+import { DownloadIcon, FaceIcon, MagicWandIcon, PaperPlaneIcon } from '@radix-ui/react-icons'
 import { Carousel, CarouselContent, CarouselItem, type TCarouselApi } from '@rag/ui/Carousel'
 import { cn } from '@rag/ui/utils/cn'
 
@@ -13,30 +13,26 @@ export const FeaturePreview = () => {
   const features: {
     description: string
     icon: React.ReactNode
-    poster: string
+    image: string
     title: string
-    video: string
   }[] = [
     {
-      description: 'Effortlessly build your resume and optimize where you need it.',
-      icon: <Pencil2Icon />,
-      poster: '/video-posters/resume-builder.png',
-      title: 'Resume Builder',
-      video: '/videos/resume-builder.mp4',
+      description: 'Use AI to extract any website data.',
+      icon: <MagicWandIcon />,
+      image: '/images/page-check.png',
+      title: 'Monitor web pages using AI',
     },
     {
-      description: 'Track all your job applications in one place.',
-      icon: <CopyIcon />,
-      poster: '/video-posters/job-applications.png',
-      title: 'Track Job Applications',
-      video: '/videos/job-applications.mp4',
+      description: 'Extract data on a schedule and get notified on changes.',
+      icon: <PaperPlaneIcon />,
+      image: '/images/page-check.png',
+      title: 'Notifications on relevant changes',
     },
     {
-      description: 'Practice technical and behavior interviews for any role.',
-      icon: <FaceIcon />,
-      poster: '/video-posters/mock-interviews.png',
-      title: 'Practice Interviews',
-      video: '/videos/mock-interview.mp4',
+      description: 'Export anywhere.',
+      icon: <DownloadIcon />,
+      image: '/images/page-check.png',
+      title: 'Export your data to over 6000 destinations',
     },
   ]
 
@@ -71,18 +67,11 @@ export const FeaturePreview = () => {
         ))}
       </div>
       <div className={cn('z-2 basis-3/3 flex aspect-video justify-end rounded-lg md:basis-2/3')}>
-        <video
-          autoPlay
-          className="aspect-video w-full rounded-lg object-fill md:max-w-[800px]"
-          key={features[selectedFeature].video}
-          loop
-          muted
-          playsInline
-          poster={features[selectedFeature].poster}
-          preload="auto"
-        >
-          <source src={features[selectedFeature].video} type="video/mp4" />
-        </video>
+        <img 
+         src={features[selectedFeature].image}
+         className="aspect-video w-full rounded-lg object-fill md:max-w-[800px]"
+         alt="Monitor website pages using AI"
+        />
       </div>
       <Carousel className="w-full md:hidden" opts={{ align: 'start', loop: true }} setApi={setApi}>
         <CarouselContent>

@@ -2,9 +2,14 @@
 
 import { useMutation, useQuery } from '@apollo/client'
 import { Button } from '@rag/ui/Button'
+import { DataTable } from '@rag/ui/DataTable'
+import { TagPill } from '@rag/ui/TagPill'
+import { cn } from '@rag/ui/utils/cn'
 import { useRouter } from 'next/navigation'
 
-import { PageCheck_GetPageCheckDocument, PageCheck_ManuallyRunPageCheckDocument } from '@gql/graphql'
+import { PageCheck_GetPageCheckDocument, PageCheck_ManuallyRunPageCheckDocument, PageCheckIntervalEnum } from '@gql/graphql'
+import { columns } from '../components/Columns'
+
 
 
 
@@ -16,12 +21,24 @@ export const PageCheck = ({ pageCheckId }: IPageCheckProps) => {
   const router = useRouter()
 
   const [manuallyRunPageCheck, { loading } ] = useMutation(PageCheck_ManuallyRunPageCheckDocument)
-  const { data } = useQuery(PageCheck_GetPageCheckDocument, {
+  const { data, refetch } = useQuery(PageCheck_GetPageCheckDocument, {
     variables: {
       pageCheckIds: [pageCheckId],
     },
   })
   const pageCheck = data?.pageChecks[0]
+  const intervalToColor = {
+    [PageCheckIntervalEnum.Daily]: "bg-emerald-600",
+    [PageCheckIntervalEnum.Weekly]: "bg-amber-500",
+  }
+
+  const pageCheckResultsData = (pageCheck?.pageCheckResults || []).map((pageCheckResult) => {
+    return {
+      createdAt: pageCheckResult.createdAt,
+      result: pageCheckResult.result,
+      sameResultAsLastRun: pageCheckResult.sameResultAsLastRun,
+    }
+  })
 
   const handleManualRun = () => {
     manuallyRunPageCheck({ variables: {id: pageCheckId } })
@@ -29,12 +46,18 @@ export const PageCheck = ({ pageCheckId }: IPageCheckProps) => {
 
 
   return (
-    <div className="flex flex-col">
-        <Button className="mb-4" loading={loading} onClick={handleManualRun} variant="cta">
-            Manually run check
-        </Button>
-        <div className="mb-4">
-            ({pageCheck?.checkInterval}) {pageCheck?.pageUrl}
+    <div className="flex flex-col pr-6">
+        <div className="flex flex-row justify-between w-full mb-4 h-[30px] items-center">
+            <div className="flex gap-2">
+                <TagPill 
+                    children={pageCheck?.checkInterval}
+                    className={cn('w-[75px] text-center', pageCheck?.checkInterval && intervalToColor[pageCheck?.checkInterval])}
+                />
+                <a className="text-link" rel="noopener noreferrer" target="_blank" href={pageCheck?.pageUrl}> {pageCheck?.pageUrl} </a>
+            </div>
+            <Button className="mb-4" loading={loading} onClick={handleManualRun} variant="cta">
+                Manually run check
+            </Button>
         </div>
         {
             pageCheck?.prompt && (
@@ -43,22 +66,13 @@ export const PageCheck = ({ pageCheckId }: IPageCheckProps) => {
                 </div> 
             )
         }
-        {pageCheck?.pageCheckResults?.map((pageCheckResult, index) => (
-          <div className="flex gap-2" key={index}>
-            <div>
-                {new Date(pageCheckResult.createdAt).toLocaleString()}
-            </div>
-            <div>
-                {pageCheckResult.result}
-            </div>
-            <div>
-                {/* {pageCheckResult} */}
-            </div>
-            <div>
-                {`${pageCheckResult.sameResultAsLastRun}`}
-            </div>
-          </div>
-        ))}
+        <DataTable
+            columns={columns(refetch)}
+            data={pageCheckResultsData}
+            isLoading={loading}
+            // onRowClick={(id: string) => {
+            // }}
+        />
     </div>
   )
 }

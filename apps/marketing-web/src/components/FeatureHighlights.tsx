@@ -18,7 +18,7 @@ import { getRandomDateString, move } from '@/utils'
 export const FeatureHighlights = () => {
   return (
     <div className="mx-auto my-10 flex flex-col gap-3">
-      <div className="flex flex-col gap-3 md:flex-row">
+      {/* <div className="flex flex-col gap-3 md:flex-row">
         <Box className="basis-1/3 bg-indigo-600 text-white">
           <CanyonScore />
           <div>
@@ -57,7 +57,7 @@ export const FeatureHighlights = () => {
             </BoxDescription>
           </div>
         </Box>
-      </div>
+      </div> */}
       <div className="flex">
         <Box className="w-full bg-slate-900">
           <EndingFeatures />
@@ -544,24 +544,40 @@ const OvalGradient = () => {
 const EndingFeatures = () => {
   const features = [
     {
+      comingSoon: false,
       description:
-        'Generate a cover letter tailored to the job description and your personal background.',
-      title: 'Cover Letter Generator',
+        'Track job listings across multiple platforms to find new opportunities, perform market research, or manage open roles for your recruiting agency.',
+      title: 'Job posting monitoring',
     },
     {
-      description: 'Optimize your resume to pass through Applicant Tracking Systems (ATS).',
-      title: 'ATS Optimizer',
+      description: 'Track competitor pricing, discounts, and promotions to stay ahead in the market and make data-driven pricing decisions.',
+      title: 'Price monitoring',
     },
     {
       description:
-        'Prepare for interviews with tailored practice questions that contexualizes both the job description and your background.',
-      title: 'Mock Interviews',
+        'Stay on top of key competitor updates to make sure you\'re never behind.',
+      title: 'Competitor monitoring',
     },
     {
-      comingSoon: true,
-      description: 'Extensive analytics and suggestions to help you make data-driven decisions.',
-      title: 'Analytics',
+      description:
+        'Collect stock prices, financial reports, and other relevant financial data to support investment decisions or track market trends.',
+      title: 'Latest stock and financial data',
     },
+    {
+      description:
+        'Stay on top of your SEO rankings to keep growth up and to the right.',
+      title: 'SEO monitoring',
+    },
+    {
+      description:
+        'Monitor out-of-stock products and get alerts when those products are back in stock',
+      title: 'Product availability',
+    },
+    // {
+    //   comingSoon: true,
+    //   description: 'Extensive analytics and suggestions to help you make data-driven decisions.',
+    //   title: 'Analytics',
+    // },
   ]
 
   return (
@@ -569,16 +585,15 @@ const EndingFeatures = () => {
       <OvalGradient />
       <div className="z-10 w-full p-6">
         <div className="flex w-full flex-col justify-between gap-10 md:flex-row">
-          <div className="flex flex-col gap-2 md:max-w-[500px]">
+          <div className="flex flex-col gap-2 md:max-w-[550px]">
             <div className="flex flex-col items-center gap-3 md:flex-row">
               <MagicWandIcon className="size-4" />
-              <h2 className="text-2xl font-semibold leading-snug">
-                The Power of Embedded Intelligence
+              <h2 className="text-xl font-semibold leading-snug">
+                Use Cases
               </h2>
             </div>
             <p className="text-[14px] leading-relaxed text-white/90">
-              Fight fire with fire. Canyon weaves the latest advancements in Large Language Models
-              and AI throughout our platform to maximize your chance of landing your dream role.
+              Never spend time refreshing the same page over and over again and let AI do the work.
             </p>
           </div>
 

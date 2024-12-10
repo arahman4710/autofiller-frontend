@@ -116,18 +116,19 @@ export function DataTable<TData, TValue>({
     className: cn(
       'select-none',
       getPinnedColumnStyles(cellInfo.column.columnDef.meta?.isPinned ?? false),
-      cellInfo.column.columnDef.meta?.disableTruncate ? '' : 'truncate'
+      cellInfo.column.columnDef.meta?.disableTruncate ? '' : 'truncate',
+      cellInfo.column.columnDef.meta?.width ? `w-[${cellInfo.column.columnDef.meta.width}px]` : 'w-[150px]'
     ),
-    style: {
-      width: cellInfo.column.columnDef.size || 'auto',
-    },
+    // style: {
+    //   width: cellInfo.column.columnDef.size || 'auto',
+    // },
   })
 
   const selectedRows = table.getSelectedRowModel().rows
 
   return (
     <div className="relative h-full">
-      <Table className="table-fixed" variant={variant}>
+      <Table variant={variant}>
         <TableHeader className={cn('', pinnedHeaderStyles)}>
           {table.getHeaderGroups().map((headerGroup) => (
             <TableRow enableHover={false} key={headerGroup.id}>

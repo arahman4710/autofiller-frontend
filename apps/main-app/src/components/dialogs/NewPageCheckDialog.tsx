@@ -67,7 +67,7 @@ export const NewPageCheckDialog = ({ open, setOpen }: INewInterviewDialogProps) 
           checkInterval,
           multiplePages,
           pageCheckType,
-          priceDiscrepancyThresholdAmount: isNaN(parseFloat(priceDiscrepancyThresholdAmount)) ? null : parseFloat(priceDiscrepancyThresholdAmount),
+          priceDiscrepancyThresholdAmount: !priceDiscrepancyThresholdAmount || isNaN(parseFloat(priceDiscrepancyThresholdAmount)) ? null : parseFloat(priceDiscrepancyThresholdAmount),
           prompt,
           resultType,
           url,

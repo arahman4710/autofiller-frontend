@@ -50,7 +50,7 @@ export const Footer = () => {
         //   label: 'Blog',
         // },
         {
-          href: 'mailto:support@skugrep.xyz',
+          href: 'mailto:support@pagetracker.biz',
           label: 'Contact Us',
         },
       ],

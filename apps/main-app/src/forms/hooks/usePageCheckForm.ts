@@ -12,7 +12,7 @@ export const PageCheckFormSchema = z.object({
   checkInterval: z.nativeEnum(PageCheckIntervalEnum),
   multiplePages: z.boolean(),
   pageCheckType: z.nativeEnum(PageCheckTypeEnum),
-  priceDiscrepancyThresholdAmount: z.string(),
+  priceDiscrepancyThresholdAmount: z.string().optional(),
   prompt: z.string(),
   resultType: z.nativeEnum(PageCheckResultTypeEnum),
   url: z.string().min(1, "Page check URL can't be empty"),

@@ -73,7 +73,6 @@ export const PageCheck = ({ pageCheckId }: IPageCheckProps) => {
         <DataTable
             columns={columns(refetch)}
             data={pageCheckResultsData}
-            isLoading={loading}
             // onRowClick={(id: string) => {
             // }}
         />

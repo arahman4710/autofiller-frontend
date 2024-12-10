@@ -1,7 +1,7 @@
 'use client'
 
 import { useMutation } from '@apollo/client'
-import { Browser } from '@phosphor-icons/react'
+import { Browser, Info } from '@phosphor-icons/react'
 import { Button } from '@rag/ui/Button'
 import { Dialog, DialogClose, DialogContent, DialogTrigger } from '@rag/ui/Dialog'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@rag/ui/Form'
@@ -9,6 +9,7 @@ import { Input } from '@rag/ui/Input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@rag/ui/Select'
 import { Switch } from '@rag/ui/Switch'
 import { Tiptap } from '@rag/ui/Tiptap'
+import { Tooltip, TooltipContent, TooltipTrigger } from '@rag/ui/Tooltip'
 import { useToast } from '@rag/ui/useToast'
 import { useRouter } from 'next/navigation'
 
@@ -43,8 +44,9 @@ export const NewPageCheckDialog = ({ open, setOpen }: INewInterviewDialogProps) 
 
   const { form } = usePageCheckForm()
   const pageCheckTypeOptions: Record<PageCheckTypeEnum, string> = {
-    [PageCheckTypeEnum.Generic]: 'Generic',
     [PageCheckTypeEnum.JobTitles]: 'Company open jobs scanner',
+    [PageCheckTypeEnum.Price]: 'Price tracker',
+    [PageCheckTypeEnum.Generic]: 'Generic',
   }
   const checkIntervalOptions: Record<PageCheckIntervalEnum, string> = {
     [PageCheckIntervalEnum.Daily]: 'Daily',
@@ -54,6 +56,7 @@ export const NewPageCheckDialog = ({ open, setOpen }: INewInterviewDialogProps) 
   const multiplePages = form.watch('multiplePages')
   const pageCheckType = form.watch('pageCheckType')
   const prompt = form.watch('prompt')
+  const priceDiscrepancyThresholdAmount = form.watch('priceDiscrepancyThresholdAmount')
   const checkInterval = form.watch('checkInterval')
   const resultType = form.watch('resultType')
 
@@ -64,6 +67,7 @@ export const NewPageCheckDialog = ({ open, setOpen }: INewInterviewDialogProps) 
           checkInterval,
           multiplePages,
           pageCheckType,
+          priceDiscrepancyThresholdAmount: isNaN(parseFloat(priceDiscrepancyThresholdAmount)) ? null : parseFloat(priceDiscrepancyThresholdAmount),
           prompt,
           resultType,
           url,
@@ -151,6 +155,7 @@ export const NewPageCheckDialog = ({ open, setOpen }: INewInterviewDialogProps) 
                     </FormItem>
                     )}
                 />
+                {pageCheckType != PageCheckTypeEnum.Price && (
                 <FormField
                     control={form.control}
                     name="multiplePages"
@@ -168,6 +173,7 @@ export const NewPageCheckDialog = ({ open, setOpen }: INewInterviewDialogProps) 
                     </FormItem>
                     )}
                 />
+                )}
               </div>
               {pageCheckType == PageCheckTypeEnum.Generic && (
                 <FormField
@@ -187,6 +193,38 @@ export const NewPageCheckDialog = ({ open, setOpen }: INewInterviewDialogProps) 
                     </FormItem>
                   )}
                 />
+              )}
+              {pageCheckType == PageCheckTypeEnum.Price && (
+              <FormField
+                control={form.control}
+                name="priceDiscrepancyThresholdAmount"
+                render={({ field }) => (
+                  <FormItem className="w-full">
+                    <FormLabel className="mb-4 flex flex-row items-center gap-1">
+                      Price discrepancy amount allowed
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Info className="text-md" />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>
+                            This is the max difference in price before its flagged as a significant change
+                          </p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </FormLabel>
+                    <FormControl>
+                      <Input
+                        {...field}
+                        min="0"
+                        step="0.01"
+                        type="number"
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
               )}
             </div>
 

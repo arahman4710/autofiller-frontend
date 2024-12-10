@@ -67,7 +67,7 @@ type Mutation {
   authSignUp(email: String!, firstName: String, lastName: String, referredByUserUniqueId: ID, resumeUniqueId: ID): AuthResponse!
   chatAddMessage(chatId: String!, message: String!): Chat!
   chatStart: Chat!
-  createPageCheck(checkInterval: PageCheckIntervalEnum!, multiplePages: Boolean, pageCheckType: PageCheckTypeEnum!, prompt: String, resultType: PageCheckResultTypeEnum!, url: String!): PageCheck!
+  createPageCheck(checkInterval: PageCheckIntervalEnum!, multiplePages: Boolean, pageCheckType: PageCheckTypeEnum!, priceDiscrepancyThresholdAmount: Float, prompt: String, resultType: PageCheckResultTypeEnum!, url: String!): PageCheck!
   manuallyRunPageCheck(pageCheckId: ID!): PageCheck!
   updateBusiness(name: String!): Business!
   updateUser(attributes: UsersInputObject!): Users!
@@ -105,6 +105,7 @@ enum PageCheckResultTypeEnum {
 enum PageCheckTypeEnum {
   GENERIC
   JOB_TITLES
+  PRICE
 }
 
 type Query {

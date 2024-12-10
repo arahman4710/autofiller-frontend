@@ -52,14 +52,12 @@ export const PageCheck = ({ pageCheckId }: IPageCheckProps) => {
                     children={pageCheck?.checkInterval}
                     className={cn('w-[75px] text-center', pageCheck?.checkInterval && intervalToColor[pageCheck?.checkInterval])}
                 />
-                <a
-                  className="text-link"
-                  href={pageCheck?.pageUrl}
-                  rel="noopener noreferrer"
-                  target="_blank"
+                <Button
+                  onClick={() => window.open(pageCheck?.pageUrl, '_blank')}
+                  variant="link"
                  >
-                    {pageCheck?.pageUrl}
-                 </a>
+                    Visit page
+                 </Button>
             </div>
             <Button className="mb-4" loading={loading} onClick={handleManualRun} variant="cta">
                 Manually run check

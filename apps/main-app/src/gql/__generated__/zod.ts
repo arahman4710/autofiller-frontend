@@ -156,6 +156,7 @@ export type MutationCreatePageCheckArgs = {
   checkInterval: PageCheckIntervalEnum;
   multiplePages?: InputMaybe<Scalars['Boolean']['input']>;
   pageCheckType: PageCheckTypeEnum;
+  priceDiscrepancyThresholdAmount?: InputMaybe<Scalars['Float']['input']>;
   prompt?: InputMaybe<Scalars['String']['input']>;
   resultType: PageCheckResultTypeEnum;
   url: Scalars['String']['input'];
@@ -225,7 +226,8 @@ export enum PageCheckResultTypeEnum {
 
 export enum PageCheckTypeEnum {
   Generic = 'GENERIC',
-  JobTitles = 'JOB_TITLES'
+  JobTitles = 'JOB_TITLES',
+  Price = 'PRICE'
 }
 
 export type Query = {
@@ -444,6 +446,7 @@ export type NewPageCheckDialog_CreatePageCheckMutationVariables = Exact<{
   pageCheckType: PageCheckTypeEnum;
   prompt?: InputMaybe<Scalars['String']['input']>;
   multiplePages: Scalars['Boolean']['input'];
+  priceDiscrepancyThresholdAmount?: InputMaybe<Scalars['Float']['input']>;
 }>;
 
 

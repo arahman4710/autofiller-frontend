@@ -1,5 +1,8 @@
-mutation NewPageCheckDialog_createPageCheck($url: String!, $checkInterval: PageCheckIntervalEnum!, $resultType: PageCheckResultTypeEnum!, $pageCheckType: PageCheckTypeEnum!, $prompt: String, $multiplePages: Boolean!) {
-  createPageCheck(url: $url, checkInterval: $checkInterval, resultType: $resultType, pageCheckType: $pageCheckType, prompt: $prompt, multiplePages: $multiplePages) {
+mutation NewPageCheckDialog_createPageCheck($url: String!, $checkInterval: PageCheckIntervalEnum!,
+                                            $resultType: PageCheckResultTypeEnum!, $pageCheckType: PageCheckTypeEnum!, $prompt: String,
+                                            $multiplePages: Boolean!, $priceDiscrepancyThresholdAmount: Float) {
+  createPageCheck(url: $url, checkInterval: $checkInterval, resultType: $resultType, pageCheckType: $pageCheckType, prompt: $prompt,
+                  multiplePages: $multiplePages, priceDiscrepancyThresholdAmount: $priceDiscrepancyThresholdAmount) {
     id
   }
 }

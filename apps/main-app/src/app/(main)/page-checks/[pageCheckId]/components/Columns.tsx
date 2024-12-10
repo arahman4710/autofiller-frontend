@@ -24,7 +24,6 @@ export const columns = (refetch): ColumnDef<TPageCheckResultRun>[] => {
     },
     {
       accessorKey: 'sameResultAsLastRun',
-      header: 'Same as last time?',
       cell: ({ cell, row }) => {
         return (
           <div>
@@ -32,6 +31,7 @@ export const columns = (refetch): ColumnDef<TPageCheckResultRun>[] => {
           </div>
         )
       },
+      header: 'Same as last time?',
     },
   ]
 }

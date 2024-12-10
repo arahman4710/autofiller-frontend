@@ -8,9 +8,8 @@ import { cn } from '@rag/ui/utils/cn'
 import { useRouter } from 'next/navigation'
 
 import { PageCheck_GetPageCheckDocument, PageCheck_ManuallyRunPageCheckDocument, PageCheckIntervalEnum } from '@gql/graphql'
+
 import { columns } from '../components/Columns'
-
-
 
 
 interface IPageCheckProps {
@@ -53,7 +52,14 @@ export const PageCheck = ({ pageCheckId }: IPageCheckProps) => {
                     children={pageCheck?.checkInterval}
                     className={cn('w-[75px] text-center', pageCheck?.checkInterval && intervalToColor[pageCheck?.checkInterval])}
                 />
-                <a className="text-link" rel="noopener noreferrer" target="_blank" href={pageCheck?.pageUrl}> {pageCheck?.pageUrl} </a>
+                <a
+                  className="text-link"
+                  href={pageCheck?.pageUrl}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                 >
+                    {pageCheck?.pageUrl}
+                 </a>
             </div>
             <Button className="mb-4" loading={loading} onClick={handleManualRun} variant="cta">
                 Manually run check

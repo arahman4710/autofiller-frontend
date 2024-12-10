@@ -44,9 +44,9 @@ export const NewPageCheckDialog = ({ open, setOpen }: INewInterviewDialogProps) 
 
   const { form } = usePageCheckForm()
   const pageCheckTypeOptions: Record<PageCheckTypeEnum, string> = {
+    [PageCheckTypeEnum.Generic]: 'Generic',
     [PageCheckTypeEnum.JobTitles]: 'Company open jobs scanner',
     [PageCheckTypeEnum.Price]: 'Price tracker',
-    [PageCheckTypeEnum.Generic]: 'Generic',
   }
   const checkIntervalOptions: Record<PageCheckIntervalEnum, string> = {
     [PageCheckIntervalEnum.Daily]: 'Daily',

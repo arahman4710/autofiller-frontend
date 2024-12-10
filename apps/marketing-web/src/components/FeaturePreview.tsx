@@ -19,7 +19,7 @@ export const FeaturePreview = () => {
     {
       description: 'Use AI to extract any website data.',
       icon: <MagicWandIcon />,
-      image: '/images/page-check.png',
+      image: '/images/create-new-page-check.png',
       title: 'Monitor web pages using AI',
     },
     {

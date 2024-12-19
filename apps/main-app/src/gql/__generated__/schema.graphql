@@ -67,7 +67,7 @@ type Mutation {
   authSignUp(email: String!, firstName: String, lastName: String, referredByUserUniqueId: ID, resumeUniqueId: ID): AuthResponse!
   chatAddMessage(chatId: String!, message: String!): Chat!
   chatStart: Chat!
-  createPageCheck(checkInterval: PageCheckIntervalEnum!, multiplePages: Boolean, pageCheckType: PageCheckTypeEnum!, priceDiscrepancyThresholdAmount: Float, prompt: String, resultType: PageCheckResultTypeEnum!, url: String!): PageCheck!
+  createPageCheck(checkInterval: PageCheckIntervalEnum!, keywordFilter: String, multiplePages: Boolean, pageCheckType: PageCheckTypeEnum!, priceDiscrepancyThresholdAmount: Float, priceMinAllowed: Float, prompt: String, resultType: PageCheckResultTypeEnum!, url: String!): PageCheck!
   manuallyRunPageCheck(pageCheckId: ID!): PageCheck!
   updateBusiness(name: String!): Business!
   updateUser(attributes: UsersInputObject!): Users!

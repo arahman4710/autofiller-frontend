@@ -32,7 +32,7 @@ interface INewInterviewDialogProps {
 export const NewPageCheckDialog = ({ open, setOpen }: INewInterviewDialogProps) => {
   const { errorToast } = useToast()
   const router = useRouter()
-//   const upgradePlanDialog = useUpgradePlanDialog()
+  //   const upgradePlanDialog = useUpgradePlanDialog()
 
   const [createPageCheck, { loading: isCreatePageCheckLoading }] = useMutation(
     NewPageCheckDialog_CreatePageCheckDocument,
@@ -57,17 +57,27 @@ export const NewPageCheckDialog = ({ open, setOpen }: INewInterviewDialogProps) 
   const pageCheckType = form.watch('pageCheckType')
   const prompt = form.watch('prompt')
   const priceDiscrepancyThresholdAmount = form.watch('priceDiscrepancyThresholdAmount')
+  const priceMinAllowed = form.watch('priceMinAllowed')
   const checkInterval = form.watch('checkInterval')
   const resultType = form.watch('resultType')
+  const keywordFilter = form.watch('keywordFilter')
 
   const handleCreatePageCheck = async () => {
     try {
       const response = await createPageCheck({
         variables: {
           checkInterval,
+          keywordFilter,
           multiplePages,
           pageCheckType,
-          priceDiscrepancyThresholdAmount: !priceDiscrepancyThresholdAmount || isNaN(parseFloat(priceDiscrepancyThresholdAmount)) ? null : parseFloat(priceDiscrepancyThresholdAmount),
+          priceDiscrepancyThresholdAmount:
+            !priceDiscrepancyThresholdAmount || isNaN(parseFloat(priceDiscrepancyThresholdAmount))
+              ? null
+              : parseFloat(priceDiscrepancyThresholdAmount),
+          priceMinAllowed:
+            !priceMinAllowed || isNaN(parseFloat(priceMinAllowed))
+              ? null
+              : parseFloat(priceMinAllowed),
           prompt,
           resultType,
           url,
@@ -132,47 +142,47 @@ export const NewPageCheckDialog = ({ open, setOpen }: INewInterviewDialogProps) 
               />
               <div className="flex w-full flex-row items-center justify-between gap-4">
                 <FormField
-                    control={form.control}
-                    name="checkInterval"
-                    render={({ field }) => (
+                  control={form.control}
+                  name="checkInterval"
+                  render={({ field }) => (
                     <FormItem className="w-full">
-                        <FormLabel>Check Interval</FormLabel>
-                        <Select defaultValue={field.value} onValueChange={field.onChange} {...field}>
+                      <FormLabel>Check Interval</FormLabel>
+                      <Select defaultValue={field.value} onValueChange={field.onChange} {...field}>
                         <FormControl>
-                            <SelectTrigger>
+                          <SelectTrigger>
                             <SelectValue placeholder="Select an page check type" />
-                            </SelectTrigger>
+                          </SelectTrigger>
                         </FormControl>
                         <SelectContent>
-                            {Object.entries(checkIntervalOptions).map((option) => (
+                          {Object.entries(checkIntervalOptions).map((option) => (
                             <SelectItem key={option[0]} value={option[0]}>
-                                {option[1]}
+                              {option[1]}
                             </SelectItem>
-                            ))}
+                          ))}
                         </SelectContent>
-                        </Select>
-                        <FormMessage />
+                      </Select>
+                      <FormMessage />
                     </FormItem>
-                    )}
+                  )}
                 />
                 {pageCheckType != PageCheckTypeEnum.Price && (
-                <FormField
+                  <FormField
                     control={form.control}
                     name="multiplePages"
                     render={({ field }) => (
-                    <FormItem className="w-1/4 md:flex md:w-full md:flex-col">
+                      <FormItem className="w-1/4 md:flex md:w-full md:flex-col">
                         <FormLabel>Multiple pages?</FormLabel>
                         <FormControl>
-                        <Switch
+                          <Switch
                             {...field}
                             checked={field.value}
                             onCheckedChange={field.onChange}
                             value={field?.value?.toString()}
-                        />
+                          />
                         </FormControl>
-                    </FormItem>
+                      </FormItem>
                     )}
-                />
+                  />
                 )}
               </div>
               {pageCheckType == PageCheckTypeEnum.Generic && (
@@ -194,37 +204,83 @@ export const NewPageCheckDialog = ({ open, setOpen }: INewInterviewDialogProps) 
                   )}
                 />
               )}
+              {pageCheckType == PageCheckTypeEnum.JobTitles && (
+                <FormField
+                  control={form.control}
+                  name="keywordFilter"
+                  render={({ field }) => (
+                    <FormItem className="w-full">
+                      <FormLabel className="mb-4 flex flex-row items-center gap-1">
+                        Keyword filter
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <Info className="text-md" />
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <p>Only results that include the keyword will be included</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </FormLabel>
+                      <FormControl>
+                        <Input {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              )}
               {pageCheckType == PageCheckTypeEnum.Price && (
-              <FormField
-                control={form.control}
-                name="priceDiscrepancyThresholdAmount"
-                render={({ field }) => (
-                  <FormItem className="w-full">
-                    <FormLabel className="mb-4 flex flex-row items-center gap-1">
-                      Price discrepancy amount allowed
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <Info className="text-md" />
-                        </TooltipTrigger>
-                        <TooltipContent>
-                          <p>
-                            This is the max difference in price before its flagged as a significant change
-                          </p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </FormLabel>
-                    <FormControl>
-                      <Input
-                        {...field}
-                        min="0"
-                        step="0.01"
-                        type="number"
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+                <FormField
+                  control={form.control}
+                  name="priceDiscrepancyThresholdAmount"
+                  render={({ field }) => (
+                    <FormItem className="w-full">
+                      <FormLabel className="mb-4 flex flex-row items-center gap-1">
+                        Price discrepancy amount allowed
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <Info className="text-md" />
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <p>
+                              This is the max difference in price before its flagged as a
+                              significant change
+                            </p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </FormLabel>
+                      <FormControl>
+                        <Input {...field} min="0" step="0.01" type="number" />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              )}
+              {pageCheckType == PageCheckTypeEnum.Price && (
+                <FormField
+                  control={form.control}
+                  name="priceMinAllowed"
+                  render={({ field }) => (
+                    <FormItem className="w-full">
+                      <FormLabel className="mb-4 flex flex-row items-center gap-1">
+                        Price drop amount
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <Info className="text-md" />
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <p>When the price drops below this price, you will be alerted</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </FormLabel>
+                      <FormControl>
+                        <Input {...field} min="0" step="0.01" type="number" />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
               )}
             </div>
 
@@ -235,9 +291,7 @@ export const NewPageCheckDialog = ({ open, setOpen }: INewInterviewDialogProps) 
                 </Button>
               </DialogClose>
               <Button
-                disabled={
-                  pageCheckType == PageCheckTypeEnum.Generic && prompt == ''
-                }
+                disabled={pageCheckType == PageCheckTypeEnum.Generic && prompt == ''}
                 loading={isCreatePageCheckLoading}
                 size="lg"
                 type="submit"

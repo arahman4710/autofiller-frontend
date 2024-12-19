@@ -10,9 +10,11 @@ import { TPageCheckForm } from '@/forms/types'
 
 export const PageCheckFormSchema = z.object({
   checkInterval: z.nativeEnum(PageCheckIntervalEnum),
+  keywordFilter: z.string(),
   multiplePages: z.boolean(),
   pageCheckType: z.nativeEnum(PageCheckTypeEnum),
   priceDiscrepancyThresholdAmount: z.string().optional(),
+  priceMinAllowed: z.string().optional(),
   prompt: z.string(),
   resultType: z.nativeEnum(PageCheckResultTypeEnum),
   url: z.string().min(1, "Page check URL can't be empty"),
@@ -21,12 +23,14 @@ export const PageCheckFormSchema = z.object({
 export const usePageCheckForm = () => {
   const defaultValues = {
     checkInterval: PageCheckIntervalEnum.Weekly,
+    keywordFilter: '',
     multiplePages: false,
     pageCheckType: PageCheckTypeEnum.JobTitles,
     priceDiscrepancyThresholdAmount: undefined,
+    priceMinAllowed: undefined,
     prompt: '',
     resultType: PageCheckResultTypeEnum.Multiple,
-    url: ''
+    url: '',
   }
 
   const form = useForm<TPageCheckForm>({

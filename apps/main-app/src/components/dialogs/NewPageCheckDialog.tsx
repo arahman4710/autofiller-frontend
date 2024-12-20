@@ -55,6 +55,8 @@ export const NewPageCheckDialog = ({ open, setOpen }: INewInterviewDialogProps) 
   const url = form.watch('url')
   const multiplePages = form.watch('multiplePages')
   const pageCheckType = form.watch('pageCheckType')
+  const jobDepartmentFilter = form.watch('jobDepartmentFilter')
+  const jobLocationFilter = form.watch('jobLocationFilter')
   const prompt = form.watch('prompt')
   const priceDiscrepancyThresholdAmount = form.watch('priceDiscrepancyThresholdAmount')
   const priceMinAllowed = form.watch('priceMinAllowed')
@@ -67,6 +69,8 @@ export const NewPageCheckDialog = ({ open, setOpen }: INewInterviewDialogProps) 
       const response = await createPageCheck({
         variables: {
           checkInterval,
+          jobDepartmentFilter,
+          jobLocationFilter,
           keywordFilter,
           multiplePages,
           pageCheckType,
@@ -211,13 +215,69 @@ export const NewPageCheckDialog = ({ open, setOpen }: INewInterviewDialogProps) 
                   render={({ field }) => (
                     <FormItem className="w-full">
                       <FormLabel className="mb-4 flex flex-row items-center gap-1">
-                        Keyword filter
+                        Job Title filter
                         <Tooltip>
                           <TooltipTrigger asChild>
                             <Info className="text-md" />
                           </TooltipTrigger>
                           <TooltipContent>
-                            <p>Only results that include the keyword will be included</p>
+                            <p>Only job titles that include the filter will be included</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </FormLabel>
+                      <FormControl>
+                        <Input {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              )}
+              {pageCheckType == PageCheckTypeEnum.JobTitles && (
+                <FormField
+                  control={form.control}
+                  name="jobLocationFilter"
+                  render={({ field }) => (
+                    <FormItem className="w-full">
+                      <FormLabel className="mb-4 flex flex-row items-center gap-1">
+                        Job Location filter
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <Info className="text-md" />
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <p>
+                              Only job locations that include the filter will be included. Use comma
+                              separated values to add multiple locations
+                            </p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </FormLabel>
+                      <FormControl>
+                        <Input {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              )}
+              {pageCheckType == PageCheckTypeEnum.JobTitles && (
+                <FormField
+                  control={form.control}
+                  name="jobDepartmentFilter"
+                  render={({ field }) => (
+                    <FormItem className="w-full">
+                      <FormLabel className="mb-4 flex flex-row items-center gap-1">
+                        Job Department filter
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <Info className="text-md" />
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <p>
+                              Only job departments that include the filter will be included. Use
+                              comma separated values to add multiple departments
+                            </p>
                           </TooltipContent>
                         </Tooltip>
                       </FormLabel>

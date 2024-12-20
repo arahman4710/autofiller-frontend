@@ -10,6 +10,8 @@ import { TPageCheckForm } from '@/forms/types'
 
 export const PageCheckFormSchema = z.object({
   checkInterval: z.nativeEnum(PageCheckIntervalEnum),
+  jobDepartmentFilter: z.string(),
+  jobLocationFilter: z.string(),
   keywordFilter: z.string(),
   multiplePages: z.boolean(),
   pageCheckType: z.nativeEnum(PageCheckTypeEnum),
@@ -23,6 +25,8 @@ export const PageCheckFormSchema = z.object({
 export const usePageCheckForm = () => {
   const defaultValues = {
     checkInterval: PageCheckIntervalEnum.Weekly,
+    jobDepartmentFilter: '',
+    jobLocationFilter: '',
     keywordFilter: '',
     multiplePages: false,
     pageCheckType: PageCheckTypeEnum.JobTitles,

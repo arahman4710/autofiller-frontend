@@ -1,10 +1,11 @@
 mutation NewPageCheckDialog_createPageCheck($url: String!, $checkInterval: PageCheckIntervalEnum!,
                                             $resultType: PageCheckResultTypeEnum!, $pageCheckType: PageCheckTypeEnum!, $prompt: String,
                                             $multiplePages: Boolean!, $priceDiscrepancyThresholdAmount: Float, $priceMinAllowed: Float, 
-                                            $keywordFilter: String) {
+                                            $keywordFilter: String, $jobLocationFilter: String, $jobDepartmentFilter: String) {
   createPageCheck(url: $url, checkInterval: $checkInterval, resultType: $resultType, pageCheckType: $pageCheckType, prompt: $prompt,
                   multiplePages: $multiplePages, priceDiscrepancyThresholdAmount: $priceDiscrepancyThresholdAmount,
-                  priceMinAllowed: $priceMinAllowed, keywordFilter: $keywordFilter) {
+                  priceMinAllowed: $priceMinAllowed, keywordFilter: $keywordFilter, jobLocationFilter: $jobLocationFilter, 
+                  jobDepartmentFilter: $jobDepartmentFilter) {
     id
   }
 }

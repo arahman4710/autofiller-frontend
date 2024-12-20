@@ -299,6 +299,8 @@ export type NewPageCheckDialog_CreatePageCheckMutationVariables = Exact<{
   priceDiscrepancyThresholdAmount?: InputMaybe<Scalars['Float']['input']>
   priceMinAllowed?: InputMaybe<Scalars['Float']['input']>
   keywordFilter?: InputMaybe<Scalars['String']['input']>
+  jobLocationFilter?: InputMaybe<Scalars['String']['input']>
+  jobDepartmentFilter?: InputMaybe<Scalars['String']['input']>
 }>
 
 export type NewPageCheckDialog_CreatePageCheckMutation = {
@@ -1397,6 +1399,16 @@ export const NewPageCheckDialog_CreatePageCheckDocument = {
           variable: { kind: 'Variable', name: { kind: 'Name', value: 'keywordFilter' } },
           type: { kind: 'NamedType', name: { kind: 'Name', value: 'String' } },
         },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'jobLocationFilter' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'String' } },
+        },
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'jobDepartmentFilter' } },
+          type: { kind: 'NamedType', name: { kind: 'Name', value: 'String' } },
+        },
       ],
       selectionSet: {
         kind: 'SelectionSet',
@@ -1452,6 +1464,16 @@ export const NewPageCheckDialog_CreatePageCheckDocument = {
                 kind: 'Argument',
                 name: { kind: 'Name', value: 'keywordFilter' },
                 value: { kind: 'Variable', name: { kind: 'Name', value: 'keywordFilter' } },
+              },
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'jobLocationFilter' },
+                value: { kind: 'Variable', name: { kind: 'Name', value: 'jobLocationFilter' } },
+              },
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'jobDepartmentFilter' },
+                value: { kind: 'Variable', name: { kind: 'Name', value: 'jobDepartmentFilter' } },
               },
             ],
             selectionSet: {

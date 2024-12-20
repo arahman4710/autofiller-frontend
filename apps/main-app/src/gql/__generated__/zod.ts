@@ -149,6 +149,8 @@ export type MutationChatAddMessageArgs = {
 
 export type MutationCreatePageCheckArgs = {
   checkInterval: PageCheckIntervalEnum
+  jobDepartmentFilter?: InputMaybe<Scalars['String']['input']>
+  jobLocationFilter?: InputMaybe<Scalars['String']['input']>
   keywordFilter?: InputMaybe<Scalars['String']['input']>
   multiplePages?: InputMaybe<Scalars['Boolean']['input']>
   pageCheckType: PageCheckTypeEnum
@@ -547,6 +549,8 @@ export type NewPageCheckDialog_CreatePageCheckMutationVariables = Exact<{
   priceDiscrepancyThresholdAmount?: InputMaybe<Scalars['Float']['input']>
   priceMinAllowed?: InputMaybe<Scalars['Float']['input']>
   keywordFilter?: InputMaybe<Scalars['String']['input']>
+  jobLocationFilter?: InputMaybe<Scalars['String']['input']>
+  jobDepartmentFilter?: InputMaybe<Scalars['String']['input']>
 }>
 
 export type NewPageCheckDialog_CreatePageCheckMutation = {

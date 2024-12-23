@@ -67,12 +67,7 @@ export const PageCheck = ({ pageCheckId }: IPageCheckProps) => {
           </Button>
         </div>
         <div className="flex gap-2">
-          <Button
-            className="mb-4"
-            loading={loading}
-            onClick={() => setIsPageSheetOpen(true)}
-            variant="default"
-          >
+          <Button className="mb-4" onClick={() => setIsPageSheetOpen(true)} variant="default">
             View details
           </Button>
         </div>

@@ -19,7 +19,7 @@ export const PageCheckFormSchema = z.object({
   priceMinAllowed: z.string().optional(),
   prompt: z.string(),
   resultType: z.nativeEnum(PageCheckResultTypeEnum),
-  url: z.string().min(1, "Page check URL can't be empty"),
+  url: z.string().min(1, "Page check URL can't be empty").url().includes('https://'),
 })
 
 export const usePageCheckForm = () => {

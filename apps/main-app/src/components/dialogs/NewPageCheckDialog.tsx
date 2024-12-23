@@ -136,7 +136,17 @@ export const NewPageCheckDialog = ({ open, setOpen }: INewInterviewDialogProps) 
                 name="url"
                 render={({ field }) => (
                   <FormItem className="w-full">
-                    <FormLabel>URL</FormLabel>
+                    <FormLabel className="mb-4 flex flex-row items-center gap-1">
+                      URL
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Info className="text-md" />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>Make sure your URL begins with "https://"</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </FormLabel>
                     <FormControl>
                       <Input {...field} />
                     </FormControl>

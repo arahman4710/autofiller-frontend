@@ -550,12 +550,12 @@ const EndingFeatures = () => {
       title: 'Job posting monitoring',
     },
     {
-      description: 'Track competitor pricing, discounts, and promotions to stay ahead in the market and make data-driven pricing decisions.',
+      description:
+        'Track competitor pricing, discounts, and promotions to stay ahead in the market and make data-driven pricing decisions.',
       title: 'Price monitoring',
     },
     {
-      description:
-        'Stay on top of key competitor updates to make sure you\'re never behind.',
+      description: "Stay on top of key competitor updates to make sure you're never behind.",
       title: 'Competitor monitoring',
     },
     {
@@ -564,8 +564,7 @@ const EndingFeatures = () => {
       title: 'Latest stock and financial data',
     },
     {
-      description:
-        'Stay on top of your SEO rankings to keep growth up and to the right.',
+      description: 'Stay on top of your SEO rankings to keep growth up and to the right.',
       title: 'SEO monitoring',
     },
     {
@@ -582,15 +581,12 @@ const EndingFeatures = () => {
 
   return (
     <div className="relative flex h-fit w-full text-white">
-      <OvalGradient />
       <div className="z-10 w-full p-6">
         <div className="flex w-full flex-col justify-between gap-10 md:flex-row">
           <div className="flex flex-col gap-2 md:max-w-[550px]">
             <div className="flex flex-col items-center gap-3 md:flex-row">
               <MagicWandIcon className="size-4" />
-              <h2 className="text-xl font-semibold leading-snug">
-                Use Cases
-              </h2>
+              <h2 className="text-xl font-semibold leading-snug">Use Cases</h2>
             </div>
             <p className="text-[14px] leading-relaxed text-white/90">
               Never spend time refreshing the same page over and over again and let AI do the work.

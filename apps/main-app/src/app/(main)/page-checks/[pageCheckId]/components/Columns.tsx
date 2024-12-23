@@ -35,7 +35,7 @@ export const columns = (refetch): ColumnDef<TPageCheckResultRun>[] => {
           </div>
         )
       },
-      header: 'Has not significantly changed?',
+      header: 'Same as last time?',
     },
   ]
 }

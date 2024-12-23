@@ -23,6 +23,7 @@ import {
 import { usePageCheckForm } from '@/forms/hooks/usePageCheckForm'
 // import { useUpgradePlanDialog } from '@/hooks/contexts/useUpgradePlanDialog'
 import { useCurrentUser } from '@/hooks/useCurrentUser'
+import { pageCheckTypeOptions } from '@/utils/pageCheckTypeOptions'
 
 interface INewInterviewDialogProps {
   open: boolean
@@ -43,11 +44,6 @@ export const NewPageCheckDialog = ({ open, setOpen }: INewInterviewDialogProps) 
   const { isPaidPlan, user } = useCurrentUser()
 
   const { form } = usePageCheckForm()
-  const pageCheckTypeOptions: Record<PageCheckTypeEnum, string> = {
-    [PageCheckTypeEnum.Generic]: 'Generic',
-    [PageCheckTypeEnum.JobTitles]: 'Company open jobs scanner',
-    [PageCheckTypeEnum.Price]: 'Price tracker',
-  }
   const checkIntervalOptions: Record<PageCheckIntervalEnum, string> = {
     [PageCheckIntervalEnum.Daily]: 'Daily',
     [PageCheckIntervalEnum.Weekly]: 'Weekly',

@@ -161,9 +161,16 @@ export type PageCheck_GetPageCheckQuery = {
     __typename?: 'PageCheck'
     id: string
     pageUrl: string
+    pageCheckType: PageCheckTypeEnum
     checkInterval: PageCheckIntervalEnum
     resultType: PageCheckResultTypeEnum
     prompt?: string | null
+    keywordFilter?: string | null
+    jobLocationFilter?: string | null
+    jobDepartmentFilter?: string | null
+    priceMinAllowed?: number | null
+    priceDiscrepancyThresholdAmount?: number | null
+    multiplePages?: boolean | null
     pageCheckResults: Array<{
       __typename?: 'PageCheckResultType'
       id: string
@@ -892,9 +899,16 @@ export const PageCheck_GetPageCheckDocument = {
               selections: [
                 { kind: 'Field', name: { kind: 'Name', value: 'id' } },
                 { kind: 'Field', name: { kind: 'Name', value: 'pageUrl' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'pageCheckType' } },
                 { kind: 'Field', name: { kind: 'Name', value: 'checkInterval' } },
                 { kind: 'Field', name: { kind: 'Name', value: 'resultType' } },
                 { kind: 'Field', name: { kind: 'Name', value: 'prompt' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'keywordFilter' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'jobLocationFilter' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'jobDepartmentFilter' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'priceMinAllowed' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'priceDiscrepancyThresholdAmount' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'multiplePages' } },
                 {
                   kind: 'Field',
                   name: { kind: 'Name', value: 'pageCheckResults' },

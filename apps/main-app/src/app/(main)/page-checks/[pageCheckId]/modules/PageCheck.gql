@@ -2,9 +2,16 @@ query PageCheck_getPageCheck($pageCheckIds: [ID!]) {
   pageChecks(pageCheckIds: $pageCheckIds) {
     id
     pageUrl
+    pageCheckType
     checkInterval
     resultType
     prompt
+    keywordFilter
+    jobLocationFilter
+    jobDepartmentFilter
+    priceMinAllowed
+    priceDiscrepancyThresholdAmount
+    multiplePages
     pageCheckResults {
       id
       createdAt

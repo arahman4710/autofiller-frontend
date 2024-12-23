@@ -193,8 +193,15 @@ export type PageCheck = {
   __typename?: 'PageCheck'
   checkInterval: PageCheckIntervalEnum
   id: Scalars['ID']['output']
+  jobDepartmentFilter?: Maybe<Scalars['String']['output']>
+  jobLocationFilter?: Maybe<Scalars['String']['output']>
+  keywordFilter?: Maybe<Scalars['String']['output']>
+  multiplePages?: Maybe<Scalars['Boolean']['output']>
   pageCheckResults: Array<PageCheckResultType>
+  pageCheckType: PageCheckTypeEnum
   pageUrl: Scalars['String']['output']
+  priceDiscrepancyThresholdAmount?: Maybe<Scalars['Float']['output']>
+  priceMinAllowed?: Maybe<Scalars['Float']['output']>
   prompt?: Maybe<Scalars['String']['output']>
   resultType: PageCheckResultTypeEnum
 }
@@ -411,9 +418,16 @@ export type PageCheck_GetPageCheckQuery = {
     __typename?: 'PageCheck'
     id: string
     pageUrl: string
+    pageCheckType: PageCheckTypeEnum
     checkInterval: PageCheckIntervalEnum
     resultType: PageCheckResultTypeEnum
     prompt?: string | null
+    keywordFilter?: string | null
+    jobLocationFilter?: string | null
+    jobDepartmentFilter?: string | null
+    priceMinAllowed?: number | null
+    priceDiscrepancyThresholdAmount?: number | null
+    multiplePages?: boolean | null
     pageCheckResults: Array<{
       __typename?: 'PageCheckResultType'
       id: string

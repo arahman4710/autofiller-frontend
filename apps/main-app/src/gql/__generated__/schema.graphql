@@ -79,8 +79,15 @@ type Mutation {
 type PageCheck {
   checkInterval: PageCheckIntervalEnum!
   id: ID!
+  jobDepartmentFilter: String
+  jobLocationFilter: String
+  keywordFilter: String
+  multiplePages: Boolean
   pageCheckResults: [PageCheckResultType!]!
+  pageCheckType: PageCheckTypeEnum!
   pageUrl: String!
+  priceDiscrepancyThresholdAmount: Float
+  priceMinAllowed: Float
   prompt: String
   resultType: PageCheckResultTypeEnum!
 }

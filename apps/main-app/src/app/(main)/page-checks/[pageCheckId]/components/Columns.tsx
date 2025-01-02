@@ -3,6 +3,8 @@
 import { CheckCircle, XCircle } from '@phosphor-icons/react'
 import { ColumnDef } from '@tanstack/react-table'
 
+import { stringIsArray } from '@/utils/stringIsArray'
+
 export type TPageCheckResultRun = {
   createdAt: string
   result: string
@@ -17,6 +19,18 @@ export const columns = (refetch): ColumnDef<TPageCheckResultRun>[] => {
     },
     {
       accessorKey: 'result',
+      cell: ({ cell, row }) => {
+        const result = cell.getValue() as string
+        return (
+          <div>
+            {stringIsArray(result)
+              ? JSON.parse(result)
+                  .sort()
+                  .map((item) => <div key={item}>{item}</div>)
+              : result}
+          </div>
+        )
+      },
       header: 'Result',
       meta: {
         width: 500,

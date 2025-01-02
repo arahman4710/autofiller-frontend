@@ -6,7 +6,7 @@
     "build": "next build",
     "clean": "git clean -xdf .next .turbo node_modules",
     "codegen": "graphql-codegen --config codegen.ts",
-    "dev": "NEXT_PUBLIC_TURBO_ENABLED=true next dev --turbo --port 3001",
+    "dev": "NEXT_PUBLIC_TURBO_ENABLED=true next dev --turbo",
     "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
     "lint": "next lint",
     "sort-package-json": "bunx sort-package-json",

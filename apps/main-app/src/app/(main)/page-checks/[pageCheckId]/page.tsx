@@ -4,7 +4,7 @@ import { Metadata } from 'next'
 import { PageCheck } from './modules/PageCheck'
 
 export const metadata: Metadata = {
-  title: 'Interview in Progress',
+  title: 'Page Check',
 }
 
 export default function PageCheckPage({
@@ -14,7 +14,7 @@ export default function PageCheckPage({
 }) {
   return (
     <MainShell className="p-6 pr-0">
-      <PageCheck pageCheckId={pageCheckId}/>
+      <PageCheck pageCheckId={pageCheckId} />
     </MainShell>
   )
 }

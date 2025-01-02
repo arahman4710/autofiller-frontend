@@ -114,10 +114,11 @@ export function DataTable<TData, TValue>({
 
   const memoizedCellProps = (cellInfo: Cell<TData, TValue>) => ({
     className: cn(
-      'select-none',
       getPinnedColumnStyles(cellInfo.column.columnDef.meta?.isPinned ?? false),
       cellInfo.column.columnDef.meta?.disableTruncate ? '' : 'truncate',
-      cellInfo.column.columnDef.meta?.width ? `w-[${cellInfo.column.columnDef.meta.width}px]` : 'w-[150px]'
+      cellInfo.column.columnDef.meta?.width
+        ? `w-[${cellInfo.column.columnDef.meta.width}px]`
+        : 'w-[150px]'
     ),
     // style: {
     //   width: cellInfo.column.columnDef.size || 'auto',

@@ -9,8 +9,7 @@ import { cn } from '@rag/ui/utils/cn'
 import Link, { LinkProps } from 'next/link'
 import { usePathname } from 'next/navigation'
 
-import {
-} from '@gql/graphql'
+import {} from '@gql/graphql'
 
 import { useUpgradePlanDialog } from '@/hooks/contexts/useUpgradePlanDialog'
 import { useCurrentUser } from '@/hooks/useCurrentUser'
@@ -40,29 +39,26 @@ export const Navigation = () => {
   const { loading: currentUserIsLoading, user } = useCurrentUser()
 
   const mainNavItems = (): TNavItem[] => {
-    if (user?.business?.name == "") {
-      return []
-    }
     return [
-        // {
-        //   enabled: true,
-        //   href: '/chat',
-        //   icon: <Chat />,
-        //   name: 'Chat',
-        // },
-        // {
-        //   enabled: true,
-        //   href: '/documents',
-        //   icon: <ReadCvLogo />,
-        //   name: 'Documents',
-        // },
-        {
-          enabled: true,
-          href: '/page-checks',
-          icon: <Browser />,
-          name: 'Page Checks',
-        },
-      ]
+      // {
+      //   enabled: true,
+      //   href: '/chat',
+      //   icon: <Chat />,
+      //   name: 'Chat',
+      // },
+      // {
+      //   enabled: true,
+      //   href: '/documents',
+      //   icon: <ReadCvLogo />,
+      //   name: 'Documents',
+      // },
+      {
+        enabled: true,
+        href: '/page-checks',
+        icon: <Browser />,
+        name: 'Page Checks',
+      },
+    ]
   }
 
   return (

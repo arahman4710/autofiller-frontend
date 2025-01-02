@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
-import { Button } from '@rag/ui/Button'
 import { X } from '@phosphor-icons/react'
+import { Button } from '@rag/ui/Button'
 
 import { Chip, ChipsContainer } from './Chip'
 import { Input } from './Input'

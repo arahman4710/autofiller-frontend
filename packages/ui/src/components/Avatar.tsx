@@ -2,8 +2,8 @@
 
 import { forwardRef, useMemo } from 'react'
 
-import { generateColors } from '@rag/utils'
 import * as AvatarPrimitive from '@radix-ui/react-avatar'
+import { generateColors } from '@rag/utils'
 
 import { cn } from '../utils'
 

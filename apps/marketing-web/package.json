@@ -5,18 +5,18 @@
   "scripts": {
     "build": "next build",
     "clean": "git clean -xdf .next .turbo node_modules",
-    "dev": "next dev --turbo --port 3001",
+    "dev": "next dev --turbo --port 3003",
     "lint": "next lint",
     "sort-package-json": "bunx sort-package-json",
     "start": "next start",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@rag/ui": "workspace:*",
-    "@rag/utils": "workspace:*",
     "@plaiceholder/next": "^3.0.0",
     "@portabletext/react": "^3.1.0",
     "@radix-ui/react-icons": "latest",
+    "@rag/ui": "workspace:*",
+    "@rag/utils": "workspace:*",
     "@sanity/image-url": "^1.0.2",
     "@sanity/react-loader": "^1.10.3",
     "@vercel/speed-insights": "^1.0.12",
@@ -31,8 +31,8 @@
     "react-intersection-observer": "^9.10.2"
   },
   "devDependencies": {
-    "@rag/tsconfig": "workspace:*",
     "@plaiceholder/tailwindcss": "^3.0.0",
+    "@rag/tsconfig": "workspace:*",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

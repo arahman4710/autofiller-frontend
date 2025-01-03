@@ -31,7 +31,7 @@ export const FeaturePreview = () => {
     {
       description: 'Export anywhere.',
       icon: <DownloadIcon />,
-      image: '/images/page-check.png',
+      image: '/images/email.png',
       title: 'Export your data to over 6000 destinations',
     },
   ]
@@ -67,10 +67,10 @@ export const FeaturePreview = () => {
         ))}
       </div>
       <div className={cn('z-2 basis-3/3 flex aspect-video justify-end rounded-lg md:basis-2/3')}>
-        <img 
-         alt="Monitor website pages using AI"
-         className="aspect-video w-full rounded-lg object-fill md:max-w-[800px]"
-         src={features[selectedFeature].image}
+        <img
+          alt="Monitor website pages using AI"
+          className="aspect-video w-full rounded-lg object-fill md:max-w-[800px]"
+          src={features[selectedFeature].image}
         />
       </div>
       <Carousel className="w-full md:hidden" opts={{ align: 'start', loop: true }} setApi={setApi}>

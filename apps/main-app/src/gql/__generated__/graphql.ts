@@ -439,7 +439,14 @@ export type UsersFragment = {
   email: string
   firstName?: string | null
   lastName?: string | null
-  business: { __typename?: 'Business'; id: string; name: string; plan: SubscriptionPlanEnum }
+  business: {
+    __typename?: 'Business'
+    id: string
+    name: string
+    plan: SubscriptionPlanEnum
+    reachedFreePlanPageCheckLimit: boolean
+    numPageChecks: number
+  }
 }
 
 export type UseCurrentUser_UsersQueryVariables = Exact<{ [key: string]: never }>
@@ -452,7 +459,14 @@ export type UseCurrentUser_UsersQuery = {
     email: string
     firstName?: string | null
     lastName?: string | null
-    business: { __typename?: 'Business'; id: string; name: string; plan: SubscriptionPlanEnum }
+    business: {
+      __typename?: 'Business'
+      id: string
+      name: string
+      plan: SubscriptionPlanEnum
+      reachedFreePlanPageCheckLimit: boolean
+      numPageChecks: number
+    }
   }
 }
 
@@ -543,6 +557,8 @@ export const UsersFragmentDoc = {
                 { kind: 'Field', name: { kind: 'Name', value: 'id' } },
                 { kind: 'Field', name: { kind: 'Name', value: 'name' } },
                 { kind: 'Field', name: { kind: 'Name', value: 'plan' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'reachedFreePlanPageCheckLimit' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'numPageChecks' } },
               ],
             },
           },
@@ -2145,6 +2161,8 @@ export const UseCurrentUser_UsersDocument = {
                 { kind: 'Field', name: { kind: 'Name', value: 'id' } },
                 { kind: 'Field', name: { kind: 'Name', value: 'name' } },
                 { kind: 'Field', name: { kind: 'Name', value: 'plan' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'reachedFreePlanPageCheckLimit' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'numPageChecks' } },
               ],
             },
           },

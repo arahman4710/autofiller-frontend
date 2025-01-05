@@ -10,7 +10,9 @@ type AuthResponse {
 type Business {
   id: ID!
   name: String!
+  numPageChecks: Int!
   plan: SubscriptionPlanEnum!
+  reachedFreePlanPageCheckLimit: Boolean!
 }
 
 type Chat {

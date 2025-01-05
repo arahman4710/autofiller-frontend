@@ -30,11 +30,13 @@ export const useCurrentUser = () => {
   const isAdvisorAdmin = false //user?.role === UsersRoleEnum.Admin
 
   return {
+    business,
     isAdvisor,
     isAdvisorAdmin,
     isPaidPlan,
     loading,
     plan: user?.business?.plan,
+    reachedFreePlanPageCheckLimit: user?.business?.reachedFreePlanPageCheckLimit,
     // role: user?.role,
     user,
   }

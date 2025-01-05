@@ -154,18 +154,19 @@ const PricingPlanCards = ({ selectedPricing }: { selectedPricing: string }) => {
   const hobbyFeatures = [
     'All Free features + ',
     '1 User',
-    '60 page check runs/month',
+    '60 Page Check Runs/month',
+    'Unlimited Manual Page Check Runs',
     'Email + SMS notifications',
   ]
 
   const basicFeatures = [
     'All Hobby features + ',
     'Unlimited Team Members',
-    '250 page check runs/month',
+    '250 Page Check Runs/month',
     'Notifications to over 50+ destinations (email, SMS, Slack, etc.)',
   ]
 
-  const proFeatures = ['All Basic features + ', '1000 page check runs/month']
+  const proFeatures = ['All Basic features + ', '1000 Page Check Runs/month']
 
   const planToFeatures = [
     {

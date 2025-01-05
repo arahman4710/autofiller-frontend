@@ -34,7 +34,9 @@ export type Business = {
   __typename?: 'Business'
   id: Scalars['ID']['output']
   name: Scalars['String']['output']
+  numPageChecks: Scalars['Int']['output']
   plan: SubscriptionPlanEnum
+  reachedFreePlanPageCheckLimit: Scalars['Boolean']['output']
 }
 
 export type Chat = {
@@ -707,7 +709,14 @@ export type UsersFragment = {
   email: string
   firstName?: string | null
   lastName?: string | null
-  business: { __typename?: 'Business'; id: string; name: string; plan: SubscriptionPlanEnum }
+  business: {
+    __typename?: 'Business'
+    id: string
+    name: string
+    plan: SubscriptionPlanEnum
+    reachedFreePlanPageCheckLimit: boolean
+    numPageChecks: number
+  }
 }
 
 export type UseCurrentUser_UsersQueryVariables = Exact<{ [key: string]: never }>
@@ -720,7 +729,14 @@ export type UseCurrentUser_UsersQuery = {
     email: string
     firstName?: string | null
     lastName?: string | null
-    business: { __typename?: 'Business'; id: string; name: string; plan: SubscriptionPlanEnum }
+    business: {
+      __typename?: 'Business'
+      id: string
+      name: string
+      plan: SubscriptionPlanEnum
+      reachedFreePlanPageCheckLimit: boolean
+      numPageChecks: number
+    }
   }
 }
 

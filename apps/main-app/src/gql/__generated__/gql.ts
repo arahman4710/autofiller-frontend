@@ -42,7 +42,7 @@ const documents = {
     types.AuthResponseFragmentDoc,
   'mutation useBillingPlan_subscriptionSessionCreate($plan: SubscriptionPlanEnum!) {\n  subscriptionsSessionCreate(plan: $plan)\n}\n\nmutation useBillingPlan_billingPortalUrl {\n  billingPortalUrl\n}':
     types.UseBillingPlan_SubscriptionSessionCreateDocument,
-  'fragment Users on Users {\n  id\n  email\n  firstName\n  lastName\n  business {\n    id\n    name\n    plan\n  }\n}\n\nquery useCurrentUser_users {\n  user {\n    id\n    ...Users\n  }\n}':
+  'fragment Users on Users {\n  id\n  email\n  firstName\n  lastName\n  business {\n    id\n    name\n    plan\n    reachedFreePlanPageCheckLimit\n    numPageChecks\n  }\n}\n\nquery useCurrentUser_users {\n  user {\n    id\n    ...Users\n  }\n}':
     types.UsersFragmentDoc,
   'mutation Plan_subscriptionSessionFetch($sessionId: ID!) {\n  subscriptionsSessionFetch(sessionId: $sessionId)\n}':
     types.Plan_SubscriptionSessionFetchDocument,
@@ -156,8 +156,8 @@ export function gql(
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(
-  source: 'fragment Users on Users {\n  id\n  email\n  firstName\n  lastName\n  business {\n    id\n    name\n    plan\n  }\n}\n\nquery useCurrentUser_users {\n  user {\n    id\n    ...Users\n  }\n}'
-): (typeof documents)['fragment Users on Users {\n  id\n  email\n  firstName\n  lastName\n  business {\n    id\n    name\n    plan\n  }\n}\n\nquery useCurrentUser_users {\n  user {\n    id\n    ...Users\n  }\n}']
+  source: 'fragment Users on Users {\n  id\n  email\n  firstName\n  lastName\n  business {\n    id\n    name\n    plan\n    reachedFreePlanPageCheckLimit\n    numPageChecks\n  }\n}\n\nquery useCurrentUser_users {\n  user {\n    id\n    ...Users\n  }\n}'
+): (typeof documents)['fragment Users on Users {\n  id\n  email\n  firstName\n  lastName\n  business {\n    id\n    name\n    plan\n    reachedFreePlanPageCheckLimit\n    numPageChecks\n  }\n}\n\nquery useCurrentUser_users {\n  user {\n    id\n    ...Users\n  }\n}']
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

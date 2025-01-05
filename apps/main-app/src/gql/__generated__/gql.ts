@@ -40,8 +40,12 @@ const documents = {
     types.UploadDocumentDocument,
   'fragment AuthResponse on AuthResponse {\n  token\n  user {\n    id\n    business {\n      id\n      name\n    }\n  }\n}\n\nmutation ProviderAuthentication($data: String!, $firstName: String, $lastName: String, $provider: AuthProviderTypeEnum!, $resumeUniqueId: ID, $referredByUserUniqueId: ID) {\n  authProviderAuthenticate(\n    data: $data\n    firstName: $firstName\n    lastName: $lastName\n    provider: $provider\n    resumeUniqueId: $resumeUniqueId\n    referredByUserUniqueId: $referredByUserUniqueId\n  ) {\n    ...AuthResponse\n  }\n}\n\nmutation CredentialsAuthenticationSignIn($email: String!, $password: String!) {\n  authSignIn(email: $email, password: $password) {\n    ...AuthResponse\n  }\n}\n\nmutation CredentialsAuthenticationSignUp($email: String!, $firstName: String, $lastName: String, $referredByUserUniqueId: ID, $resumeUniqueId: ID) {\n  authSignUp(\n    email: $email\n    firstName: $firstName\n    lastName: $lastName\n    referredByUserUniqueId: $referredByUserUniqueId\n    resumeUniqueId: $resumeUniqueId\n  ) {\n    ...AuthResponse\n  }\n}\n\nmutation CredentialsAuthenticationEmailVerify($emailVerificationCode: String!, $firstName: String!, $lastName: String!, $password: String!) {\n  userEmailVerify(\n    emailVerificationCode: $emailVerificationCode\n    firstName: $firstName\n    lastName: $lastName\n    password: $password\n  ) {\n    ...AuthResponse\n  }\n}':
     types.AuthResponseFragmentDoc,
-  'fragment Users on Users {\n  id\n  email\n  firstName\n  lastName\n  business {\n    id\n    name\n  }\n}\n\nquery useCurrentUser_users {\n  user {\n    id\n    ...Users\n  }\n}':
+  'mutation useBillingPlan_subscriptionSessionCreate($plan: SubscriptionPlanEnum!) {\n  subscriptionsSessionCreate(plan: $plan)\n}\n\nmutation useBillingPlan_billingPortalUrl {\n  billingPortalUrl\n}':
+    types.UseBillingPlan_SubscriptionSessionCreateDocument,
+  'fragment Users on Users {\n  id\n  email\n  firstName\n  lastName\n  business {\n    id\n    name\n    plan\n  }\n}\n\nquery useCurrentUser_users {\n  user {\n    id\n    ...Users\n  }\n}':
     types.UsersFragmentDoc,
+  'mutation Plan_subscriptionSessionFetch($sessionId: ID!) {\n  subscriptionsSessionFetch(sessionId: $sessionId)\n}':
+    types.Plan_SubscriptionSessionFetchDocument,
 }
 
 /**
@@ -146,8 +150,20 @@ export function gql(
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(
-  source: 'fragment Users on Users {\n  id\n  email\n  firstName\n  lastName\n  business {\n    id\n    name\n  }\n}\n\nquery useCurrentUser_users {\n  user {\n    id\n    ...Users\n  }\n}'
-): (typeof documents)['fragment Users on Users {\n  id\n  email\n  firstName\n  lastName\n  business {\n    id\n    name\n  }\n}\n\nquery useCurrentUser_users {\n  user {\n    id\n    ...Users\n  }\n}']
+  source: 'mutation useBillingPlan_subscriptionSessionCreate($plan: SubscriptionPlanEnum!) {\n  subscriptionsSessionCreate(plan: $plan)\n}\n\nmutation useBillingPlan_billingPortalUrl {\n  billingPortalUrl\n}'
+): (typeof documents)['mutation useBillingPlan_subscriptionSessionCreate($plan: SubscriptionPlanEnum!) {\n  subscriptionsSessionCreate(plan: $plan)\n}\n\nmutation useBillingPlan_billingPortalUrl {\n  billingPortalUrl\n}']
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(
+  source: 'fragment Users on Users {\n  id\n  email\n  firstName\n  lastName\n  business {\n    id\n    name\n    plan\n  }\n}\n\nquery useCurrentUser_users {\n  user {\n    id\n    ...Users\n  }\n}'
+): (typeof documents)['fragment Users on Users {\n  id\n  email\n  firstName\n  lastName\n  business {\n    id\n    name\n    plan\n  }\n}\n\nquery useCurrentUser_users {\n  user {\n    id\n    ...Users\n  }\n}']
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(
+  source: 'mutation Plan_subscriptionSessionFetch($sessionId: ID!) {\n  subscriptionsSessionFetch(sessionId: $sessionId)\n}'
+): (typeof documents)['mutation Plan_subscriptionSessionFetch($sessionId: ID!) {\n  subscriptionsSessionFetch(sessionId: $sessionId)\n}']
 
 export function gql(source: string) {
   return (documents as any)[source] ?? {}

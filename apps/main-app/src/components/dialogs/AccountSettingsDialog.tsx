@@ -6,6 +6,7 @@ import { useMutation, useQuery } from '@apollo/client'
 import { Gear, User, Wallet } from '@phosphor-icons/react'
 import { Alert, AlertDescription, AlertTitle } from '@rag/ui/Alert'
 import { Avatar, AvatarFallback } from '@rag/ui/Avatar'
+import { Button } from '@rag/ui/Button'
 import { Dialog, DialogContent, DialogScreen, DialogScreenProvider } from '@rag/ui/Dialog'
 import { IconText } from '@rag/ui/IconText'
 import { Separator } from '@rag/ui/Separator'
@@ -16,6 +17,7 @@ import { cn } from '@rag/ui/utils'
 import {
   AccountSettingsDialog_UpdateUserDocument,
   AccountSettingsDialog_UserDocument,
+  SubscriptionPlanEnum,
   UseCurrentUser_UsersDocument,
 } from '@gql/graphql'
 
@@ -26,7 +28,7 @@ import { UserForm } from '@/forms/UserForm'
 import { useUserForm } from '@/forms/hooks/useUserForm'
 import { useUserFormReset } from '@/forms/hooks/useUserFormReset'
 import { useUpgradePlanDialog } from '@/hooks/contexts/useUpgradePlanDialog'
-// import { useBillingPlan } from '@/hooks/useBillingPlan'
+import { useBillingPlan } from '@/hooks/useBillingPlan'
 import { useCurrentUser } from '@/hooks/useCurrentUser'
 import { useDelayedLoading } from '@/hooks/useDelayedLoading'
 import { useFormAutoSave } from '@/hooks/useFormAutoSave'
@@ -43,7 +45,7 @@ export const AccountSettingsDialog = ({ open, setOpen }: IAccountSettingsDialogP
 
   const menuItems = [
     { icon: <User />, label: 'Profile' },
-    // { icon: <Wallet />, label: 'Billing' },
+    { icon: <Wallet />, label: 'Billing' },
   ]
 
   useEffect(() => {
@@ -192,10 +194,7 @@ const ProfileSettings = () => {
 
   return (
     <div>
-      <SettingHeader
-        subtitle="Manage your personal details"
-        title="Profile"
-      />
+      <SettingHeader subtitle="Manage your personal details" title="Profile" />
       <SettingContent>
         <UserForm form={form} onSubmit={handleOnSubmit} />
         {isUpdating && (
@@ -209,14 +208,14 @@ const ProfileSettings = () => {
 }
 
 const BillingSettings = () => {
-  const { isPaidPlan } = useCurrentUser()
+  const { isPaidPlan, plan } = useCurrentUser()
 
   return (
     <div>
       <SettingHeader subtitle="Manage your billing details" title="Billing" />
       <SettingContent>
         <div className="flex flex-col justify-between">
-          <BillingPlan plan={isPaidPlan ? 'pro' : 'free'} />
+          <BillingPlan plan={plan} />
           <div className="text-muted-foreground mt-5 text-sm">
             Questions? Contact <SupportLink />.
           </div>
@@ -226,29 +225,9 @@ const BillingSettings = () => {
   )
 }
 
-const BillingPlan = ({ plan }: { plan: 'advisory' | 'free' | 'pro' }) => {
-  // const { manageSubscription } = useBillingPlan()
+const BillingPlan = ({ plan }: { plan?: SubscriptionPlanEnum }) => {
+  const { manageSubscription } = useBillingPlan()
   const upgradePlanDialog = useUpgradePlanDialog()
-
-  const isAdvisor = plan === 'advisory'
-  const isPro = plan === 'pro'
-  const isFree = plan === 'free'
-
-  // const actionButton = isFree ? (
-  //   <Button onClick={() => upgradePlanDialog.setOpen(true)} variant="cta">
-  //     Upgrade Plan
-  //   </Button>
-  // ) : isPro && !isLifetimePaidUser ? (
-  //   <Button onClick={() => manageSubscription()}>Manage Subscription</Button>
-  // ) : null
-
-  const tierBadge = isAdvisor ? (
-    <AdvisoryBadge className="text-md" />
-  ) : isPro ? (
-    <ProBadge className="text-md" />
-  ) : (
-    <span className="text-md">Free</span>
-  )
 
   return (
     <div className="flex h-full flex-col gap-3">
@@ -256,9 +235,14 @@ const BillingPlan = ({ plan }: { plan: 'advisory' | 'free' | 'pro' }) => {
       <div className="border-border-secondary bg-background-secondary flex rounded-lg border p-5">
         <div className="flex w-full items-center justify-between">
           <div className="flex flex-row items-center gap-2">
-            {tierBadge}{' '}
+            <span className="text-md">{plan}</span>{' '}
           </div>
-          {/* {actionButton} */}
+          <div className="flex flex-row gap-2">
+            <Button onClick={() => upgradePlanDialog.setOpen(true)} variant="cta">
+              Upgrade Plan
+            </Button>
+            <Button onClick={() => manageSubscription()}>Manage Subscription</Button>
+          </div>
         </div>
       </div>
     </div>

@@ -34,6 +34,7 @@ export type Business = {
   __typename?: 'Business'
   id: Scalars['ID']['output']
   name: Scalars['String']['output']
+  plan: SubscriptionPlanEnum
 }
 
 export type Chat = {
@@ -92,10 +93,13 @@ export type Mutation = {
   authResetPassword: Scalars['String']['output']
   authSignIn: AuthResponse
   authSignUp: AuthResponse
+  billingPortalUrl: Scalars['String']['output']
   chatAddMessage: Chat
   chatStart: Chat
   createPageCheck: PageCheck
   manuallyRunPageCheck: PageCheck
+  subscriptionsSessionCreate: Scalars['String']['output']
+  subscriptionsSessionFetch: Scalars['String']['output']
   updateBusiness: Business
   updateUser: Users
   uploadDocument: Document
@@ -163,6 +167,14 @@ export type MutationCreatePageCheckArgs = {
 
 export type MutationManuallyRunPageCheckArgs = {
   pageCheckId: Scalars['ID']['input']
+}
+
+export type MutationSubscriptionsSessionCreateArgs = {
+  plan: SubscriptionPlanEnum
+}
+
+export type MutationSubscriptionsSessionFetchArgs = {
+  sessionId: Scalars['ID']['input']
 }
 
 export type MutationUpdateBusinessArgs = {
@@ -267,9 +279,10 @@ export type Subscription = {
 }
 
 export enum SubscriptionPlanEnum {
+  Basic = 'BASIC',
   Free = 'FREE',
+  Hobby = 'HOBBY',
   Pro = 'PRO',
-  ProQuarterly = 'PRO_QUARTERLY',
 }
 
 export type Users = {
@@ -293,7 +306,6 @@ export type Users = {
   numStartedInterviews: Scalars['Int']['output']
   numUploadedResumes: Scalars['Int']['output']
   phoneNumber?: Maybe<Scalars['String']['output']>
-  plan: SubscriptionPlanEnum
   referralTokens: Scalars['Int']['output']
   tokenAchievements: Scalars['Int']['output']
   tokenCoverLetter: Scalars['Int']['output']
@@ -673,13 +685,29 @@ export type CredentialsAuthenticationEmailVerifyMutation = {
   }
 }
 
+export type UseBillingPlan_SubscriptionSessionCreateMutationVariables = Exact<{
+  plan: SubscriptionPlanEnum
+}>
+
+export type UseBillingPlan_SubscriptionSessionCreateMutation = {
+  __typename?: 'Mutation'
+  subscriptionsSessionCreate: string
+}
+
+export type UseBillingPlan_BillingPortalUrlMutationVariables = Exact<{ [key: string]: never }>
+
+export type UseBillingPlan_BillingPortalUrlMutation = {
+  __typename?: 'Mutation'
+  billingPortalUrl: string
+}
+
 export type UsersFragment = {
   __typename?: 'Users'
   id: string
   email: string
   firstName?: string | null
   lastName?: string | null
-  business: { __typename?: 'Business'; id: string; name: string }
+  business: { __typename?: 'Business'; id: string; name: string; plan: SubscriptionPlanEnum }
 }
 
 export type UseCurrentUser_UsersQueryVariables = Exact<{ [key: string]: never }>
@@ -692,8 +720,17 @@ export type UseCurrentUser_UsersQuery = {
     email: string
     firstName?: string | null
     lastName?: string | null
-    business: { __typename?: 'Business'; id: string; name: string }
+    business: { __typename?: 'Business'; id: string; name: string; plan: SubscriptionPlanEnum }
   }
+}
+
+export type Plan_SubscriptionSessionFetchMutationVariables = Exact<{
+  sessionId: Scalars['ID']['input']
+}>
+
+export type Plan_SubscriptionSessionFetchMutation = {
+  __typename?: 'Mutation'
+  subscriptionsSessionFetch: string
 }
 
 type Properties<T> = Required<{

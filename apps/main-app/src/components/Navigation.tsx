@@ -2,19 +2,16 @@
 
 import { cloneElement, useEffect, useMemo, useState } from 'react'
 
-import { Browser } from '@phosphor-icons/react'
+import { ArrowCircleUp, Browser } from '@phosphor-icons/react'
 import { Badge } from '@rag/ui/Badge'
 import { IconText } from '@rag/ui/IconText'
 import { cn } from '@rag/ui/utils/cn'
 import Link, { LinkProps } from 'next/link'
 import { usePathname } from 'next/navigation'
 
-import {} from '@gql/graphql'
-
 import { useUpgradePlanDialog } from '@/hooks/contexts/useUpgradePlanDialog'
 import { useCurrentUser } from '@/hooks/useCurrentUser'
 import { useQueryParams } from '@/hooks/useQueryParams'
-import { trackEvent } from '@/lib/utils/analytics'
 
 type TNavItem = {
   count?: number
@@ -36,7 +33,7 @@ export const Navigation = () => {
   const { queryParams } = useQueryParams()
   const upgradePlanDialog = useUpgradePlanDialog()
   const shouldOpenUpgradeDialog = queryParams?.get('open_upgrade_dialog') == 'true'
-  const { loading: currentUserIsLoading, user } = useCurrentUser()
+  const { isPaidPlan, loading: currentUserIsLoading, user } = useCurrentUser()
 
   const mainNavItems = (): TNavItem[] => {
     return [
@@ -71,6 +68,26 @@ export const Navigation = () => {
           </NavLink>
         ))}
       </nav>
+      {!isPaidPlan && !currentUserIsLoading && (
+        <>
+          <hr className="border-border/30" />
+          <div className="flex flex-col gap-2 px-3">
+            <div
+              className="font-light text-white hover:text-white/80"
+              onClick={() => {
+                upgradePlanDialog.setOpen(true)
+              }}
+              role="button"
+            >
+              <IconText
+                leftIcon={<ArrowCircleUp className="text-emerald-400" size={16} weight="fill" />}
+              >
+                Upgrade to Pro
+              </IconText>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   )
 }

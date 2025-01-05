@@ -10,6 +10,7 @@ type AuthResponse {
 type Business {
   id: ID!
   name: String!
+  plan: SubscriptionPlanEnum!
 }
 
 type Chat {
@@ -65,10 +66,13 @@ type Mutation {
   authResetPassword(newPassword: String!, resetPasswordToken: String!): String!
   authSignIn(email: String!, password: String!): AuthResponse!
   authSignUp(email: String!, firstName: String, lastName: String, referredByUserUniqueId: ID, resumeUniqueId: ID): AuthResponse!
+  billingPortalUrl: String!
   chatAddMessage(chatId: String!, message: String!): Chat!
   chatStart: Chat!
   createPageCheck(checkInterval: PageCheckIntervalEnum!, jobDepartmentFilter: String, jobLocationFilter: String, keywordFilter: String, multiplePages: Boolean, pageCheckType: PageCheckTypeEnum!, priceDiscrepancyThresholdAmount: Float, priceMinAllowed: Float, prompt: String, resultType: PageCheckResultTypeEnum!, url: String!): PageCheck!
   manuallyRunPageCheck(pageCheckId: ID!): PageCheck!
+  subscriptionsSessionCreate(plan: SubscriptionPlanEnum!): String!
+  subscriptionsSessionFetch(sessionId: ID!): String!
   updateBusiness(name: String!): Business!
   updateUser(attributes: UsersInputObject!): Users!
   uploadDocument(name: String!, uploadSignedId: ID!): Document!
@@ -130,9 +134,10 @@ type Subscription {
 }
 
 enum SubscriptionPlanEnum {
+  BASIC
   FREE
+  HOBBY
   PRO
-  PRO_QUARTERLY
 }
 
 type Users {
@@ -155,7 +160,6 @@ type Users {
   numStartedInterviews: Int!
   numUploadedResumes: Int!
   phoneNumber: String
-  plan: SubscriptionPlanEnum!
   referralTokens: Int!
   tokenAchievements: Int!
   tokenCoverLetter: Int!

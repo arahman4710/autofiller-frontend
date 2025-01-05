@@ -49,9 +49,10 @@ export enum PageCheckTypeEnum {
 }
 
 export enum SubscriptionPlanEnum {
+  Basic = 'BASIC',
   Free = 'FREE',
+  Hobby = 'HOBBY',
   Pro = 'PRO',
-  ProQuarterly = 'PRO_QUARTERLY',
 }
 
 export type UsersInputObject = {
@@ -416,13 +417,29 @@ export type CredentialsAuthenticationEmailVerifyMutation = {
   }
 }
 
+export type UseBillingPlan_SubscriptionSessionCreateMutationVariables = Exact<{
+  plan: SubscriptionPlanEnum
+}>
+
+export type UseBillingPlan_SubscriptionSessionCreateMutation = {
+  __typename?: 'Mutation'
+  subscriptionsSessionCreate: string
+}
+
+export type UseBillingPlan_BillingPortalUrlMutationVariables = Exact<{ [key: string]: never }>
+
+export type UseBillingPlan_BillingPortalUrlMutation = {
+  __typename?: 'Mutation'
+  billingPortalUrl: string
+}
+
 export type UsersFragment = {
   __typename?: 'Users'
   id: string
   email: string
   firstName?: string | null
   lastName?: string | null
-  business: { __typename?: 'Business'; id: string; name: string }
+  business: { __typename?: 'Business'; id: string; name: string; plan: SubscriptionPlanEnum }
 }
 
 export type UseCurrentUser_UsersQueryVariables = Exact<{ [key: string]: never }>
@@ -435,8 +452,17 @@ export type UseCurrentUser_UsersQuery = {
     email: string
     firstName?: string | null
     lastName?: string | null
-    business: { __typename?: 'Business'; id: string; name: string }
+    business: { __typename?: 'Business'; id: string; name: string; plan: SubscriptionPlanEnum }
   }
+}
+
+export type Plan_SubscriptionSessionFetchMutationVariables = Exact<{
+  sessionId: Scalars['ID']['input']
+}>
+
+export type Plan_SubscriptionSessionFetchMutation = {
+  __typename?: 'Mutation'
+  subscriptionsSessionFetch: string
 }
 
 export const UsersUpdateFragmentDoc = {
@@ -516,6 +542,7 @@ export const UsersFragmentDoc = {
               selections: [
                 { kind: 'Field', name: { kind: 'Name', value: 'id' } },
                 { kind: 'Field', name: { kind: 'Name', value: 'name' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'plan' } },
               ],
             },
           },
@@ -2018,6 +2045,62 @@ export const CredentialsAuthenticationEmailVerifyDocument = {
   CredentialsAuthenticationEmailVerifyMutation,
   CredentialsAuthenticationEmailVerifyMutationVariables
 >
+export const UseBillingPlan_SubscriptionSessionCreateDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'mutation',
+      name: { kind: 'Name', value: 'useBillingPlan_subscriptionSessionCreate' },
+      variableDefinitions: [
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'plan' } },
+          type: {
+            kind: 'NonNullType',
+            type: { kind: 'NamedType', name: { kind: 'Name', value: 'SubscriptionPlanEnum' } },
+          },
+        },
+      ],
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'subscriptionsSessionCreate' },
+            arguments: [
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'plan' },
+                value: { kind: 'Variable', name: { kind: 'Name', value: 'plan' } },
+              },
+            ],
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<
+  UseBillingPlan_SubscriptionSessionCreateMutation,
+  UseBillingPlan_SubscriptionSessionCreateMutationVariables
+>
+export const UseBillingPlan_BillingPortalUrlDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'mutation',
+      name: { kind: 'Name', value: 'useBillingPlan_billingPortalUrl' },
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [{ kind: 'Field', name: { kind: 'Name', value: 'billingPortalUrl' } }],
+      },
+    },
+  ],
+} as unknown as DocumentNode<
+  UseBillingPlan_BillingPortalUrlMutation,
+  UseBillingPlan_BillingPortalUrlMutationVariables
+>
 export const UseCurrentUser_UsersDocument = {
   kind: 'Document',
   definitions: [
@@ -2061,6 +2144,7 @@ export const UseCurrentUser_UsersDocument = {
               selections: [
                 { kind: 'Field', name: { kind: 'Name', value: 'id' } },
                 { kind: 'Field', name: { kind: 'Name', value: 'name' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'plan' } },
               ],
             },
           },
@@ -2069,3 +2153,42 @@ export const UseCurrentUser_UsersDocument = {
     },
   ],
 } as unknown as DocumentNode<UseCurrentUser_UsersQuery, UseCurrentUser_UsersQueryVariables>
+export const Plan_SubscriptionSessionFetchDocument = {
+  kind: 'Document',
+  definitions: [
+    {
+      kind: 'OperationDefinition',
+      operation: 'mutation',
+      name: { kind: 'Name', value: 'Plan_subscriptionSessionFetch' },
+      variableDefinitions: [
+        {
+          kind: 'VariableDefinition',
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'sessionId' } },
+          type: {
+            kind: 'NonNullType',
+            type: { kind: 'NamedType', name: { kind: 'Name', value: 'ID' } },
+          },
+        },
+      ],
+      selectionSet: {
+        kind: 'SelectionSet',
+        selections: [
+          {
+            kind: 'Field',
+            name: { kind: 'Name', value: 'subscriptionsSessionFetch' },
+            arguments: [
+              {
+                kind: 'Argument',
+                name: { kind: 'Name', value: 'sessionId' },
+                value: { kind: 'Variable', name: { kind: 'Name', value: 'sessionId' } },
+              },
+            ],
+          },
+        ],
+      },
+    },
+  ],
+} as unknown as DocumentNode<
+  Plan_SubscriptionSessionFetchMutation,
+  Plan_SubscriptionSessionFetchMutationVariables
+>

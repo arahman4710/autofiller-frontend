@@ -17,9 +17,13 @@ type TTokens = { [key in TTokenTypes]: number | undefined }
 export const useCurrentUser = () => {
   const { data, loading } = useQuery(UseCurrentUser_UsersDocument)
   const user = data?.user
-  const paidPlans = [SubscriptionPlanEnum.Pro, SubscriptionPlanEnum.ProQuarterly]
-  // const isPaidPlan = user?.plan ? paidPlans.includes(user.plan) : false
-  const isPaidPlan = true
+  const business = user?.business
+  const paidPlans = [
+    SubscriptionPlanEnum.Pro,
+    SubscriptionPlanEnum.Basic,
+    SubscriptionPlanEnum.Hobby,
+  ]
+  const isPaidPlan = business?.plan ? paidPlans.includes(business.plan) : false
   // const isLifetimePaidUser = isPaidPlan && !user?.hasSubscription
 
   const isAdvisor = false // user?.role === UsersRoleEnum.Advisor
@@ -30,7 +34,7 @@ export const useCurrentUser = () => {
     isAdvisorAdmin,
     isPaidPlan,
     loading,
-    // plan: user?.plan,
+    plan: user?.business?.plan,
     // role: user?.role,
     user,
   }

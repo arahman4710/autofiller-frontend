@@ -6,6 +6,7 @@ fragment Users on Users {
   business {
     id
     name
+    plan
   }
 }
 

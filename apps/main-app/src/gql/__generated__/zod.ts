@@ -157,7 +157,6 @@ export type MutationCreatePageCheckArgs = {
   checkInterval: PageCheckIntervalEnum
   jobDepartmentFilter?: InputMaybe<Scalars['String']['input']>
   jobLocationFilter?: InputMaybe<Scalars['String']['input']>
-  keywordFilter?: InputMaybe<Scalars['String']['input']>
   keywordFilters: Array<Scalars['String']['input']>
   multiplePages?: InputMaybe<Scalars['Boolean']['input']>
   pageCheckType: PageCheckTypeEnum
@@ -210,7 +209,6 @@ export type PageCheck = {
   id: Scalars['ID']['output']
   jobDepartmentFilter?: Maybe<Scalars['String']['output']>
   jobLocationFilter?: Maybe<Scalars['String']['output']>
-  keywordFilter?: Maybe<Scalars['String']['output']>
   keywordFilters: Array<Scalars['String']['output']>
   multiplePages?: Maybe<Scalars['Boolean']['output']>
   pageCheckResults: Array<PageCheckResultType>

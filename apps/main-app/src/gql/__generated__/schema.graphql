@@ -71,7 +71,7 @@ type Mutation {
   billingPortalUrl: String!
   chatAddMessage(chatId: String!, message: String!): Chat!
   chatStart: Chat!
-  createPageCheck(checkInterval: PageCheckIntervalEnum!, jobDepartmentFilter: String, jobLocationFilter: String, keywordFilter: String, keywordFilters: [String!]!, multiplePages: Boolean, pageCheckType: PageCheckTypeEnum!, priceDiscrepancyThresholdAmount: Float, priceMinAllowed: Float, prompt: String, resultType: PageCheckResultTypeEnum!, url: String!): PageCheck!
+  createPageCheck(checkInterval: PageCheckIntervalEnum!, jobDepartmentFilter: String, jobLocationFilter: String, keywordFilters: [String!]!, multiplePages: Boolean, pageCheckType: PageCheckTypeEnum!, priceDiscrepancyThresholdAmount: Float, priceMinAllowed: Float, prompt: String, resultType: PageCheckResultTypeEnum!, url: String!): PageCheck!
   manuallyRunPageCheck(pageCheckId: ID!): PageCheck!
   subscriptionsSessionCreate(plan: SubscriptionPlanEnum!): String!
   subscriptionsSessionFetch(sessionId: ID!): String!
@@ -87,7 +87,6 @@ type PageCheck {
   id: ID!
   jobDepartmentFilter: String
   jobLocationFilter: String
-  keywordFilter: String
   keywordFilters: [String!]!
   multiplePages: Boolean
   pageCheckResults: [PageCheckResultType!]!

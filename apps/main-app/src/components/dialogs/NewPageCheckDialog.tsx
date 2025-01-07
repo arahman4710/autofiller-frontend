@@ -71,7 +71,12 @@ export const NewPageCheckDialog = ({ open, setOpen }: INewInterviewDialogProps) 
           checkInterval,
           jobDepartmentFilter,
           jobLocationFilter,
-          keywordFilters: keywordFilters.length > 0 ? keywordFilters : [jobTitleInputValue],
+          keywordFilters:
+            keywordFilters.length > 0
+              ? keywordFilters
+              : jobTitleInputValue
+                ? [jobTitleInputValue]
+                : [],
           multiplePages,
           pageCheckType,
           priceDiscrepancyThresholdAmount:

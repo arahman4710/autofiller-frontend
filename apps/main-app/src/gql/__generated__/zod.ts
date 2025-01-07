@@ -158,6 +158,7 @@ export type MutationCreatePageCheckArgs = {
   jobDepartmentFilter?: InputMaybe<Scalars['String']['input']>
   jobLocationFilter?: InputMaybe<Scalars['String']['input']>
   keywordFilter?: InputMaybe<Scalars['String']['input']>
+  keywordFilters: Array<Scalars['String']['input']>
   multiplePages?: InputMaybe<Scalars['Boolean']['input']>
   pageCheckType: PageCheckTypeEnum
   priceDiscrepancyThresholdAmount?: InputMaybe<Scalars['Float']['input']>
@@ -210,6 +211,7 @@ export type PageCheck = {
   jobDepartmentFilter?: Maybe<Scalars['String']['output']>
   jobLocationFilter?: Maybe<Scalars['String']['output']>
   keywordFilter?: Maybe<Scalars['String']['output']>
+  keywordFilters: Array<Scalars['String']['output']>
   multiplePages?: Maybe<Scalars['Boolean']['output']>
   pageCheckResults: Array<PageCheckResultType>
   pageCheckType: PageCheckTypeEnum
@@ -436,7 +438,7 @@ export type PageCheck_GetPageCheckQuery = {
     checkInterval: PageCheckIntervalEnum
     resultType: PageCheckResultTypeEnum
     prompt?: string | null
-    keywordFilter?: string | null
+    keywordFilters: Array<string>
     jobLocationFilter?: string | null
     jobDepartmentFilter?: string | null
     priceMinAllowed?: number | null
@@ -576,7 +578,7 @@ export type NewPageCheckDialog_CreatePageCheckMutationVariables = Exact<{
   multiplePages: Scalars['Boolean']['input']
   priceDiscrepancyThresholdAmount?: InputMaybe<Scalars['Float']['input']>
   priceMinAllowed?: InputMaybe<Scalars['Float']['input']>
-  keywordFilter?: InputMaybe<Scalars['String']['input']>
+  keywordFilters: Array<Scalars['String']['input']> | Scalars['String']['input']
   jobLocationFilter?: InputMaybe<Scalars['String']['input']>
   jobDepartmentFilter?: InputMaybe<Scalars['String']['input']>
 }>

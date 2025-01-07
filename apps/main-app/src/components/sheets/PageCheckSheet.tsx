@@ -49,10 +49,10 @@ export const PageCheckSheet = ({ onOpenChange, open, pageCheck }: IPageCheckShee
               )}
             </span>
           </div>
-          {pageCheck?.keywordFilter && (
+          {pageCheck?.keywordFilters && pageCheck?.keywordFilters.length > 0 && (
             <div className="flex flex-col gap-2">
-              <Label className="text-muted-foreground">Keyword Filter</Label>
-              <span>{pageCheck?.keywordFilter}</span>
+              <Label className="text-muted-foreground">Keyword Filters</Label>
+              <span>{pageCheck?.keywordFilters.join(', ')}</span>
             </div>
           )}
           {pageCheck?.jobDepartmentFilter && (

@@ -1,11 +1,14 @@
 'use client'
 
+import { useState } from 'react'
+
 import { useMutation } from '@apollo/client'
 import { Browser, Info } from '@phosphor-icons/react'
 import { Button } from '@rag/ui/Button'
 import { Dialog, DialogClose, DialogContent, DialogTrigger } from '@rag/ui/Dialog'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@rag/ui/Form'
 import { Input } from '@rag/ui/Input'
+import { InputChips } from '@rag/ui/InputChips'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@rag/ui/Select'
 import { Switch } from '@rag/ui/Switch'
 import { Tiptap } from '@rag/ui/Tiptap'
@@ -31,6 +34,7 @@ interface INewInterviewDialogProps {
 }
 
 export const NewPageCheckDialog = ({ open, setOpen }: INewInterviewDialogProps) => {
+  const [jobTitleInputValue, setJobTitleInputValue] = useState<string>('')
   const { errorToast } = useToast()
   const router = useRouter()
   //   const upgradePlanDialog = useUpgradePlanDialog()
@@ -58,7 +62,7 @@ export const NewPageCheckDialog = ({ open, setOpen }: INewInterviewDialogProps) 
   const priceMinAllowed = form.watch('priceMinAllowed')
   const checkInterval = form.watch('checkInterval')
   const resultType = form.watch('resultType')
-  const keywordFilter = form.watch('keywordFilter')
+  const keywordFilters = form.watch('keywordFilters')
 
   const handleCreatePageCheck = async () => {
     try {
@@ -67,7 +71,7 @@ export const NewPageCheckDialog = ({ open, setOpen }: INewInterviewDialogProps) 
           checkInterval,
           jobDepartmentFilter,
           jobLocationFilter,
-          keywordFilter,
+          keywordFilters: keywordFilters.length > 0 ? keywordFilters : [jobTitleInputValue],
           multiplePages,
           pageCheckType,
           priceDiscrepancyThresholdAmount:
@@ -217,22 +221,31 @@ export const NewPageCheckDialog = ({ open, setOpen }: INewInterviewDialogProps) 
               {pageCheckType == PageCheckTypeEnum.JobTitles && (
                 <FormField
                   control={form.control}
-                  name="keywordFilter"
+                  name="keywordFilters"
                   render={({ field }) => (
                     <FormItem className="w-full">
                       <FormLabel className="mb-4 flex flex-row items-center gap-1">
-                        Job Title filter
+                        Job Title filters
                         <Tooltip>
                           <TooltipTrigger asChild>
                             <Info className="text-md" />
                           </TooltipTrigger>
                           <TooltipContent>
-                            <p>Only job titles that include the filter will be included</p>
+                            <p>
+                              Only job titles that include the filter will be included. Type and
+                              press enter to add multiple job title filters
+                            </p>
                           </TooltipContent>
                         </Tooltip>
                       </FormLabel>
                       <FormControl>
-                        <Input {...field} />
+                        <InputChips
+                          chips={field.value}
+                          inputValue={jobTitleInputValue}
+                          onChange={field.onChange}
+                          placeholder="Type and press enter to add multiple job title filters"
+                          setInputValue={setJobTitleInputValue}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>

@@ -166,7 +166,7 @@ export type PageCheck_GetPageCheckQuery = {
     checkInterval: PageCheckIntervalEnum
     resultType: PageCheckResultTypeEnum
     prompt?: string | null
-    keywordFilter?: string | null
+    keywordFilters: Array<string>
     jobLocationFilter?: string | null
     jobDepartmentFilter?: string | null
     priceMinAllowed?: number | null
@@ -306,7 +306,7 @@ export type NewPageCheckDialog_CreatePageCheckMutationVariables = Exact<{
   multiplePages: Scalars['Boolean']['input']
   priceDiscrepancyThresholdAmount?: InputMaybe<Scalars['Float']['input']>
   priceMinAllowed?: InputMaybe<Scalars['Float']['input']>
-  keywordFilter?: InputMaybe<Scalars['String']['input']>
+  keywordFilters: Array<Scalars['String']['input']> | Scalars['String']['input']
   jobLocationFilter?: InputMaybe<Scalars['String']['input']>
   jobDepartmentFilter?: InputMaybe<Scalars['String']['input']>
 }>
@@ -946,7 +946,7 @@ export const PageCheck_GetPageCheckDocument = {
                 { kind: 'Field', name: { kind: 'Name', value: 'checkInterval' } },
                 { kind: 'Field', name: { kind: 'Name', value: 'resultType' } },
                 { kind: 'Field', name: { kind: 'Name', value: 'prompt' } },
-                { kind: 'Field', name: { kind: 'Name', value: 'keywordFilter' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'keywordFilters' } },
                 { kind: 'Field', name: { kind: 'Name', value: 'jobLocationFilter' } },
                 { kind: 'Field', name: { kind: 'Name', value: 'jobDepartmentFilter' } },
                 { kind: 'Field', name: { kind: 'Name', value: 'priceMinAllowed' } },
@@ -1453,8 +1453,17 @@ export const NewPageCheckDialog_CreatePageCheckDocument = {
         },
         {
           kind: 'VariableDefinition',
-          variable: { kind: 'Variable', name: { kind: 'Name', value: 'keywordFilter' } },
-          type: { kind: 'NamedType', name: { kind: 'Name', value: 'String' } },
+          variable: { kind: 'Variable', name: { kind: 'Name', value: 'keywordFilters' } },
+          type: {
+            kind: 'NonNullType',
+            type: {
+              kind: 'ListType',
+              type: {
+                kind: 'NonNullType',
+                type: { kind: 'NamedType', name: { kind: 'Name', value: 'String' } },
+              },
+            },
+          },
         },
         {
           kind: 'VariableDefinition',
@@ -1519,8 +1528,8 @@ export const NewPageCheckDialog_CreatePageCheckDocument = {
               },
               {
                 kind: 'Argument',
-                name: { kind: 'Name', value: 'keywordFilter' },
-                value: { kind: 'Variable', name: { kind: 'Name', value: 'keywordFilter' } },
+                name: { kind: 'Name', value: 'keywordFilters' },
+                value: { kind: 'Variable', name: { kind: 'Name', value: 'keywordFilters' } },
               },
               {
                 kind: 'Argument',

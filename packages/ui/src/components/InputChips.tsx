@@ -12,8 +12,10 @@ interface IInputChipsProps {
   chips: string[]
   disableDrag?: boolean
   disabled?: boolean
+  inputValue: string
   onChange: (chips: string[]) => void
   placeholder?: string
+  setInputValue: (value: string) => void
 }
 
 const Wrapper = ({ children }: { children: React.ReactNode }) => {
@@ -25,10 +27,12 @@ export const InputChips = ({
   chips,
   disableDrag,
   disabled,
+  inputValue,
   onChange,
   placeholder,
+  setInputValue,
 }: IInputChipsProps) => {
-  const [inputValue, setInputValue] = useState<string>('')
+  // const [inputValue, setInputValue] = useState<string>('')
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'Enter') {

@@ -1,10 +1,16 @@
-import { CheckCircle, XCircle } from '@phosphor-icons/react'
+import { CheckCircle, Info, XCircle } from '@phosphor-icons/react'
 import { Label } from '@rag/ui/Label'
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@rag/ui/Sheet'
+import { Tooltip, TooltipContent, TooltipTrigger } from '@rag/ui/Tooltip'
 
-import { PageCheck_GetPageCheckQuery } from '@gql/graphql'
+import { PageCheck_GetPageCheckQuery, PageCheckIntervalEnum } from '@gql/graphql'
 
 import { pageCheckTypeOptions } from '@/utils/pageCheckTypeOptions'
+
+const pageCheckIntervalToTooltip = {
+  [PageCheckIntervalEnum.Daily]: 'This check runs daily at 2:00 PM EST',
+  [PageCheckIntervalEnum.Weekly]: 'This check runs weekly on Monday at 5:00 PM EST',
+}
 
 interface IPageCheckSheetProps {
   onOpenChange: (open: boolean) => void
@@ -29,7 +35,19 @@ export const PageCheckSheet = ({ onOpenChange, open, pageCheck }: IPageCheckShee
           </div>
           <div className="flex flex-col gap-2">
             <Label className="text-muted-foreground">Check interval</Label>
-            <span>{pageCheck?.checkInterval?.toLowerCase()}</span>
+            <span className="flex flex-row items-center gap-1">
+              {pageCheck?.checkInterval?.toLowerCase()}
+              {pageCheckIntervalToTooltip[pageCheck?.checkInterval || ''] && (
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Info className="text-md" />
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>{pageCheckIntervalToTooltip[pageCheck?.checkInterval || '']}</p>
+                  </TooltipContent>
+                </Tooltip>
+              )}
+            </span>
           </div>
           {pageCheck?.keywordFilter && (
             <div className="flex flex-col gap-2">

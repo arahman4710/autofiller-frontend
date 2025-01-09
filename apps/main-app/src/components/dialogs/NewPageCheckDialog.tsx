@@ -136,29 +136,56 @@ export const NewPageCheckDialog = ({ open, setOpen }: INewInterviewDialogProps) 
                   </FormItem>
                 )}
               />
-              <FormField
-                control={form.control}
-                name="url"
-                render={({ field }) => (
-                  <FormItem className="w-full">
-                    <FormLabel className="mb-4 flex flex-row items-center gap-1">
-                      URL
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <Info className="text-md" />
-                        </TooltipTrigger>
-                        <TooltipContent>
-                          <p>Make sure your URL begins with "https://"</p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </FormLabel>
-                    <FormControl>
-                      <Input {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
+              {pageCheckType == PageCheckTypeEnum.JobTitles && (
+                <FormField
+                  control={form.control}
+                  name="url"
+                  render={({ field }) => (
+                    <FormItem className="w-full">
+                      <FormLabel className="mb-4 flex flex-row items-center gap-1">
+                        Careers Page URL
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <Info className="text-md" />
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <p>Make sure your URL begins with "https://"</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </FormLabel>
+                      <FormControl>
+                        <Input {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              )}
+              {pageCheckType != PageCheckTypeEnum.JobTitles && (
+                <FormField
+                  control={form.control}
+                  name="url"
+                  render={({ field }) => (
+                    <FormItem className="w-full">
+                      <FormLabel className="mb-4 flex flex-row items-center gap-1">
+                        URL
+                        <Tooltip>
+                          <TooltipTrigger asChild>
+                            <Info className="text-md" />
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <p>Make sure your URL begins with "https://"</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </FormLabel>
+                      <FormControl>
+                        <Input {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              )}
               <div className="flex w-full flex-row items-center justify-between gap-4">
                 <FormField
                   control={form.control}

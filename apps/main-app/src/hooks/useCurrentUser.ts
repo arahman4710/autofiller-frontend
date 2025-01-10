@@ -37,6 +37,7 @@ export const useCurrentUser = () => {
     loading,
     plan: user?.business?.plan,
     reachedFreePlanPageCheckLimit: user?.business?.reachedFreePlanPageCheckLimit,
+    reachedManuallyRunLimit: user?.business?.reachedManuallyRunLimit,
     // role: user?.role,
     user,
   }

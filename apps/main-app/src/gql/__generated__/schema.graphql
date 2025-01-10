@@ -13,6 +13,7 @@ type Business {
   numPageChecks: Int!
   plan: SubscriptionPlanEnum!
   reachedFreePlanPageCheckLimit: Boolean!
+  reachedManuallyRunLimit: Boolean!
 }
 
 type Chat {

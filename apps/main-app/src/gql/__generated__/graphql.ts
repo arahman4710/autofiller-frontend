@@ -445,6 +445,7 @@ export type UsersFragment = {
     name: string
     plan: SubscriptionPlanEnum
     reachedFreePlanPageCheckLimit: boolean
+    reachedManuallyRunLimit: boolean
     numPageChecks: number
   }
 }
@@ -465,6 +466,7 @@ export type UseCurrentUser_UsersQuery = {
       name: string
       plan: SubscriptionPlanEnum
       reachedFreePlanPageCheckLimit: boolean
+      reachedManuallyRunLimit: boolean
       numPageChecks: number
     }
   }
@@ -558,6 +560,7 @@ export const UsersFragmentDoc = {
                 { kind: 'Field', name: { kind: 'Name', value: 'name' } },
                 { kind: 'Field', name: { kind: 'Name', value: 'plan' } },
                 { kind: 'Field', name: { kind: 'Name', value: 'reachedFreePlanPageCheckLimit' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'reachedManuallyRunLimit' } },
                 { kind: 'Field', name: { kind: 'Name', value: 'numPageChecks' } },
               ],
             },
@@ -2171,6 +2174,7 @@ export const UseCurrentUser_UsersDocument = {
                 { kind: 'Field', name: { kind: 'Name', value: 'name' } },
                 { kind: 'Field', name: { kind: 'Name', value: 'plan' } },
                 { kind: 'Field', name: { kind: 'Name', value: 'reachedFreePlanPageCheckLimit' } },
+                { kind: 'Field', name: { kind: 'Name', value: 'reachedManuallyRunLimit' } },
                 { kind: 'Field', name: { kind: 'Name', value: 'numPageChecks' } },
               ],
             },

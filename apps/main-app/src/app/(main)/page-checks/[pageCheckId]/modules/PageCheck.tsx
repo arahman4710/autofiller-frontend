@@ -12,6 +12,7 @@ import {
   PageCheck_GetPageCheckDocument,
   PageCheck_ManuallyRunPageCheckDocument,
   PageCheckIntervalEnum,
+  UseCurrentUser_UsersDocument,
 } from '@gql/graphql'
 
 import { PageCheckSheet } from '@/components/sheets/PageCheckSheet'
@@ -27,10 +28,12 @@ interface IPageCheckProps {
 export const PageCheck = ({ pageCheckId }: IPageCheckProps) => {
   const router = useRouter()
   const [isPageSheetOpen, setIsPageSheetOpen] = useState(false)
-  const { reachedFreePlanPageCheckLimit } = useCurrentUser()
+  const { reachedManuallyRunLimit } = useCurrentUser()
   const upgradePlanDialog = useUpgradePlanDialog()
 
-  const [manuallyRunPageCheck, { loading }] = useMutation(PageCheck_ManuallyRunPageCheckDocument)
+  const [manuallyRunPageCheck, { loading }] = useMutation(PageCheck_ManuallyRunPageCheckDocument, {
+    refetchQueries: [UseCurrentUser_UsersDocument],
+  })
   const { data, refetch } = useQuery(PageCheck_GetPageCheckDocument, {
     variables: {
       pageCheckIds: [pageCheckId],
@@ -51,7 +54,7 @@ export const PageCheck = ({ pageCheckId }: IPageCheckProps) => {
   })
 
   const handleManualRun = () => {
-    if (reachedFreePlanPageCheckLimit) {
+    if (reachedManuallyRunLimit) {
       upgradePlanDialog.setOpen(true)
     } else {
       manuallyRunPageCheck({ variables: { id: pageCheckId } })

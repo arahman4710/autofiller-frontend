@@ -37,6 +37,7 @@ export type Business = {
   numPageChecks: Scalars['Int']['output']
   plan: SubscriptionPlanEnum
   reachedFreePlanPageCheckLimit: Scalars['Boolean']['output']
+  reachedManuallyRunLimit: Scalars['Boolean']['output']
 }
 
 export type Chat = {
@@ -715,6 +716,7 @@ export type UsersFragment = {
     name: string
     plan: SubscriptionPlanEnum
     reachedFreePlanPageCheckLimit: boolean
+    reachedManuallyRunLimit: boolean
     numPageChecks: number
   }
 }
@@ -735,6 +737,7 @@ export type UseCurrentUser_UsersQuery = {
       name: string
       plan: SubscriptionPlanEnum
       reachedFreePlanPageCheckLimit: boolean
+      reachedManuallyRunLimit: boolean
       numPageChecks: number
     }
   }

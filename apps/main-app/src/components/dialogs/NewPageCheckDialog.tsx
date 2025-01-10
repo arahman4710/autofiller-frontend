@@ -21,6 +21,7 @@ import {
   PageCheckIntervalEnum,
   PageCheckTypeEnum,
   PageChecksList_AllPageChecksDocument,
+  UseCurrentUser_UsersDocument,
 } from '@gql/graphql'
 
 import { usePageCheckForm } from '@/forms/hooks/usePageCheckForm'
@@ -42,7 +43,7 @@ export const NewPageCheckDialog = ({ open, setOpen }: INewInterviewDialogProps) 
   const [createPageCheck, { loading: isCreatePageCheckLoading }] = useMutation(
     NewPageCheckDialog_CreatePageCheckDocument,
     {
-      refetchQueries: [PageChecksList_AllPageChecksDocument],
+      refetchQueries: [PageChecksList_AllPageChecksDocument, UseCurrentUser_UsersDocument],
     }
   )
   const { isPaidPlan, user } = useCurrentUser()

@@ -1,5 +1,5 @@
-import { Clipboard } from '@phosphor-icons/react'
 import { Button } from '@autofiller/ui/Button'
+import { Clipboard } from '@phosphor-icons/react'
 
 import { useCopyToClipboard } from '@/hooks/useCopyToClipboard'
 

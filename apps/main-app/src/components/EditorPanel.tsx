@@ -2,6 +2,12 @@
 
 import { useState } from 'react'
 
+import { Button } from '@autofiller/ui/Button'
+import { IconText } from '@autofiller/ui/IconText'
+import { DragHandle } from '@autofiller/ui/SortableItem'
+import { Tooltip, TooltipContent, TooltipTrigger } from '@autofiller/ui/Tooltip'
+import { WarningTooltip } from '@autofiller/ui/WarningTooltip'
+import { cn } from '@autofiller/ui/utils/cn'
 import {
   CaretDown,
   CaretUp,
@@ -12,12 +18,6 @@ import {
   Sparkle,
   Trash,
 } from '@phosphor-icons/react'
-import { Button } from '@autofiller/ui/Button'
-import { IconText } from '@autofiller/ui/IconText'
-import { DragHandle } from '@autofiller/ui/SortableItem'
-import { Tooltip, TooltipContent, TooltipTrigger } from '@autofiller/ui/Tooltip'
-import { WarningTooltip } from '@autofiller/ui/WarningTooltip'
-import { cn } from '@autofiller/ui/utils/cn'
 import { type VariantProps, cva } from 'class-variance-authority'
 
 import { DestroyAlertDialog } from '@/components/dialogs/DestroyAlertDialog'

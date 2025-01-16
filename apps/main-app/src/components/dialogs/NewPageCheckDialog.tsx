@@ -3,17 +3,23 @@
 import { useState } from 'react'
 
 import { useMutation } from '@apollo/client'
-import { Browser, Info } from '@phosphor-icons/react'
 import { Button } from '@autofiller/ui/Button'
 import { Dialog, DialogClose, DialogContent, DialogTrigger } from '@autofiller/ui/Dialog'
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@autofiller/ui/Form'
 import { Input } from '@autofiller/ui/Input'
 import { InputChips } from '@autofiller/ui/InputChips'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@autofiller/ui/Select'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@autofiller/ui/Select'
 import { Switch } from '@autofiller/ui/Switch'
 import { Tiptap } from '@autofiller/ui/Tiptap'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@autofiller/ui/Tooltip'
 import { useToast } from '@autofiller/ui/useToast'
+import { Browser, Info } from '@phosphor-icons/react'
 import { useRouter } from 'next/navigation'
 
 import {

@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 
-import { ArchiveBox, DotsThree, FileText } from '@phosphor-icons/react'
 import { IconText } from '@autofiller/ui/IconText'
 import {
   Popover,
@@ -13,6 +12,7 @@ import {
   PopoverTrigger,
 } from '@autofiller/ui/Popover'
 import { cn } from '@autofiller/ui/utils/cn'
+import { ArchiveBox, DotsThree, FileText } from '@phosphor-icons/react'
 
 import { IListRowProps, ListRow } from './ListRow'
 
@@ -40,17 +40,14 @@ export const ListDocumentRow = ({
 
   const handleClick = () => {
     if (documentUrl && window != null) {
-      window?.open(documentUrl, '_blank')?.focus();
+      window?.open(documentUrl, '_blank')?.focus()
     }
   }
 
   return (
     <div>
       <Shell isLast={isLast}>
-        <div
-          className="cursor-pointer grow"
-          onClick={handleClick}
-        >
+        <div className="grow cursor-pointer" onClick={handleClick}>
           <IconText
             className="gap-3 font-mono"
             leftIcon={<FileText className="text-muted-foreground text-lg" />}

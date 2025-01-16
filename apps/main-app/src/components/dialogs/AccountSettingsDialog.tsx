@@ -3,7 +3,6 @@ import type { TAlertVariant } from '@autofiller/ui/Alert'
 import { useEffect, useState } from 'react'
 
 import { useMutation, useQuery } from '@apollo/client'
-import { Gear, User, Wallet } from '@phosphor-icons/react'
 import { Alert, AlertDescription, AlertTitle } from '@autofiller/ui/Alert'
 import { Avatar, AvatarFallback } from '@autofiller/ui/Avatar'
 import { Button } from '@autofiller/ui/Button'
@@ -13,6 +12,7 @@ import { Separator } from '@autofiller/ui/Separator'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@autofiller/ui/Tooltip'
 import { useToast } from '@autofiller/ui/useToast'
 import { cn } from '@autofiller/ui/utils'
+import { Gear, User, Wallet } from '@phosphor-icons/react'
 
 import {
   AccountSettingsDialog_UpdateUserDocument,

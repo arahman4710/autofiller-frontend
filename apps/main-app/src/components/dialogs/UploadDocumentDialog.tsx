@@ -3,13 +3,13 @@
 import { useEffect, useState } from 'react'
 
 import { useLazyQuery, useMutation } from '@apollo/client'
-import { PlusCircle } from '@phosphor-icons/react'
 import { Button } from '@autofiller/ui/Button'
 import { Dialog, DialogClose, DialogContent, DialogFooter } from '@autofiller/ui/Dialog'
 import { Dropzone } from '@autofiller/ui/Dropzone'
 import { useToast } from '@autofiller/ui/useToast'
+import { PlusCircle } from '@phosphor-icons/react'
 
-import { DocumentsList_AllDocumentsDocument, UploadDocumentDocument, } from '@gql/graphql'
+import { DocumentsList_AllDocumentsDocument, UploadDocumentDocument } from '@gql/graphql'
 
 import { useCurrentUser } from '@/hooks/useCurrentUser'
 import { uploadFile } from '@/utils/uploadFile'
@@ -18,7 +18,6 @@ interface IUploadDocumentDialogProps {
   open: boolean
   setOpen: (open: boolean) => void
 }
-
 
 export const UploadDocumentDialog = ({ open, setOpen }: IUploadDocumentDialogProps) => {
   const { errorToast, successToast } = useToast()
@@ -64,12 +63,12 @@ export const UploadDocumentDialog = ({ open, setOpen }: IUploadDocumentDialogPro
     try {
       if (fileSignedId) {
         await uploadDocument({
-            variables: {
+          variables: {
             name: fileName,
             uploadSignedId: fileSignedId,
-            }
+          },
         })
-      } 
+      }
       successToast({ description: 'Your document has been uploaded.' })
       setOpen(false)
     } catch (error) {
@@ -86,21 +85,18 @@ export const UploadDocumentDialog = ({ open, setOpen }: IUploadDocumentDialogPro
         title="Upload new document"
         titleIcon={<PlusCircle />}
       >
-      <Dropzone
-        loading={false}
-        onDropAccepted={handleUploadResume}
-      />
-      <Button
-        className="mt-4"
-        fullWidth={true}
-        loading={loading}
-        onClick={handleSubmit}
-        size="lg"
-        type="submit"
-        variant="cta"
-      >
-        Upload File
-      </Button>
+        <Dropzone loading={false} onDropAccepted={handleUploadResume} />
+        <Button
+          className="mt-4"
+          fullWidth={true}
+          loading={loading}
+          onClick={handleSubmit}
+          size="lg"
+          type="submit"
+          variant="cta"
+        >
+          Upload File
+        </Button>
       </DialogContent>
     </Dialog>
   )

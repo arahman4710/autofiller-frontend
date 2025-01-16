@@ -1,7 +1,7 @@
-import { Plus, Sparkle } from '@phosphor-icons/react'
 import { Chip, ChipsContainer } from '@autofiller/ui/Chip'
 import { IconText } from '@autofiller/ui/IconText'
 import { cn } from '@autofiller/ui/utils/cn'
+import { Plus, Sparkle } from '@phosphor-icons/react'
 
 interface ISuggestedChipsProps {
   chips: string[]

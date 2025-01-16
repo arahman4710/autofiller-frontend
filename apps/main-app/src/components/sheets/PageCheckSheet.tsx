@@ -1,7 +1,7 @@
-import { CheckCircle, Info, XCircle } from '@phosphor-icons/react'
 import { Label } from '@autofiller/ui/Label'
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@autofiller/ui/Sheet'
 import { Tooltip, TooltipContent, TooltipTrigger } from '@autofiller/ui/Tooltip'
+import { CheckCircle, Info, XCircle } from '@phosphor-icons/react'
 
 import { PageCheck_GetPageCheckQuery, PageCheckIntervalEnum } from '@gql/graphql'
 

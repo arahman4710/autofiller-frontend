@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react'
 import { createContext } from 'react'
 
-import { ArrowCircleUp, CheckCircle } from '@phosphor-icons/react'
 import { Badge } from '@autofiller/ui/Badge'
 import { Button } from '@autofiller/ui/Button'
 import { Card, CardContent } from '@autofiller/ui/Card'
@@ -11,6 +10,7 @@ import { Dialog, DialogContent } from '@autofiller/ui/Dialog'
 import { Loader } from '@autofiller/ui/Loader'
 import { SwitchTabs, SwitchTabsContent } from '@autofiller/ui/SwitchTabs'
 import { cn } from '@autofiller/ui/utils/cn'
+import { ArrowCircleUp, CheckCircle } from '@phosphor-icons/react'
 import { motion } from 'framer-motion'
 
 import { SubscriptionPlanEnum } from '@gql/graphql'

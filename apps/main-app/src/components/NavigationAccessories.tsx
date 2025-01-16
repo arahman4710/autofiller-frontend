@@ -1,6 +1,5 @@
 'use client'
 
-import { Hammer, PuzzlePiece } from '@phosphor-icons/react'
 import {
   Drawer,
   DrawerContent,
@@ -10,6 +9,7 @@ import {
   DrawerTrigger,
 } from '@autofiller/ui/Drawer'
 import { IconText } from '@autofiller/ui/IconText'
+import { Hammer, PuzzlePiece } from '@phosphor-icons/react'
 
 import { Devtool } from '@/__dev__/Devtool'
 import { ProfileButton } from '@/components/ProfileButton'

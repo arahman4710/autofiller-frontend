@@ -1,6 +1,0 @@
-mutation addBusinessName($name: String!) {
-  updateBusiness(name: $name) {
-    id
-    name
-  }
-}

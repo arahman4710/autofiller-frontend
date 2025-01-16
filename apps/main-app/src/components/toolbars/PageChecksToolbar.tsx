@@ -3,8 +3,8 @@
 import { useState } from 'react'
 
 import { PlusCircle } from '@phosphor-icons/react'
-import { Button } from '@rag/ui/Button'
-import { Toolbar } from '@rag/ui/Toolbar'
+import { Button } from '@autofiller/ui/Button'
+import { Toolbar } from '@autofiller/ui/Toolbar'
 
 import { NewPageCheckDialog } from '@/components/dialogs/NewPageCheckDialog'
 import { useUpgradePlanDialog } from '@/hooks/contexts/useUpgradePlanDialog'

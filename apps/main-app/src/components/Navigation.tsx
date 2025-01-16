@@ -3,9 +3,9 @@
 import { cloneElement, useEffect, useMemo, useState } from 'react'
 
 import { ArrowCircleUp, Browser } from '@phosphor-icons/react'
-import { Badge } from '@rag/ui/Badge'
-import { IconText } from '@rag/ui/IconText'
-import { cn } from '@rag/ui/utils/cn'
+import { Badge } from '@autofiller/ui/Badge'
+import { IconText } from '@autofiller/ui/IconText'
+import { cn } from '@autofiller/ui/utils/cn'
 import Link, { LinkProps } from 'next/link'
 import { usePathname } from 'next/navigation'
 

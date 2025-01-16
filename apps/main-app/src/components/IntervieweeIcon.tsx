@@ -1,5 +1,5 @@
-import { cn } from '@rag/ui/utils/cn'
-import { getInitials } from '@rag/utils'
+import { cn } from '@autofiller/ui/utils/cn'
+import { getInitials } from '@autofiller/utils'
 
 export const IntervieweeIcon = ({
   className,

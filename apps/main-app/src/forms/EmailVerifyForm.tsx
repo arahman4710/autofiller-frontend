@@ -1,6 +1,6 @@
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@rag/ui/Form'
-import { InfoTooltip } from '@rag/ui/InfoTooltip'
-import { Input } from '@rag/ui/Input'
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@autofiller/ui/Form'
+import { InfoTooltip } from '@autofiller/ui/InfoTooltip'
+import { Input } from '@autofiller/ui/Input'
 import { SubmitHandler, UseFormReturn } from 'react-hook-form'
 
 import { TEmailVerifyForm } from '@/forms/types'

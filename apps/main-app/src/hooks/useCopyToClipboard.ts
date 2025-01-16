@@ -1,4 +1,4 @@
-import { useToast } from '@rag/ui/useToast'
+import { useToast } from '@autofiller/ui/useToast'
 
 export const useCopyToClipboard = () => {
   const { toast } = useToast()

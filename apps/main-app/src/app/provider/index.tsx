@@ -1,6 +1,6 @@
 'use client'
 
-import { TooltipProvider } from '@rag/ui/Tooltip'
+import { TooltipProvider } from '@autofiller/ui/Tooltip'
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import { ErrorBoundary, Provider } from '@rollbar/react'
 import { Session } from 'next-auth'

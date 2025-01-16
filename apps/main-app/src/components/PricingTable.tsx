@@ -1,6 +1,6 @@
 import { Check, X } from '@phosphor-icons/react'
-import { EmptySpace } from '@rag/ui/EmptySpace'
-import { cn } from '@rag/ui/utils/cn'
+import { EmptySpace } from '@autofiller/ui/EmptySpace'
+import { cn } from '@autofiller/ui/utils/cn'
 
 type TCheck = 'check' | 'cross'
 type TSubscriptionPlanValue = React.ReactNode | TCheck | string

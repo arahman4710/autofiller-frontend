@@ -3,9 +3,9 @@
 import { useState } from 'react'
 
 import { useMutation } from '@apollo/client'
-import { Button } from '@rag/ui/Button'
-import { useToast } from '@rag/ui/useToast'
-import { objectToQueryString } from '@rag/utils'
+import { Button } from '@autofiller/ui/Button'
+import { useToast } from '@autofiller/ui/useToast'
+import { objectToQueryString } from '@autofiller/utils'
 import { useSearchParams } from 'next/navigation'
 import { useRouter } from 'next/navigation'
 

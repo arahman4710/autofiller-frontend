@@ -3,8 +3,8 @@
 import { useState } from 'react'
 
 import { GoogleDriveLogo, PlusCircle } from '@phosphor-icons/react'
-import { Button } from '@rag/ui/Button'
-import { Toolbar } from '@rag/ui/Toolbar'
+import { Button } from '@autofiller/ui/Button'
+import { Toolbar } from '@autofiller/ui/Toolbar'
 import { useGoogleLogin } from '@react-oauth/google';
 
 import { UploadDocumentDialog } from '@/components/dialogs/UploadDocumentDialog'

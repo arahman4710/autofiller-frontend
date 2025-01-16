@@ -3,8 +3,8 @@
 import { useState } from 'react'
 
 import { useSuspenseQuery } from '@apollo/experimental-nextjs-app-support/ssr'
-import { Button } from '@rag/ui/Button'
-import { useToast } from '@rag/ui/useToast'
+import { Button } from '@autofiller/ui/Button'
+import { useToast } from '@autofiller/ui/useToast'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useSearchParams } from 'next/navigation'

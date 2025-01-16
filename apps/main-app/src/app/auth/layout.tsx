@@ -1,4 +1,4 @@
-import { LogoFull } from '@rag/ui/Logo'
+import { LogoFull } from '@autofiller/ui/Logo'
 
 export default function AuthLayout({ children }: { children: React.ReactNode }) {
   return (

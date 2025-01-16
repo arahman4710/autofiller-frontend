@@ -1,6 +1,6 @@
-import { Dot, IDotProps } from '@rag/ui/Dot'
-import { Skeleton } from '@rag/ui/Skeleton'
-import { cn } from '@rag/ui/utils/cn'
+import { Dot, IDotProps } from '@autofiller/ui/Dot'
+import { Skeleton } from '@autofiller/ui/Skeleton'
+import { cn } from '@autofiller/ui/utils/cn'
 
 import { ListRow } from './ListRow'
 

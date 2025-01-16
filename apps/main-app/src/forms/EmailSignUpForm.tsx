@@ -1,5 +1,5 @@
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@rag/ui/Form'
-import { Input } from '@rag/ui/Input'
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@autofiller/ui/Form'
+import { Input } from '@autofiller/ui/Input'
 import { SubmitHandler, UseFormReturn } from 'react-hook-form'
 
 import { TEmailAuthSignUpForm } from '@/forms/types'

@@ -1,4 +1,4 @@
-import { cn } from '@rag/ui/utils/cn'
+import { cn } from '@autofiller/ui/utils/cn'
 
 interface IArchivedBannerProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode

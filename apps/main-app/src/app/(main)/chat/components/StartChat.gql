@@ -1,5 +1,0 @@
-mutation Chat_StartChat {
-  chatStart {
-    id
-  }
-}

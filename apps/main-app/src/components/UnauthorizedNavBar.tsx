@@ -1,7 +1,7 @@
 'use client'
 
-import { Button } from '@rag/ui/Button'
-import { Toolbar } from '@rag/ui/Toolbar'
+import { Button } from '@autofiller/ui/Button'
+import { Toolbar } from '@autofiller/ui/Toolbar'
 import Link from 'next/link'
 
 import { Logo } from '@/components/assets/Logo'

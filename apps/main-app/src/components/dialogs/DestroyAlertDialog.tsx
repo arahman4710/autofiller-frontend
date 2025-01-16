@@ -10,7 +10,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from '@rag/ui/AlertDialog'
+} from '@autofiller/ui/AlertDialog'
 
 interface IDestroyAlertDialogProps {
   confirmText?: string

@@ -1,18 +1,18 @@
-import type { TAlertVariant } from '@rag/ui/Alert'
+import type { TAlertVariant } from '@autofiller/ui/Alert'
 
 import { useEffect, useState } from 'react'
 
 import { useMutation, useQuery } from '@apollo/client'
 import { Gear, User, Wallet } from '@phosphor-icons/react'
-import { Alert, AlertDescription, AlertTitle } from '@rag/ui/Alert'
-import { Avatar, AvatarFallback } from '@rag/ui/Avatar'
-import { Button } from '@rag/ui/Button'
-import { Dialog, DialogContent, DialogScreen, DialogScreenProvider } from '@rag/ui/Dialog'
-import { IconText } from '@rag/ui/IconText'
-import { Separator } from '@rag/ui/Separator'
-import { Tooltip, TooltipContent, TooltipTrigger } from '@rag/ui/Tooltip'
-import { useToast } from '@rag/ui/useToast'
-import { cn } from '@rag/ui/utils'
+import { Alert, AlertDescription, AlertTitle } from '@autofiller/ui/Alert'
+import { Avatar, AvatarFallback } from '@autofiller/ui/Avatar'
+import { Button } from '@autofiller/ui/Button'
+import { Dialog, DialogContent, DialogScreen, DialogScreenProvider } from '@autofiller/ui/Dialog'
+import { IconText } from '@autofiller/ui/IconText'
+import { Separator } from '@autofiller/ui/Separator'
+import { Tooltip, TooltipContent, TooltipTrigger } from '@autofiller/ui/Tooltip'
+import { useToast } from '@autofiller/ui/useToast'
+import { cn } from '@autofiller/ui/utils'
 
 import {
   AccountSettingsDialog_UpdateUserDocument,

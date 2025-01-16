@@ -1,6 +1,6 @@
 import { CoinVertical } from '@phosphor-icons/react'
-import { Button } from '@rag/ui/Button'
-import { Tooltip, TooltipContent, TooltipTrigger } from '@rag/ui/Tooltip'
+import { Button } from '@autofiller/ui/Button'
+import { Tooltip, TooltipContent, TooltipTrigger } from '@autofiller/ui/Tooltip'
 
 import { SubscriptionPlanEnum } from '@/gql/__generated__/graphql'
 import { useUpgradePlanDialog } from '@/hooks/contexts/useUpgradePlanDialog'

@@ -1,6 +1,6 @@
 'use client'
 
-import { LogoFull } from '@rag/ui/Logo'
+import { LogoFull } from '@autofiller/ui/Logo'
 
 export const Logo = () => {
   return (

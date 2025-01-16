@@ -1,7 +1,7 @@
 import { Suspense } from 'react'
 
-import { Toaster } from '@rag/ui/Toaster'
-import { cn } from '@rag/ui/utils/cn'
+import { Toaster } from '@autofiller/ui/Toaster'
+import { cn } from '@autofiller/ui/utils/cn'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { GeistSans } from 'geist/font/sans'
 import { Metadata } from 'next'
@@ -16,7 +16,7 @@ import { Providers } from './provider'
 import { PostHogPageview } from './provider/Posthog'
 
 import './globals.css'
-import '@rag/ui/globals.css'
+import '@autofiller/ui/globals.css'
 
 export const metadata: Metadata = {
   description: 'Pagetracker.',

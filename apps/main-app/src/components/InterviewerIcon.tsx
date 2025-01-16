@@ -1,5 +1,5 @@
 import { Sparkle } from '@phosphor-icons/react'
-import { cn } from '@rag/ui/utils/cn'
+import { cn } from '@autofiller/ui/utils/cn'
 
 export const InterviewerIcon = ({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) => {
   return (

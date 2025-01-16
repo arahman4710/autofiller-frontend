@@ -1,5 +1,5 @@
-import { OrDivider } from '@rag/ui/OrDivider'
-import { objectToQueryString } from '@rag/utils'
+import { OrDivider } from '@autofiller/ui/OrDivider'
+import { objectToQueryString } from '@autofiller/utils'
 import { Metadata } from 'next'
 import Link from 'next/link'
 

@@ -2,9 +2,9 @@
 
 import { useState } from 'react'
 
-import { Button } from '@rag/ui/Button'
-import { IconText } from '@rag/ui/IconText'
-import { objectToQueryString } from '@rag/utils'
+import { Button } from '@autofiller/ui/Button'
+import { IconText } from '@autofiller/ui/IconText'
+import { objectToQueryString } from '@autofiller/utils'
 import { useSearchParams } from 'next/navigation'
 import { signIn } from 'next-auth/react'
 

@@ -1,4 +1,4 @@
-import { MainShell } from '@rag/ui/MainShell'
+import { MainShell } from '@autofiller/ui/MainShell'
 import { Metadata } from 'next'
 
 import DocumentsHeader from './components/DocumentsHeader'

@@ -1,4 +1,4 @@
-import { Button, IButtonProps } from '@rag/ui/Button'
+import { Button, IButtonProps } from '@autofiller/ui/Button'
 
 interface IEmptyPageView {
   button?: IButtonProps

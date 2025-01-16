@@ -1,5 +1,5 @@
 {
-  "extends": "@rag/tsconfig/nextjs.json",
+  "extends": "@autofiller/tsconfig/nextjs.json",
   "compilerOptions": {
     "paths": {
       "@/*": ["./src/*"],

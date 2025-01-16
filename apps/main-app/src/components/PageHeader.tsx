@@ -1,5 +1,5 @@
-import { IconText } from '@rag/ui/IconText'
-import { cn } from '@rag/ui/utils/cn'
+import { IconText } from '@autofiller/ui/IconText'
+import { cn } from '@autofiller/ui/utils/cn'
 
 interface IPageHeaderProps {
   className?: string

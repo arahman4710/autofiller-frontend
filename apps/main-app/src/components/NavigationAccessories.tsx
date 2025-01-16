@@ -8,8 +8,8 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from '@rag/ui/Drawer'
-import { IconText } from '@rag/ui/IconText'
+} from '@autofiller/ui/Drawer'
+import { IconText } from '@autofiller/ui/IconText'
 
 import { Devtool } from '@/__dev__/Devtool'
 import { ProfileButton } from '@/components/ProfileButton'

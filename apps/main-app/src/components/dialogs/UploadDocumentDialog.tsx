@@ -4,10 +4,10 @@ import { useEffect, useState } from 'react'
 
 import { useLazyQuery, useMutation } from '@apollo/client'
 import { PlusCircle } from '@phosphor-icons/react'
-import { Button } from '@rag/ui/Button'
-import { Dialog, DialogClose, DialogContent, DialogFooter } from '@rag/ui/Dialog'
-import { Dropzone } from '@rag/ui/Dropzone'
-import { useToast } from '@rag/ui/useToast'
+import { Button } from '@autofiller/ui/Button'
+import { Dialog, DialogClose, DialogContent, DialogFooter } from '@autofiller/ui/Dialog'
+import { Dropzone } from '@autofiller/ui/Dropzone'
+import { useToast } from '@autofiller/ui/useToast'
 
 import { DocumentsList_AllDocumentsDocument, UploadDocumentDocument, } from '@gql/graphql'
 

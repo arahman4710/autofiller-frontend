@@ -12,12 +12,12 @@ import {
   Sparkle,
   Trash,
 } from '@phosphor-icons/react'
-import { Button } from '@rag/ui/Button'
-import { IconText } from '@rag/ui/IconText'
-import { DragHandle } from '@rag/ui/SortableItem'
-import { Tooltip, TooltipContent, TooltipTrigger } from '@rag/ui/Tooltip'
-import { WarningTooltip } from '@rag/ui/WarningTooltip'
-import { cn } from '@rag/ui/utils/cn'
+import { Button } from '@autofiller/ui/Button'
+import { IconText } from '@autofiller/ui/IconText'
+import { DragHandle } from '@autofiller/ui/SortableItem'
+import { Tooltip, TooltipContent, TooltipTrigger } from '@autofiller/ui/Tooltip'
+import { WarningTooltip } from '@autofiller/ui/WarningTooltip'
+import { cn } from '@autofiller/ui/utils/cn'
 import { type VariantProps, cva } from 'class-variance-authority'
 
 import { DestroyAlertDialog } from '@/components/dialogs/DestroyAlertDialog'

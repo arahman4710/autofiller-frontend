@@ -36,7 +36,7 @@ const nextConfig = {
       },
     ]
   },
-  transpilePackages: ['@rag/ui'],
+  transpilePackages: ['@autofiller/ui'],
   webpack(config, { buildId, dev, isServer, webpack }) {
     const rules = config.module.rules
       .find((rule) => typeof rule.oneOf === 'object')

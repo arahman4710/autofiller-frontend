@@ -3,7 +3,7 @@
 import { useState } from 'react'
 
 import { ArchiveBox, DotsThree, FileText } from '@phosphor-icons/react'
-import { IconText } from '@rag/ui/IconText'
+import { IconText } from '@autofiller/ui/IconText'
 import {
   Popover,
   PopoverContent,
@@ -11,8 +11,8 @@ import {
   PopoverMenuItem,
   PopoverOverlay,
   PopoverTrigger,
-} from '@rag/ui/Popover'
-import { cn } from '@rag/ui/utils/cn'
+} from '@autofiller/ui/Popover'
+import { cn } from '@autofiller/ui/utils/cn'
 
 import { IListRowProps, ListRow } from './ListRow'
 

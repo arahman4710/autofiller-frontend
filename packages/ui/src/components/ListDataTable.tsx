@@ -1,6 +1,6 @@
-import { EmptyState } from '@rag/ui/EmptyState'
-import { LoaderBar } from '@rag/ui/LoaderBar'
-import { ScrollArea } from '@rag/ui/ScrollArea'
+import { EmptyState } from '@autofiller/ui/EmptyState'
+import { LoaderBar } from '@autofiller/ui/LoaderBar'
+import { ScrollArea } from '@autofiller/ui/ScrollArea'
 
 interface IItem {
   [key: string]: unknown

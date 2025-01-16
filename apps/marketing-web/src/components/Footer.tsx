@@ -1,9 +1,9 @@
 'use client'
 import { useEffect, useState } from 'react'
 
+import { LogoFull } from '@autofiller/ui/Logo'
+import { cn } from '@autofiller/ui/utils/cn'
 import { CheckCircledIcon, DotFilledIcon } from '@radix-ui/react-icons'
-import { LogoFull } from '@rag/ui/Logo'
-import { cn } from '@rag/ui/utils/cn'
 import Link from 'next/link'
 
 export const Footer = () => {
@@ -63,13 +63,11 @@ export const Footer = () => {
     //   try {
     //     const response = await fetch('/api/checkly')
     //     const data = await response.json()
-
     //     if (data.hasDegredations) {
     //       setHasDegredations(true)
     //     }
     //   } catch (error) {}
     // }
-
     // checkOperationaStatus()
   }, [])
 
@@ -106,9 +104,7 @@ export const Footer = () => {
             ))}
           </div>
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-center md:justify-start">
-            <p
-              className="hidden cursor-pointer items-center gap-1 md:flex"
-            >
+            <p className="hidden cursor-pointer items-center gap-1 md:flex">
               <DotFilledIcon
                 className={cn('h-4 w-4', hasDegredations ? 'text-amber-400' : 'text-green-400')}
               />

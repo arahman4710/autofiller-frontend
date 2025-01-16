@@ -1,5 +1,5 @@
 {
-  "extends": "@rag/tsconfig/react-library.json",
+  "extends": "@autofiller/tsconfig/react-library.json",
   "include": ["src", "*.d.ts", "../types/**/*.d.ts"],
   "exclude": ["node_modules"],
 }

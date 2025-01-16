@@ -1,5 +1,5 @@
 {
-  "name": "@rag/utils",
+  "name": "@autofiller/utils",
   "private": true,
   "version": "1.0.0",
   "scripts": {
@@ -8,7 +8,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@rag/tsconfig": "workspace:*",
+    "@autofiller/tsconfig": "workspace:*",
     "date-fns": "latest"
   },
   "exports": {

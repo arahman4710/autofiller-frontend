@@ -3,7 +3,7 @@
 import { forwardRef, useMemo } from 'react'
 
 import * as AvatarPrimitive from '@radix-ui/react-avatar'
-import { generateColors } from '@rag/utils'
+import { generateColors } from '@autofiller/utils'
 
 import { cn } from '../utils'
 

@@ -1,11 +1,16 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@rag/ui/Accordion'
-import { Badge } from '@rag/ui/Badge'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@autofiller/ui/Accordion'
+import { Badge } from '@autofiller/ui/Badge'
 import {
   SwitchTabs,
   SwitchTabsContent,
   SwitchTabsList,
   SwitchTabsTrigger,
-} from '@rag/ui/SwitchTabs'
+} from '@autofiller/ui/SwitchTabs'
 import { Metadata } from 'next'
 
 import { Plans } from '@/components/Plans'

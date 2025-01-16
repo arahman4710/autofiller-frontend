@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react'
 
-import { LoaderBar } from '@rag/ui/LoaderBar'
+import { LoaderBar } from '@autofiller/ui/LoaderBar'
 import {
   Table,
   TableBody,
@@ -12,9 +12,9 @@ import {
   TableHeader,
   TableRow,
   tableVariants,
-} from '@rag/ui/Table'
-import { cn } from '@rag/ui/utils/cn'
-import { formatDate } from '@rag/utils'
+} from '@autofiller/ui/Table'
+import { cn } from '@autofiller/ui/utils/cn'
+import { formatDate } from '@autofiller/utils'
 import {
   Cell,
   ColumnDef,

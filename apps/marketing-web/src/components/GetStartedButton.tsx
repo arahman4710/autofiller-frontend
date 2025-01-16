@@ -1,5 +1,5 @@
+import { cn } from '@autofiller/ui/utils/cn'
 import { ChevronRightIcon } from '@radix-ui/react-icons'
-import { cn } from '@rag/ui/utils/cn'
 import Link from 'next/link'
 
 interface IGetStartedButtonProps extends React.ComponentProps<'a'> {

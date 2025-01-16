@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from 'react'
 
+import { Carousel, CarouselContent, CarouselItem, type TCarouselApi } from '@autofiller/ui/Carousel'
+import { cn } from '@autofiller/ui/utils/cn'
 import { DownloadIcon, FaceIcon, MagicWandIcon, PaperPlaneIcon } from '@radix-ui/react-icons'
-import { Carousel, CarouselContent, CarouselItem, type TCarouselApi } from '@rag/ui/Carousel'
-import { cn } from '@rag/ui/utils/cn'
 
 export const FeaturePreview = () => {
   const [selectedFeature, setSelectedFeature] = useState(0)

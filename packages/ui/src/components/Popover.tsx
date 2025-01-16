@@ -3,7 +3,7 @@
 import { forwardRef } from 'react'
 
 import * as PopoverPrimitive from '@radix-ui/react-popover'
-import { Separator } from '@rag/ui/Separator'
+import { Separator } from '@autofiller/ui/Separator'
 
 import { cn } from '../utils'
 

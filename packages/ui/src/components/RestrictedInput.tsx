@@ -1,4 +1,4 @@
-import { restrictKeyInput } from '@rag/utils'
+import { restrictKeyInput } from '@autofiller/utils'
 
 import { IInputProps, Input } from './Input'
 

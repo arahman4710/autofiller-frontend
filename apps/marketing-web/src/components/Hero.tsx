@@ -1,6 +1,6 @@
 'use client'
 
-import { Carousel, CarouselContent, CarouselItem } from '@rag/ui/Carousel'
+import { Carousel, CarouselContent, CarouselItem } from '@autofiller/ui/Carousel'
 import Autoscroll from 'embla-carousel-auto-scroll'
 import { motion } from 'framer-motion'
 import Image from 'next/image'

@@ -1,5 +1,5 @@
 import { Info } from '@phosphor-icons/react'
-import { cn } from '@rag/ui/utils'
+import { cn } from '@autofiller/ui/utils'
 
 import { Tooltip, TooltipContent, TooltipTrigger } from './Tooltip'
 

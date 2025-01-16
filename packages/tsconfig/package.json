@@ -1,5 +1,5 @@
 {
-  "name": "@rag/tsconfig",
+  "name": "@autofiller/tsconfig",
   "private": true,
   "version": "1.0.0",
   "files": [

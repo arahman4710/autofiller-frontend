@@ -1,4 +1,4 @@
-import { cn } from '@rag/ui/utils'
+import { cn } from '@autofiller/ui/utils'
 
 interface ILoaderBarProps {
   className?: string

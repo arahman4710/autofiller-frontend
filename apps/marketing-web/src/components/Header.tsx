@@ -51,7 +51,7 @@ export function Header() {
   const pathname = usePathname()
   const [isOpen, setOpen] = useState(false)
 
-  const lastPath = `/${pathname.split('/').pop()}`
+  const lastPath = `/${pathname?.split('/').pop()}`
 
   const handleToggleMenu = () => {
     setOpen((prev) => {
@@ -60,7 +60,7 @@ export function Header() {
     })
   }
 
-  const isAdvisoryPage = pathname.includes('advisors-and-organizations')
+  const isAdvisoryPage = pathname?.includes('advisors-and-organizations')
 
   return (
     <header
@@ -159,7 +159,7 @@ export function Header() {
             >
               {links.map(({ name, path, title }) => {
                 const isActive =
-                  path === '/updates' ? pathname.includes('updates') : path === lastPath
+                  path === '/updates' ? pathname?.includes('updates') : path === lastPath
 
                 return (
                   <motion.li key={path} variants={itemVariant}>

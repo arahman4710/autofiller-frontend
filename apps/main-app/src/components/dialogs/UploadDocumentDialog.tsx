@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import { useLazyQuery, useMutation } from '@apollo/client'
 import { Button } from '@autofiller/ui/Button'
@@ -19,11 +19,17 @@ interface IUploadDocumentDialogProps {
   setOpen: (open: boolean) => void
 }
 
+interface IFile {
+  filename: string
+  signed_id: string
+}
+
 export const UploadDocumentDialog = ({ open, setOpen }: IUploadDocumentDialogProps) => {
   const { errorToast, successToast } = useToast()
   const [isFileUploading, setIsFileUploading] = useState<boolean>(false)
-  const [fileSignedId, setFileSignedId] = useState<null | string>(null)
-  const [fileName, setFileName] = useState<string>('')
+  // const [fileSignedId, setFileSignedId] = useState<null | string>(null)
+  // const [fileName, setFileName] = useState<string>('')
+  const filesRef = useRef<IFile[]>([])
   const [isLoading, setIsLoading] = useState(false)
 
   const { isPaidPlan, user } = useCurrentUser()
@@ -33,7 +39,7 @@ export const UploadDocumentDialog = ({ open, setOpen }: IUploadDocumentDialogPro
 
   useEffect(() => {
     if (!open) {
-      setFileSignedId(null)
+      filesRef.current = []
       setIsLoading(false)
     }
   }, [open])
@@ -41,19 +47,17 @@ export const UploadDocumentDialog = ({ open, setOpen }: IUploadDocumentDialogPro
   const handleUploadResume = async (files: File[]) => {
     setIsFileUploading(true)
 
-    const file = files[0]
-
-    await uploadFile({
-      file,
-      onComplete: (response) => {
-        setFileSignedId(response.signed_id)
-        setFileName(response.filename)
-        setIsFileUploading(false)
-      },
-      onError: () => {
-        errorToast({ description: 'There was an error uploading your document.' })
-        setIsFileUploading(false)
-      },
+    files.forEach(async (file) => {
+      await uploadFile({
+        file,
+        onComplete: (response) => {
+          filesRef.current.push({ filename: response.filename, signed_id: response.signed_id })
+        },
+        onError: () => {
+          errorToast({ description: 'There was an error uploading your document.' })
+          setIsFileUploading(false)
+        },
+      })
     })
   }
 
@@ -61,12 +65,14 @@ export const UploadDocumentDialog = ({ open, setOpen }: IUploadDocumentDialogPro
     setIsLoading(true)
 
     try {
-      if (fileSignedId) {
-        await uploadDocument({
-          variables: {
-            name: fileName,
-            uploadSignedId: fileSignedId,
-          },
+      if (filesRef.current.length > 0) {
+        filesRef.current.forEach(async (file) => {
+          await uploadDocument({
+            variables: {
+              name: file.filename,
+              uploadSignedId: file.signed_id,
+            },
+          })
         })
       }
       successToast({ description: 'Your document has been uploaded.' })
@@ -85,7 +91,7 @@ export const UploadDocumentDialog = ({ open, setOpen }: IUploadDocumentDialogPro
         title="Upload new document"
         titleIcon={<PlusCircle />}
       >
-        <Dropzone loading={false} onDropAccepted={handleUploadResume} />
+        <Dropzone loading={false} multiple onDropAccepted={handleUploadResume} />
         <Button
           className="mt-4"
           fullWidth={true}

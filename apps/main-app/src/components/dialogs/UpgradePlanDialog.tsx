@@ -62,7 +62,7 @@ export const UpgradePlanDialog = ({ open, setOpen }: IUpgradePlanDialogProps) =>
             <Loader />
           ) : (
             <SwitchTabs
-              className="flex flex-col items-center justify-center self-center"
+              className="flex flex-col justify-center self-center"
               defaultValue="quarterly"
               onValueChange={handleBillingFrequencySwitch}
               value={pricingPlanTab}
@@ -145,28 +145,13 @@ const PricingPlanCards = ({ selectedPricing }: { selectedPricing: string }) => {
     })
   }
 
-  const freeFeatures = [
-    '1 User',
-    'Max of either 2 page check creations or 10 page check runs',
-    'Email notifications',
-  ]
+  const freeFeatures = ['1 User', '5 Autofills']
 
-  const hobbyFeatures = [
-    'All Free features + ',
-    '1 User',
-    '60 Page Check Runs/month',
-    'Unlimited Manual Page Check Runs',
-    'Email + SMS notifications',
-  ]
+  const hobbyFeatures = ['All Free features + ', '1 User', '60 Autofills/month']
 
-  const basicFeatures = [
-    'All Hobby features + ',
-    'Unlimited Team Members',
-    '250 Page Check Runs/month',
-    'Notifications to over 50+ destinations (email, SMS, Slack, etc.)',
-  ]
+  const basicFeatures = ['All Hobby features + ', 'Unlimited Team Members', '250 Autofills/month']
 
-  const proFeatures = ['All Basic features + ', '1000 Page Check Runs/month']
+  const proFeatures = ['All Basic features + ', 'Unlimited Autofills/month']
 
   const planToFeatures = [
     {
@@ -215,6 +200,7 @@ const PricingPlanCards = ({ selectedPricing }: { selectedPricing: string }) => {
               </Button>
             ) : (
               <Button
+                className="px-6"
                 fullWidth={true}
                 loading={
                   typeof planToLoading[plan][0] === 'boolean' ? planToLoading[plan][0] : false

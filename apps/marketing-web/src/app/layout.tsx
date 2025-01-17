@@ -19,7 +19,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   description: 'Autofiller.',
   icons: { icon: '/favicon.ico' },
-  title: 'Autofiller',
+  title: 'Autofiller AI – Fill out any form in seconds',
 }
 
 export default function RootLayout({

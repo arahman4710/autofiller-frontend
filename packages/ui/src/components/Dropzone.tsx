@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react'
 import { CloudArrowUp, FileArrowUp, X } from '@phosphor-icons/react'
 import { useDropzone } from 'react-dropzone'
 
-import { cn } from '../utils'
 import { Button } from './Button'
+import { cn } from '../utils'
 
 interface IDropzoneProps extends React.HTMLAttributes<HTMLDivElement> {
   description?: string
@@ -65,10 +65,10 @@ export const Dropzone = ({
       {showDropzone && (
         <div {...getRootProps({ className: rootClassName })}>
           {isInputMounted && <input {...getInputProps()} />}
-          <div className="flex flex-col items-center justify-center gap-3 text-center">
+          <div className="flex flex-col items-center justify-center gap-4 text-center">
             <CloudArrowUp size={48} />
             <p className="font-semibold text-stone-400">
-              {description ?? 'Drag and drop your file here'} or{' '}
+              {description ?? 'Drag and drop your files here'} or{' '}
               <button
                 className="cursor-pointer text-blue-500 underline"
                 onClick={open}
@@ -81,20 +81,22 @@ export const Dropzone = ({
           </div>
         </div>
       )}
-      <div>
-        <ul className="flex flex-row gap-2">
-          {acceptedFiles.map((file, index) => {
-            return (
-              <UploadedFile
-                file={file}
-                fileIndex={index}
-                key={file.name}
-                onRemoveFile={handleRemoveFile}
-              />
-            )
-          })}
-        </ul>
-      </div>
+      {acceptedFiles.length > 0 && (
+        <div>
+          <ul className="flex max-h-[400px] flex-row flex-wrap gap-2 overflow-scroll">
+            {acceptedFiles.map((file, index) => {
+              return (
+                <UploadedFile
+                  file={file}
+                  fileIndex={index}
+                  key={file.name}
+                  onRemoveFile={handleRemoveFile}
+                />
+              )
+            })}
+          </ul>
+        </div>
+      )}
     </div>
   )
 }

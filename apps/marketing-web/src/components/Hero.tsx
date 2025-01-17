@@ -45,16 +45,16 @@ export const Hero = () => {
     <motion.section>
       <div className="hero-slide-up container mt-[32px] flex flex-col pb-[64px] md:mt-[74px]">
         <h1 className="hidden text-[64px] font-medium leading-tight md:block">
-          Save time by letting us monitor your pages
+          Quickly fill out any form with 1-click
         </h1>
         <h1 className="text-[30px] font-medium leading-tight md:hidden">
-          Save time by letting us monitor your pages
+          Quickly fill out any form with 1-click
         </h1>
 
         <p className="mt-4 max-w-[500px] text-[18px] leading-relaxed text-white/70 md:mt-6">
           <span className="text-neutral-100">
             {' '}
-            Our AI monitors web pages and alerts you when important website changes happen
+            Our AI uses the data you provide and fills out any form in seconds
           </span>
         </p>
 

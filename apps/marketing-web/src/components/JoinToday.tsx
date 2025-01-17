@@ -6,7 +6,7 @@ export const JoinToday = () => {
       <div className="flex flex-col gap-2">
         <h3 className="leading-snug text-stone-900 md:text-[26px]">Ready to get started?</h3>
         <p className="text-white/90">
-          Join thousands of users that use Canyon to accelerate their job search.
+          Join thousands of users that use Autofiller to accelerate their form filling.
         </p>
       </div>
       <GetStartedButton className="bg-emerald-200 text-black hover:bg-emerald-300" />

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 
 import { Carousel, CarouselContent, CarouselItem, type TCarouselApi } from '@autofiller/ui/Carousel'
 import { cn } from '@autofiller/ui/utils/cn'
-import { DownloadIcon, FaceIcon, MagicWandIcon, PaperPlaneIcon } from '@radix-ui/react-icons'
+import { LightningBoltIcon, MagicWandIcon, Pencil1Icon } from '@radix-ui/react-icons'
 
 export const FeaturePreview = () => {
   const [selectedFeature, setSelectedFeature] = useState(0)
@@ -17,22 +17,22 @@ export const FeaturePreview = () => {
     title: string
   }[] = [
     {
-      description: 'Use AI to extract any website data.',
+      description: 'Use AI to fill out any form.',
       icon: <MagicWandIcon />,
       image: '/images/create-new-page-check.png',
-      title: 'Monitor web pages using AI',
+      title: 'Fill out any form with 1-click',
     },
     {
-      description: 'Extract data on a schedule and get notified on changes.',
-      icon: <PaperPlaneIcon />,
+      description: 'Our AI learns from past filled forms.',
+      icon: <LightningBoltIcon />,
       image: '/images/page-check.png',
       title: 'Notifications on relevant changes',
     },
     {
-      description: 'Export anywhere.',
-      icon: <DownloadIcon />,
+      description: 'Add any kind of data to inform our auto filler.',
+      icon: <Pencil1Icon />,
       image: '/images/email.png',
-      title: 'Export your data to over 6000 destinations',
+      title: 'Add any data you want',
     },
   ]
 

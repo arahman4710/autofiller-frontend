@@ -9,13 +9,13 @@ export const GetStartedCTA = () => {
         <h2 className="hidden text-3xl font-semibold leading-snug text-stone-900 md:block">
           <span className="text-black/60">Ready to start?</span>
           <br />
-          Try Page Tracker for free today.
+          Try Autofiller for free today.
         </h2>
 
         <h2 className="text-3xl font-semibold leading-snug text-stone-900 md:hidden">
           <span className="text-black/60">Ready to start?</span>
           <br />
-          Try Page Tracker for free.
+          Try Autofiller for free.
         </h2>
 
         <GetStartedButton className="bg-black text-white hover:bg-black/90" />

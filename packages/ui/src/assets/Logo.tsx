@@ -27,7 +27,7 @@ export const LogoFull = ({ className }: { className?: string }) => (
         points="11.5,2 8,11.5 13,11.5 9.5,20 14.5,11.5 11.5,11.5"
       />
       <text fill="white" font-family="Arial, sans-serif" font-size="14" x="25" y="15">
-        Pagetracker
+        Autofiller
       </text>
     </svg>
   </div>

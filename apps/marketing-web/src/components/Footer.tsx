@@ -110,7 +110,7 @@ export const Footer = () => {
               />
               {hasDegredations ? 'Systems Degraded' : 'Systems Operational'}
             </p>
-            <span>© 2024 PageTracker</span>
+            <span>© 2024 Autofiller</span>
           </div>
         </div>
       </div>

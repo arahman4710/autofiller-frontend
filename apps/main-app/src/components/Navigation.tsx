@@ -5,7 +5,7 @@ import { cloneElement, useEffect, useMemo, useState } from 'react'
 import { Badge } from '@autofiller/ui/Badge'
 import { IconText } from '@autofiller/ui/IconText'
 import { cn } from '@autofiller/ui/utils/cn'
-import { ArrowCircleUp, Browser } from '@phosphor-icons/react'
+import { ArrowCircleUp, File } from '@phosphor-icons/react'
 import Link, { LinkProps } from 'next/link'
 import { usePathname } from 'next/navigation'
 
@@ -51,9 +51,9 @@ export const Navigation = () => {
       // },
       {
         enabled: true,
-        href: '/page-checks',
-        icon: <Browser />,
-        name: 'Page Checks',
+        href: '/documents',
+        icon: <File />,
+        name: 'Documents',
       },
     ]
   }

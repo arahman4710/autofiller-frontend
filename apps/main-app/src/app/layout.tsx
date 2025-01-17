@@ -19,11 +19,11 @@ import './globals.css'
 import '@autofiller/ui/globals.css'
 
 export const metadata: Metadata = {
-  description: 'Pagetracker.',
+  description: 'Autofiller.',
   icons: { icon: '/favicon.ico' },
   title: {
-    default: 'Pagetracker',
-    template: 'Pagetracker • %s',
+    default: 'Autofiller',
+    template: 'Autofiller • %s',
   },
 }
 

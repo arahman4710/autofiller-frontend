@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 import { SectionHeader } from '@/components/SectionHeader'
 
 export const metadata: Metadata = {
-  title: 'Pagetracker • Privacy Policy',
+  title: 'Autofiller • Privacy Policy',
 }
 
 export default function PrivacyPolicyPage() {
@@ -15,13 +15,14 @@ export default function PrivacyPolicyPage() {
         <section>
           <i>Last updated on January 16, 2024</i>
           <p>
-            Pagetracker operates the <a href="https://www.Pagetracker.biz">https://www.Pagetracker.biz</a>{' '}
-            website, which provides the SERVICE.
+            Autofiller operates the{' '}
+            <a href="https://www.Autofiller.biz">https://www.Autofiller.biz</a> website, which
+            provides the SERVICE.
           </p>
           <p>
             This page is used to inform website visitors regarding our policies with the collection,
             use, and disclosure of Personal Information if anyone decided to use our Service, the
-            Pagetracker website.
+            Autofiller website.
           </p>
           <p>
             If you choose to use our Service, then you agree to the collection and use of
@@ -32,7 +33,7 @@ export default function PrivacyPolicyPage() {
           <p>
             The terms used in this Privacy Policy have the same meanings as in our Terms and
             Conditions, which is accessible at{' '}
-            <a href="https://www.Pagetracker.biz">https://www.Pagetracker.biz</a>, unless otherwise
+            <a href="https://www.Autofiller.biz">https://www.Autofiller.biz</a>, unless otherwise
             defined in this Privacy Policy.
           </p>
         </section>
@@ -148,7 +149,7 @@ export default function PrivacyPolicyPage() {
           <h2>9. Contact Us</h2>
           <p>
             If you have any questions or suggestions about our Privacy Policy, do not hesitate to
-            contact us at <a href="mailto:support@Pagetracker.biz">support@Pagetracker.biz</a>.
+            contact us at <a href="mailto:support@Autofiller.biz">support@Autofiller.biz</a>.
           </p>
         </section>
       </article>

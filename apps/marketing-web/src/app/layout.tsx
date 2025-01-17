@@ -17,9 +17,9 @@ import '@autofiller/ui/globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  description: 'Pagetracker.',
+  description: 'Autofiller.',
   icons: { icon: '/favicon.ico' },
-  title: 'Pagetracker',
+  title: 'Autofiller',
 }
 
 export default function RootLayout({

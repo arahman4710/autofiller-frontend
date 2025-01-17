@@ -25,14 +25,6 @@ export const DocumentsToolbar = () => {
     <Toolbar justify="end">
       <div className="flex flex-row items-center gap-2">
         <Button
-          leftIcon={<GoogleDriveLogo size={16} weight="bold" />}
-          onClick={(_) => login()}
-          size="sm"
-          variant="outline"
-        >
-          Connect Google Drive
-        </Button>
-        <Button
           leftIcon={<PlusCircle size={16} weight="bold" />}
           onClick={() => setuploadDocumentDialogOpen(true)}
           size="sm"

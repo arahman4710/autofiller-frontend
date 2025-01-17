@@ -71,7 +71,7 @@ export function Header() {
     >
       <nav className="flex h-[50px] w-full items-center justify-between rounded-lg bg-[#121212] bg-opacity-70 px-4 backdrop-blur-xl backdrop-filter md:bg-transparent">
         <Link className="cursor-pointer" href="/">
-          <span className="sr-only">Pagetracker Logo</span>
+          <span className="sr-only">Autofiller Logo</span>
           <LogoFull />
         </Link>
 
@@ -105,7 +105,7 @@ export function Header() {
         <div className="hidden w-[240px] items-center justify-end gap-4 text-sm md:flex">
           <Link
             className="hover:text-text/80 px-4 transition-all ease-in-out"
-            href="https://app.pagetracker.biz/auth/signin"
+            href="https://app.aiautofiller.xyz/auth/signin"
           >
             Sign In
           </Link>
@@ -129,7 +129,7 @@ export function Header() {
         >
           <div className="relative mt-4 flex justify-between p-3 px-4">
             <button onClick={handleToggleMenu} type="button">
-              <span className="sr-only">Pagetracker Logo</span>
+              <span className="sr-only">Autofiller Logo</span>
               <LogoFull />
             </button>
 
@@ -184,7 +184,7 @@ export function Header() {
               >
                 <Link
                   className="text-muted-foreground text-xl"
-                  href="https://app.pagetracker.biz/auth/signin"
+                  href="https://app.aiautofiller.xyz/auth/signin"
                 >
                   Sign in
                 </Link>

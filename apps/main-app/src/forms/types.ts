@@ -5,7 +5,6 @@ import { EmailAuthSignInFormSchema } from '@/forms/hooks/useEmailAuthSignInForm'
 import { EmailAuthSignUpFormSchema } from '@/forms/hooks/useEmailAuthSignUpForm'
 import { EmailVerifyFormSchema } from '@/forms/hooks/useEmailVerifyForm'
 import { ForgotPasswordFormSchema } from '@/forms/hooks/useForgotPasswordForm'
-import { PageCheckFormSchema } from '@/forms/hooks/usePageCheckForm'
 import { ResetPasswordFormSchema } from '@/forms/hooks/useResetPasswordForm'
 import { UserFormSchema } from '@/forms/hooks/useUserForm'
 
@@ -16,4 +15,3 @@ export type TEmailVerifyForm = z.infer<typeof EmailVerifyFormSchema>
 export type TEmailAuthSignInForm = z.infer<typeof EmailAuthSignInFormSchema>
 export type TEmailAuthSignUpForm = z.infer<typeof EmailAuthSignUpFormSchema>
 export type TForgotPasswordForm = z.infer<typeof ForgotPasswordFormSchema>
-export type TPageCheckForm = z.infer<typeof PageCheckFormSchema>

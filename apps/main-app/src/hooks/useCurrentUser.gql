@@ -7,9 +7,6 @@ fragment Users on Users {
     id
     name
     plan
-    reachedFreePlanPageCheckLimit
-    reachedManuallyRunLimit
-    numPageChecks
   }
 }
 

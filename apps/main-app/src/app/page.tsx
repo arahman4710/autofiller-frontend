@@ -15,5 +15,5 @@ export default async function Home({ searchParams }) {
     redirect(fromSearchParam)
   }
 
-  redirect('/page-checks')
+  redirect('/documents')
 }

@@ -26,23 +26,23 @@ export const LandingBody = () => {
           <FeaturePreview />
         </section>
 
-        <div className="bg-white">
+        {/* <div className="bg-white">
           <section className="container py-10">
             <div className="flex flex-col gap-2">
               <span className="font-mono text-xs uppercase text-stone-400">Features</span>
               <h2 className="text-[24px] leading-tight text-stone-950 md:text-3xl md:text-[36px]">
                 <span className="text-primary">Built</span> to enhance your form filling
-              </h2>
-              {/* <p className="text-primary/80 mt-4"> */}
-              {/* From automated receipt-to-transaction mapping to conversing with your
+              </h2> */}
+        {/* <p className="text-primary/80 mt-4"> */}
+        {/* From automated receipt-to-transaction mapping to conversing with your
                 <br />
                 financials and consolidating all your files
               </p> */}
-            </div>
+        {/* </div> */}
 
-            {/* <FeatureHighlights /> */}
-          </section>
-        </div>
+        {/* <FeatureHighlights /> */}
+        {/* </section>
+        </div> */}
       </div>
     </div>
   )

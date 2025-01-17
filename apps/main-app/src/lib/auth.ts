@@ -71,7 +71,7 @@ export const authOptions: (any?) => NextAuthOptions = (req = null) => ({
     sessionToken: {
       name: `${useSecureCookies ? '__Secure-' : ''}next-auth.session-token`,
       options: {
-        domain: useSecureCookies ? '.pagetracker.biz' : 'localhost',
+        domain: useSecureCookies ? '.aiautofiller.xyz' : 'localhost',
         httpOnly: true,
         path: '/',
         sameSite: 'lax',

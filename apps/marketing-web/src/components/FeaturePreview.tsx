@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import { Carousel, CarouselContent, CarouselItem, type TCarouselApi } from '@autofiller/ui/Carousel'
 import { cn } from '@autofiller/ui/utils/cn'
@@ -13,25 +13,27 @@ export const FeaturePreview = () => {
   const features: {
     description: string
     icon: React.ReactNode
-    image: string
+    image?: string
     title: string
+    video?: string
   }[] = [
     {
       description: 'Use AI to fill out any form.',
       icon: <MagicWandIcon />,
-      image: '/images/create-new-page-check.png',
       title: 'Fill out any form with 1-click',
+      video: '/videos/autofiller.mov',
     },
     {
-      description: 'Our AI learns from past filled forms.',
+      description:
+        'Our AI learns from past filled forms and will use that data to fill out future forms faster.',
       icon: <LightningBoltIcon />,
-      image: '/images/page-check.png',
-      title: 'Notifications on relevant changes',
+      image: '/images/chrome-extension.png',
+      title: 'Fill out forms faster the more you use it',
     },
     {
-      description: 'Add any kind of data to inform our auto filler.',
+      description: 'Add your own data or from other chrome tabs to inform our auto filler.',
       icon: <Pencil1Icon />,
-      image: '/images/email.png',
+      image: '/images/chrome-extension-chrome-tab.png',
       title: 'Add any data you want',
     },
   ]
@@ -43,6 +45,13 @@ export const FeaturePreview = () => {
       setSelectedFeature(api.selectedScrollSnap())
     })
   }, [api])
+
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const setPlayBack = () => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 1.7
+    }
+  }
 
   return (
     <div className="my-6 flex flex-col items-start gap-8 md:flex-row">
@@ -67,11 +76,28 @@ export const FeaturePreview = () => {
         ))}
       </div>
       <div className={cn('z-2 basis-3/3 flex aspect-video justify-end rounded-lg md:basis-2/3')}>
-        <img
-          alt="Monitor website pages using AI"
-          className="aspect-video w-full rounded-lg object-fill md:max-w-[800px]"
-          src={features[selectedFeature].image}
-        />
+        {features[selectedFeature].image ? (
+          <img
+            alt="Monitor website pages using AI"
+            className="aspect-video w-full rounded-lg object-fill md:max-w-[800px]"
+            src={features[selectedFeature].image}
+          />
+        ) : (
+          <video
+            autoPlay
+            className="aspect-video w-full rounded-lg object-fill md:max-w-[800px]"
+            key={features[selectedFeature].video}
+            loop
+            muted
+            onCanPlay={() => setPlayBack()}
+            playsInline
+            // poster={features[selectedFeature].poster}
+            preload="auto"
+            ref={videoRef}
+          >
+            <source src={features[selectedFeature].video} type="video/mp4" />
+          </video>
+        )}
       </div>
       <Carousel className="w-full md:hidden" opts={{ align: 'start', loop: true }} setApi={setApi}>
         <CarouselContent>

@@ -35,6 +35,12 @@ export const Navigation = () => {
   const shouldOpenUpgradeDialog = queryParams?.get('open_upgrade_dialog') == 'true'
   const { isPaidPlan, loading: currentUserIsLoading, user } = useCurrentUser()
 
+  useEffect(() => {
+    if (shouldOpenUpgradeDialog && !upgradePlanDialog.isOpen) {
+      upgradePlanDialog.setOpen(true)
+    }
+  }, [])
+
   const mainNavItems = (): TNavItem[] => {
     return [
       // {

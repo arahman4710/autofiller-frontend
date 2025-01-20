@@ -145,7 +145,7 @@ const PricingPlanCards = ({ selectedPricing }: { selectedPricing: string }) => {
     })
   }
 
-  const freeFeatures = ['1 User', '5 Autofills']
+  const freeFeatures = ['1 User', '3 Autofills']
 
   const hobbyFeatures = ['All Free features + ', '1 User', '60 Autofills/month']
 
